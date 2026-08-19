@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Diễn Đàn Cộng Đồng</title>
+    <meta name="description" content="Diễn đàn cộng đồng Khám Phá Cần Thơ — nơi chia sẻ câu chuyện, ảnh đẹp và thảo luận về du lịch, ẩm thực, văn hóa miền Tây.">
+    <link rel="stylesheet" href="forum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+<!-- ===================================================
+     NAVBAR
+     =================================================== -->
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                        <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                        <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===================================================
+     ACCOUNT FLOATING WIDGET
+     (JS forum.js sẽ populate: profileName, profileRole,
+      profileAvatar, statusPill, statusText, statusActions)
+     =================================================== -->
+<div class="account-widget" id="accountWidget" role="complementary" aria-label="Thông tin tài khoản">
+    <!-- Collapsed header — always visible, click to toggle -->
+    <button class="account-widget-header" id="accountWidgetToggle" aria-expanded="false" aria-controls="accountWidgetBody">
+        <span class="aw-avatar" id="profileAvatar"><i class="fa-solid fa-user"></i></span>
+        <span class="aw-name-wrap">
+            <span class="aw-name" id="profileName">Đang tải...</span>
+            <span class="aw-role" id="profileRole"></span>
+        </span>
+        <i class="fa-solid fa-chevron-up aw-chevron" id="awChevron"></i>
+    </button>
+
+    <!-- Expandable body -->
+    <div class="account-widget-body" id="accountWidgetBody">
+        <div class="aw-status-row">
+            <span class="status-pill" id="statusPill">Đang kiểm tra</span>
+        </div>
+        <p class="aw-desc" id="statusText">Đang đồng bộ thông tin tài khoản.</p>
+        <div class="aw-actions status-actions" id="statusActions">
+            <a href="account.html" class="inline-link">Mở trang tài khoản</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================
+     MAIN CONTENT — Full-width social feed
+     =================================================== -->
+<main class="forum-page">
+    <div class="feed-wrap">
+
+        <!-- Composer Card -->
+        <article class="panel-card composer-card" id="composerCard">
+            <button type="button" class="composer-trigger" id="composerToggleBtn" aria-expanded="false" aria-controls="composerBody">
+                <span class="composer-trigger-avatar" id="composerAvatar">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span class="composer-trigger-placeholder">Bạn đang nghĩ gì về Cần Thơ?</span>
+                <span class="composer-trigger-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+            </button>
+
+            <div class="composer-body" id="composerBody">
+                <div class="composer-body-inner">
+                    <form id="postForm" class="post-form" novalidate>
+                        <div class="field-grid">
+                            <label>
+                                Chủ đề
+                                <select name="topic" required>
+                                    <option value="">Chọn chủ đề</option>
+                                    <option value="Du lịch">Du lịch</option>
+                                    <option value="Ẩm thực">Ẩm thực</option>
+                                    <option value="Văn hóa">Văn hóa</option>
+                                    <option value="Câu chuyện cá nhân">Câu chuyện cá nhân</option>
+                                    <option value="Chia sẻ ảnh đẹp">Chia sẻ ảnh đẹp</option>
+                                </select>
+                            </label>
+                            <label>
+                                Tiêu đề bài viết
+                                <input type="text" name="title" placeholder="Ví dụ: Buổi sáng ở chợ nổi Cái Răng" required>
+                            </label>
+                        </div>
+                        <label>
+                            Nội dung chia sẻ
+                            <textarea name="content" rows="5" placeholder="Kể câu chuyện, đặt câu hỏi hoặc mở một chủ đề thảo luận..." required></textarea>
+                        </label>
+                        <label class="media-label">
+                            <span class="media-label-text"><i class="fa-solid fa-image"></i> Ảnh hoặc video</span>
+                            <input type="file" id="mediaInput" accept="image/*,video/*" multiple>
+                            <span class="input-help">Nên chọn file nhỏ. Tổng dung lượng nên dưới 2MB để lưu ổn định trên trình duyệt.</span>
+                        </label>
+                        <div class="preview-grid" id="mediaPreview"></div>
+                        <div class="form-actions">
+                            <button type="submit" class="primary-btn"><i class="fa-solid fa-paper-plane"></i> Đăng bài</button>
+                            <p class="form-message" id="postMessage" role="status" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+
+        <!-- Search + Filter bar -->
+        <article class="panel-card filter-card">
+            <div class="filter-bar-row">
+                <label class="search-box" aria-label="Tìm kiếm bài viết">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm bài viết...">
+                </label>
+                <select id="topicFilter" aria-label="Lọc theo chủ đề">
+                    <option value="all">Tất cả chủ đề</option>
+                    <option value="Du lịch">Du lịch</option>
+                    <option value="Ẩm thực">Ẩm thực</option>
+                    <option value="Văn hóa">Văn hóa</option>
+                    <option value="Câu chuyện cá nhân">Câu chuyện cá nhân</option>
+                    <option value="Chia sẻ ảnh đẹp">Chia sẻ ảnh đẹp</option>
+                </select>
+                <span class="post-counter-badge" id="postCounter">0 bài viết</span>
+            </div>
+        </article>
+
+        <!-- Post list rendered by forum.js -->
+        <section class="post-list" id="postList"></section>
+
+    </div>
+</main>
+
+<button type="button" class="back-to-top" id="backToTopBtn" aria-label="Lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<footer class="footer">
+    © 2026 Diễn đàn Khám Phá Cần Thơ — không gian để cộng đồng cùng kể chuyện về miền Tây.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="JS/supabase.js"></script>
+<script src="report.js"></script>
+<script src="forum.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ── Composer toggle ───────────────────────────────────────
+    var composerCard = document.getElementById("composerCard");
+    var composerToggleBtn = document.getElementById("composerToggleBtn");
+    if (composerCard && composerToggleBtn) {
+        composerToggleBtn.addEventListener("click", function () {
+            var isOpen = composerCard.classList.toggle("open");
+            composerToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            if (isOpen) {
+                var firstInput = composerCard.querySelector("select, input[type='text'], textarea");
+                if (firstInput) setTimeout(function () { firstInput.focus(); }, 350);
+            }
+        });
+    }
+
+    // ── Account floating widget toggle ────────────────────────
+    var widget = document.getElementById("accountWidget");
+    var widgetToggle = document.getElementById("accountWidgetToggle");
+    var widgetBody = document.getElementById("accountWidgetBody");
+    var chevron = document.getElementById("awChevron");
+
+    if (widgetToggle && widget) {
+        widgetToggle.addEventListener("click", function () {
+            var isOpen = widget.classList.toggle("open");
+            widgetToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            if (chevron) chevron.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+        });
+
+        // Close when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!widget.contains(e.target)) {
+                widget.classList.remove("open");
+                widgetToggle.setAttribute("aria-expanded", "false");
+                if (chevron) chevron.style.transform = "rotate(180deg)";
+            }
+        });
+    }
+
+    // ── Back to top ───────────────────────────────────────────
+    var backToTopBtn = document.getElementById("backToTopBtn");
+    if (backToTopBtn) {
+        window.addEventListener("scroll", function () {
+            backToTopBtn.classList.toggle("visible", window.scrollY > 420);
+        });
+        backToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+});
+</script>
+
+
+<script src="mobile-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Lễ hội Kỳ Yên Đình Bình Thủy với nghi thức cổ truyền, không gian đình làng và chiều sâu tín ngưỡng Nam Bộ.">
+    <title>Lễ hội Kỳ Yên Đình Bình Thủy</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .kyyen-page .sub-header { background: linear-gradient(135deg, rgba(51, 28, 13, 0.78), rgba(147, 105, 51, 0.48)), url("images/Lễ hội Kỳ Yên 1.jpg") center/cover; }
+        .kyyen-page .hero-btn.primary { color: #61361d; background: linear-gradient(135deg, #f8e1b4, #dcb06d); box-shadow: 0 18px 30px rgba(147, 105, 51, 0.24); }
+        .kyyen-page .feature-pill i, .kyyen-page .highlight-item i, .kyyen-page .quick-plan li i, .kyyen-page .travel-tips li i, .kyyen-page .timeline-time { color: #8a5a2b; }
+        .kyyen-page .feature-pill i, .kyyen-page .highlight-item i { background: rgba(138, 90, 43, 0.12); }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page kyyen-page">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<header class="header"><div class="container"><div class="logo-area"><a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a><h1 class="site-title">Khám Phá Cần Thơ</h1></div><nav class="navbar" aria-label="Điều hướng chính"><ul><li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li><li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li><li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li><li><a href="vanhoa.html" class="active"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li><li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li><li class="dropdown"><a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a><ul class="dropdown-menu"><li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li><li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li><li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li></ul></li><li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li><li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li></ul></nav></div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header"><div class="hero-shell"><div class="hero-copy"><div class="eyebrow"><i class="fa-solid fa-drum"></i> Hồn đình làng và tín ngưỡng cộng đồng</div><h1>Lễ hội Kỳ Yên Đình Bình Thủy</h1><p class="hero-lead">Lễ hội mang không khí trầm lắng mà thiêng liêng, nơi người dân gửi gắm ước vọng bình an, mùa màng thuận lợi và sự gắn kết bền chặt với cội nguồn làng xóm.</p><div class="hero-actions"><a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem nhịp trải nghiệm</a><a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a></div></div><div class="hero-panel"><h2>Điểm nhanh trước khi ghé</h2><div class="hero-stats"><div class="hero-stat"><strong>Nghi thức cổ truyền</strong><span>Nhiều nghi lễ phản ánh tinh thần tôn kính tiền nhân của cư dân Nam Bộ</span></div><div class="hero-stat"><strong>Không gian đình làng</strong><span>Mang vẻ uy nghi mà vẫn gần gũi với đời sống địa phương</span></div><div class="hero-stat"><strong>Giá trị tinh thần cao</strong><span>Phù hợp với người thích tìm hiểu chiều sâu văn hóa hơn là check-in nhanh</span></div><div class="hero-stat"><strong>Cảm xúc rất riêng</strong><span>Nét đẹp nằm nhiều ở nhịp lễ, âm thanh và bầu không khí cộng đồng</span></div></div></div></div></header>
+<section class="tour-detail">
+    <div class="intro-section"><div class="intro-text"><h2>Vài nét về lễ hội</h2><p>Lễ hội Kỳ Yên là nét sinh hoạt văn hóa tâm linh lâu đời gắn với đình làng Nam Bộ. Tại Bình Thủy, lễ hội không chỉ mang giá trị thờ tự mà còn là dịp người dân cùng nhau ôn lại ký ức cộng đồng, nhớ về tiền hiền hậu hiền và gìn giữ mạch sống văn hóa của vùng đất.</p><p>Sức hút của lễ hội nằm ở sự trang nghiêm vừa đủ, mộc mạc vừa đủ. Bạn có thể cảm nhận rõ nhịp thời gian chậm hơn, bớt ồn ào hơn, để nhìn thấy vì sao đình làng từng là trung tâm tinh thần của cả một cộng đồng cư dân.</p></div><div class="image-placeholder"><img src="images/Lễ hội Kỳ Yên 1.jpg" alt="Lễ hội Kỳ Yên Đình Bình Thủy"><div class="image-badge">Khoảnh khắc nên cảm<span>Đứng yên một lúc để nghe trống lễ và quan sát sự trang nghiêm của nghi thức</span></div></div></div>
+    <div class="feature-band"><div class="feature-pill"><i class="fa-solid fa-gopuram"></i><div><h3>Đậm hồn đình làng</h3><p>Không gian lễ hội giữ được cảm giác cổ truyền của sinh hoạt cộng đồng Nam Bộ xưa.</p></div></div><div class="feature-pill"><i class="fa-solid fa-bell"></i><div><h3>Nghi lễ có chiều sâu</h3><p>Mỗi phần nghi thức đều thể hiện quan niệm sống, lòng biết ơn và ước vọng an lành.</p></div></div><div class="feature-pill"><i class="fa-solid fa-people-roof"></i><div><h3>Gắn kết cộng đồng</h3><p>Lễ hội là dịp để người dân gặp gỡ, tưởng nhớ và tiếp nối nếp làng qua nhiều thế hệ.</p></div></div></div>
+    <hr class="separator">
+    <div class="section-block"><h2 class="section-heading">Điều làm lễ hội này nổi bật</h2><p class="section-copy">Khác với những lễ hội thiên về náo nhiệt, Kỳ Yên cuốn hút bằng chiều sâu tinh thần. Càng quan sát kỹ, bạn càng thấy rõ cách văn hóa đình làng phản chiếu lối sống trọng nghĩa tình và sự gắn bó với quê xứ.</p><div class="highlights"><div class="highlight-item"><i class="fa-solid fa-scroll"></i><h3>Nghi lễ mang tính biểu tượng</h3><p>Mỗi bước cúng tế đều lưu giữ quan niệm về trật tự, lòng thành và đạo lý uống nước nhớ nguồn.</p></div><div class="highlight-item"><i class="fa-solid fa-masks-theater"></i><h3>Phần hội giàu chất truyền thống</h3><p>Nếu có các tiết mục diễn xướng, bạn sẽ cảm được tinh thần lễ hội dân gian hòa cùng sinh hoạt cộng đồng.</p></div><div class="highlight-item"><i class="fa-solid fa-leaf"></i><h3>Nét đẹp không phô trương</h3><p>Sự hấp dẫn đến từ bầu không khí và ý nghĩa chứ không nằm ở những hiệu ứng quá sôi động.</p></div></div></div>
+    <div class="section-block" id="hanh-trinh"><h2 class="section-heading">Gợi ý một nhịp trải nghiệm</h2><p class="section-copy">Đi chậm, nghe nhiều và quan sát kỹ sẽ giúp bạn cảm đúng tinh thần của lễ hội hơn là chỉ chụp vài tấm ảnh rồi rời đi.</p><div class="timeline-grid"><div class="timeline-card"><div class="timeline-item"><div class="timeline-time">Mở đầu</div><div><h3>Ngắm tổng thể kiến trúc đình</h3><p>Hãy nhìn từ sân vào chánh điện để cảm nhận không khí cổ kính và bố cục lễ nghi.</p></div></div><div class="timeline-item"><div class="timeline-time">Tiếp nối</div><div><h3>Theo dõi một phần nghi thức</h3><p>Chỉ cần đứng lặng quan sát, bạn sẽ thấy lễ hội chứa rất nhiều lớp nghĩa văn hóa.</p></div></div><div class="timeline-item"><div class="timeline-time">Điểm vui</div><div><h3>Trò chuyện với người địa phương</h3><p>Người dân thường kể rất chân thành về lịch sử đình và vì sao họ trân trọng lễ này.</p></div></div><div class="timeline-item"><div class="timeline-time">Kết lại</div><div><h3>Dành vài phút nhìn lại không gian đình</h3><p>Khoảnh khắc yên tĩnh cuối buổi thường để lại dư vị đẹp nhất.</p></div></div></div><aside class="quick-plan"><h3>Một chuyến đi hợp lý thường có</h3><ul><li><i class="fa-solid fa-check"></i><span>Trang phục lịch sự để phù hợp không gian thờ tự.</span></li><li><i class="fa-solid fa-check"></i><span>Thái độ nhẹ nhàng, tránh nói cười quá lớn khi nghi lễ diễn ra.</span></li><li><i class="fa-solid fa-check"></i><span>Thời gian đủ thong thả để hiểu không khí chứ không chỉ nhìn bề ngoài.</span></li><li><i class="fa-solid fa-check"></i><span>Tinh thần tôn trọng tập quán địa phương khi chụp ảnh hoặc di chuyển.</span></li></ul></aside></div></div>
+    <div class="travel-tips"><h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ trước khi ghé</h3><div class="travel-tips-grid"><div class="tip-box"><strong>Cho trải nghiệm</strong><ul><li><i class="fa-solid fa-volume-low"></i><span>Ưu tiên giữ giọng nói nhỏ để không làm loãng không khí trang nghiêm.</span></li><li><i class="fa-solid fa-shirt"></i><span>Trang phục gọn gàng sẽ giúp bạn hòa vào không gian lễ hơn.</span></li><li><i class="fa-solid fa-book"></i><span>Nếu có thể, đọc trước vài thông tin về đình làng sẽ giúp chuyến đi ý nghĩa hơn.</span></li></ul></div><div class="tip-box"><strong>Cho ảnh đẹp</strong><ul><li><i class="fa-solid fa-sun"></i><span>Ánh sáng đầu ngày thường làm nổi rõ chất gỗ, mái ngói và sân đình.</span></li><li><i class="fa-solid fa-camera"></i><span>Ảnh kể chuyện sẽ đẹp hơn nếu chụp cả kiến trúc lẫn người tham gia nghi lễ.</span></li><li><i class="fa-solid fa-images"></i><span>Đừng chỉ chụp chính điện, các góc sân và chi tiết trang trí cũng rất có hồn.</span></li></ul></div></div></div>
+    <div class="card comment-section" data-id="22" id="danh-gia"><h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3><p>Hãy chia sẻ cảm nhận của bạn về không khí lễ hội và vẻ đẹp đình làng Bình Thủy nhé.</p><div class="rating" id="rating-22"></div><div class="comment-box"></div></div>
+</section>
+<footer class="footer"><div class="footer-container"><div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div><div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div></div><div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div></footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

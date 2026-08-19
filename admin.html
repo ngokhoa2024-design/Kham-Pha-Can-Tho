@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung Tâm Quản Trị | Khám Phá Cần Thơ</title>
+    <meta name="description" content="Trang quản trị & kiểm duyệt cộng đồng cho website Khám Phá Cần Thơ.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!--
+    BẢO MẬT:
+    Đây là frontend access guard dựa trên profiles.role.
+    Quyền truy cập thực tế PHẢI được bảo vệ bằng Supabase RLS (Row Level Security)
+    trên từng bảng dữ liệu. Frontend guard chỉ là UX layer, không phải bảo mật thực sự.
+-->
+
+<!-- LOADING SCREEN -->
+<div id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Đang xác thực quyền truy cập...</p>
+</div>
+
+<!-- ACCESS DENIED -->
+<div id="accessDenied" class="hidden">
+    <div class="denied-icon">🚫</div>
+    <h1 class="denied-title">Không có quyền truy cập</h1>
+    <p class="denied-sub">Trang này chỉ dành cho tài khoản quản trị viên.<br>Bạn sẽ được chuyển hướng tự động.</p>
+    <a href="index.html" class="denied-btn"><i class="fa-solid fa-house"></i> Về trang chủ</a>
+</div>
+
+<!-- SIDEBAR OVERLAY (mobile) -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ADMIN SHELL -->
+<div id="adminShell" class="hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Điều hướng quản trị">
+        <div class="sidebar-brand">
+            <img src="images/logo Cần Thơ.png" alt="Logo" class="sidebar-logo"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sidebar-logo-fallback" style="display:none">CT</div>
+            <div class="sidebar-brand-text">
+                <span class="sidebar-brand-title">Khám Phá Cần Thơ</span>
+                <span class="sidebar-brand-sub">Admin Dashboard</span>
+            </div>
+        </div>
+
+        <div class="sidebar-admin-info">
+            <div class="sidebar-admin-avatar" id="sidebarAdminAvatar">A</div>
+            <div>
+                <div class="sidebar-admin-name" id="sidebarAdminName">Đang tải...</div>
+                <div class="sidebar-admin-role">⚡ Quản trị viên</div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="sidebar-section-label">Tổng quan</div>
+            <div class="sidebar-nav-item active" data-panel="dashboard">
+                <span class="nav-icon">📊</span> Tổng quan
+            </div>
+            <div class="sidebar-section-label">Kiểm duyệt</div>
+            <div class="sidebar-nav-item" data-panel="reports">
+                <span class="nav-icon">🚨</span> Báo cáo
+                <span class="nav-badge" id="reportBadge" style="display:none">0</span>
+            </div>
+            <div class="sidebar-nav-item" data-panel="posts">
+                <span class="nav-icon">📝</span> Bài viết
+            </div>
+            <div class="sidebar-nav-item" data-panel="comments">
+                <span class="nav-icon">💬</span> Bình luận
+            </div>
+            <div class="sidebar-section-label">Người dùng</div>
+            <div class="sidebar-nav-item" data-panel="users">
+                <span class="nav-icon">👥</span> Người dùng
+            </div>
+            <div class="sidebar-nav-item" data-panel="trust">
+                <span class="nav-icon">⭐</span> Điểm uy tín
+            </div>
+            <div class="sidebar-nav-item" data-panel="violations">
+                <span class="nav-icon">🚫</span> Lịch sử vi phạm
+            </div>
+            <div class="sidebar-nav-item" data-panel="titles">
+                <span class="nav-icon">🏷️</span> Quản lý Title
+            </div>
+            <div class="sidebar-section-label">Hệ thống</div>
+            <div class="sidebar-nav-item" data-panel="settings">
+                <span class="nav-icon">⚙️</span> Cài đặt
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="sidebar-footer-btn">
+                <i class="fa-solid fa-house" style="width:22px;text-align:center"></i> Về trang chủ
+            </a>
+            <a href="forum.html" class="sidebar-footer-btn">
+                <i class="fa-solid fa-comments" style="width:22px;text-align:center"></i> Diễn đàn
+            </a>
+            <button class="sidebar-footer-btn danger" id="btnSignOut">
+                <i class="fa-solid fa-right-from-bracket" style="width:22px;text-align:center"></i> Đăng xuất
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="admin-main">
+        <!-- TOPBAR -->
+        <header class="admin-topbar">
+            <button class="topbar-hamburger" id="topbarHamburger" aria-label="Mở sidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <span class="topbar-page-title" id="topbarTitle">📊 Tổng quan</span>
+            <div class="topbar-actions">
+                <span class="topbar-time" id="topbarTime"></span>
+                <a href="account.html" class="topbar-link"><i class="fa-solid fa-user"></i> Tài khoản</a>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <div class="admin-content">
+
+            <!-- DASHBOARD -->
+            <section class="admin-panel active" id="panel-dashboard">
+                <div class="panel-header">
+                    <h1 class="panel-title">📊 Tổng quan</h1>
+                    <p class="panel-sub">Thống kê hoạt động cộng đồng Khám Phá Cần Thơ.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <div class="stat-label">Tổng người dùng</div>
+                            <div class="stat-value" id="statTotalUsers"><span class="stat-loading">…</span></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🟢</div>
+                        <div class="stat-info">
+                            <div class="stat-label">Đang hoạt động</div>
+                            <div class="stat-value" id="statActiveUsers"><span class="stat-loading">…</span></div>
+                        </div>
+                    </div>
+                    <div class="stat-card danger-card">
+                        <div class="stat-icon">🔴</div>
+                        <div class="stat-info">
+                            <div class="stat-label">Tài khoản bị khóa</div>
+                            <div class="stat-value" id="statBannedUsers"><span class="stat-loading">…</span></div>
+                        </div>
+                    </div>
+                    <div class="stat-card warning-card">
+                        <div class="stat-icon">🚨</div>
+                        <div class="stat-info">
+                            <div class="stat-label">Report chờ xử lý</div>
+                            <div class="stat-value" id="statPendingReports">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card accent-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <div class="stat-label">Tổng bài viết</div>
+                            <div class="stat-value" id="statTotalPosts"><span class="stat-loading">…</span></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💬</div>
+                        <div class="stat-info">
+                            <div class="stat-label">Tổng bình luận</div>
+                            <div class="stat-value" id="statTotalComments"><span class="stat-loading">…</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="quick-action-btn" onclick="switchPanel('users')">
+                        <span class="quick-action-icon">👥</span>Quản lý người dùng
+                    </button>
+                    <button class="quick-action-btn" onclick="switchPanel('reports')">
+                        <span class="quick-action-icon">🚨</span>Xem báo cáo
+                    </button>
+                    <button class="quick-action-btn" onclick="switchPanel('posts')">
+                        <span class="quick-action-icon">📝</span>Kiểm duyệt bài viết
+                    </button>
+                    <button class="quick-action-btn" onclick="switchPanel('violations')">
+                        <span class="quick-action-icon">🚫</span>Lịch sử vi phạm
+                    </button>
+                    <button class="quick-action-btn" onclick="switchPanel('titles')">
+                        <span class="quick-action-icon">🏷️</span>Quản lý Title
+                    </button>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-title"><i class="fa-solid fa-circle-info"></i> Trạng thái hệ thống</div>
+                        <div class="info-row">
+                            <span class="info-row-label">Kết nối Supabase</span>
+                            <span class="info-row-value" id="dbStatus" style="color:var(--text-muted)">Đang kiểm tra…</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label">Hệ thống báo cáo</span>
+                            <span class="info-row-value" style="color:var(--warning)">Chưa triển khai</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label">Bảng trust_history</span>
+                            <span class="info-row-value" style="color:var(--success)">✓ Sẵn sàng</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label">Bảng user_bans</span>
+                            <span class="info-row-value" style="color:var(--warning)">Chưa tạo</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-title"><i class="fa-solid fa-shield-halved"></i> Bảo mật</div>
+                        <div class="info-row">
+                            <span class="info-row-label">Supabase RLS</span>
+                            <span class="info-row-value" style="color:var(--warning)">⚠ Cần cấu hình</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label">Frontend guard</span>
+                            <span class="info-row-value" style="color:var(--success)">✓ Đã kích hoạt</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label">Admin kiểm tra</span>
+                            <span class="info-row-value" style="color:var(--success)">✓ profiles.role</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label">Phiên đăng nhập</span>
+                            <span class="info-row-value" id="sessionStatus" style="color:var(--text-muted)">Đang kiểm tra…</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REPORTS -->
+            <section class="admin-panel" id="panel-reports">
+                <div class="panel-header">
+                    <h2 class="panel-title">🚨 Báo cáo</h2>
+                    <p class="panel-sub">Quản lý và xử lý các báo cáo từ cộng đồng.</p>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <span class="card-title">📋 Danh sách báo cáo</span>
+                        <div class="toolbar">
+                            <div class="toolbar-search">
+                                <i class="fa-solid fa-magnifying-glass toolbar-search-icon"></i>
+                                <input type="text" class="toolbar-input" id="reportSearch" placeholder="Tìm báo cáo...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">Tất cả</button>
+                        <button class="filter-tab" data-filter="pending">🟠 Chờ xử lý</button>
+                        <button class="filter-tab" data-filter="resolved">🟢 Đã xử lý</button>
+                        <button class="filter-tab" data-filter="ok">⚪ Không vi phạm</button>
+                    </div>
+                    <div id="reportList"><div class="empty-state"><div class="loading-spinner" style="width:36px;height:36px;border-width:3px"></div><div class="empty-title">Đang tải báo cáo...</div></div></div>
+                </div>
+            </section>
+
+            <!-- POSTS -->
+            <section class="admin-panel" id="panel-posts">
+                <div class="panel-header">
+                    <h2 class="panel-title">📝 Quản lý bài viết</h2>
+                    <p class="panel-sub">Kiểm duyệt và quản lý bài viết trên diễn đàn cộng đồng.</p>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <span class="card-title">📋 Danh sách bài viết</span>
+                        <div class="toolbar">
+                            <div class="toolbar-search">
+                                <i class="fa-solid fa-magnifying-glass toolbar-search-icon"></i>
+                                <input type="text" class="toolbar-input" id="postSearch" placeholder="Tìm bài viết..." oninput="filterPosts(this.value)">
+                            </div>
+                            <select class="toolbar-select" id="postTopicFilter" onchange="filterPosts()">
+                                <option value="">Tất cả chủ đề</option>
+                                <option value="Câu chuyện cá nhân">Câu chuyện cá nhân</option>
+                                <option value="Hỏi đáp">Hỏi đáp</option>
+                                <option value="Địa điểm">Địa điểm</option>
+                                <option value="Ẩm thực">Ẩm thực</option>
+                                <option value="Sự kiện">Sự kiện</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="post-list" id="postList">
+                        <div class="empty-state">
+                            <div class="loading-spinner" style="width:36px;height:36px;border-width:3px"></div>
+                            <div class="empty-title">Đang tải bài viết...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMMENTS -->
+            <section class="admin-panel" id="panel-comments">
+                <div class="panel-header">
+                    <h2 class="panel-title">💬 Quản lý bình luận</h2>
+                    <p class="panel-sub">Xem và kiểm duyệt các bình luận trên diễn đàn.</p>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <span class="card-title">📋 Danh sách bình luận</span>
+                        <div class="toolbar">
+                            <div class="toolbar-search">
+                                <i class="fa-solid fa-magnifying-glass toolbar-search-icon"></i>
+                                <input type="text" class="toolbar-input" id="commentSearch" placeholder="Tìm bình luận..." oninput="filterComments(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-list" id="commentList">
+                        <div class="empty-state">
+                            <div class="loading-spinner" style="width:36px;height:36px;border-width:3px"></div>
+                            <div class="empty-title">Đang tải bình luận...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- USERS -->
+            <section class="admin-panel" id="panel-users">
+                <div class="panel-header">
+                    <h2 class="panel-title">👥 Quản lý người dùng</h2>
+                    <p class="panel-sub">Xem thông tin, khoá/mở khoá tài khoản thành viên.</p>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <span class="card-title">📋 Danh sách thành viên</span>
+                        <div class="toolbar">
+                            <div class="toolbar-search">
+                                <i class="fa-solid fa-magnifying-glass toolbar-search-icon"></i>
+                                <input type="text" class="toolbar-input" id="userSearch" placeholder="Tìm tên hoặc liên kết..." oninput="filterUsers(this.value)">
+                            </div>
+                            <select class="toolbar-select" id="userStatusFilter" onchange="filterUsers()">
+                                <option value="">Tất cả</option>
+                                <option value="active">Đang hoạt động</option>
+                                <option value="banned">Đã khóa</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-userfilter="all">Tất cả</button>
+                        <button class="filter-tab" data-userfilter="active">🟢 Hoạt động</button>
+                        <button class="filter-tab" data-userfilter="banned">🔴 Đã khóa</button>
+                        <button class="filter-tab" data-userfilter="admin">⭐ Admin</button>
+                    </div>
+                    <div class="user-list" id="userList">
+                        <div class="empty-state">
+                            <div class="loading-spinner" style="width:36px;height:36px;border-width:3px"></div>
+                            <div class="empty-title">Đang tải danh sách...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRUST -->
+            <section class="admin-panel" id="panel-trust">
+                <div class="panel-header">
+                    <h2 class="panel-title">⭐ Hệ thống điểm uy tín</h2>
+                    <p class="panel-sub">Điểm uy tín chỉ thay đổi khi quản trị viên xác nhận một báo cáo vi phạm.</p>
+                </div>
+                <div class="trust-section" style="margin-bottom:20px">
+                    <div class="trust-title">⭐ Các mức điểm uy tín</div>
+                    <div class="trust-levels">
+                        <div class="trust-level-card tl-excellent">
+                            <div class="trust-level-range">90 – 100</div>
+                            <div class="trust-level-label">🌟 Rất tốt</div>
+                        </div>
+                        <div class="trust-level-card tl-good">
+                            <div class="trust-level-range">80 – 89</div>
+                            <div class="trust-level-label">✅ Tốt</div>
+                        </div>
+                        <div class="trust-level-card tl-warn">
+                            <div class="trust-level-range">70 – 79</div>
+                            <div class="trust-level-label">⚠️ Cảnh báo</div>
+                        </div>
+                        <div class="trust-level-card tl-limit">
+                            <div class="trust-level-range">50 – 69</div>
+                            <div class="trust-level-label">🔶 Hạn chế</div>
+                        </div>
+                        <div class="trust-level-card tl-vio">
+                            <div class="trust-level-range">30 – 49</div>
+                            <div class="trust-level-label">❌ Vi phạm</div>
+                        </div>
+                        <div class="trust-level-card tl-danger">
+                            <div class="trust-level-range">0 – 29</div>
+                            <div class="trust-level-label">🚨 Nguy hiểm</div>
+                        </div>
+                    </div>
+                    <div style="background:var(--bg-input);border-radius:var(--r-md);padding:16px;font-size:0.85rem;color:var(--text-sub);line-height:1.6">
+                        <strong>📌 Lưu ý:</strong> Không tự động cộng điểm, khóa tài khoản, hoặc trừ điểm khi người dùng gửi/xem báo cáo. Lịch sử thay đổi được lưu ở <code>trust_history</code> khi admin xác nhận vi phạm.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title" style="margin-bottom:16px">📊 Điểm uy tín người dùng (dữ liệu thật)</div>
+                    <div id="trustUserList">
+                        <div class="empty-state">
+                            <div class="loading-spinner" style="width:36px;height:36px;border-width:3px"></div>
+                            <div class="empty-title">Đang tải dữ liệu...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIOLATIONS -->
+            <section class="admin-panel" id="panel-violations">
+                <div class="panel-header">
+                    <h2 class="panel-title">🚫 Lịch sử vi phạm</h2>
+                    <p class="panel-sub">Lịch sử thay đổi điểm uy tín được lưu khi quản trị viên xác nhận báo cáo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-head"><span class="card-title">📋 Bảng lịch sử vi phạm</span></div>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Thời gian</th>
+                                    <th>Người dùng</th>
+                                    <th>Loại vi phạm</th>
+                                    <th>Mức độ</th>
+                                    <th>Điểm thay đổi</th>
+                                    <th>Admin xử lý</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody id="violationTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="empty-state" id="violationEmpty">
+                        <div class="empty-icon">🚫</div>
+                        <div class="empty-title">Chưa có lịch sử vi phạm</div>
+                        <div class="empty-sub">Lịch sử sẽ xuất hiện khi có báo cáo được xác nhận.</div>
+                    </div>
+                </div>
+                <div class="card" style="border-color:var(--warning);background:var(--warning-light)">
+                    <div class="card-title" style="color:var(--warning);margin-bottom:12px">⚠️ Người dùng có cảnh cáo (dữ liệu thật từ profiles.warning_count)</div>
+                    <div id="warnedUserList">
+                        <div class="empty-state" style="padding:20px">
+                            <div class="loading-spinner" style="width:28px;height:28px;border-width:3px"></div>
+                            <div class="empty-title" style="font-size:0.85rem">Đang tải...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SETTINGS -->
+            <section class="admin-panel" id="panel-settings">
+                <div class="panel-header">
+                    <h2 class="panel-title">⚙️ Cài đặt</h2>
+                    <p class="panel-sub">Thông tin và cài đặt hệ thống quản trị.</p>
+                </div>
+                <div class="settings-section">
+                    <div class="settings-section-title"><i class="fa-solid fa-database"></i> Cơ sở dữ liệu Supabase</div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">URL dự án</div>
+                            <div class="setting-desc">https://lkearyxyyblhivsbpgaq.supabase.co</div>
+                        </div>
+                        <span class="badge badge-active">✓ Kết nối</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Bảng profiles</div>
+                            <div class="setting-desc">id, name, role, status, avatar_url, trust_score</div>
+                        </div>
+                        <span class="badge badge-active">✓ Sẵn sàng</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Bảng posts</div>
+                            <div class="setting-desc">id, user_id, title, content, topic, created_at, pinned, media</div>
+                        </div>
+                        <span class="badge badge-active">✓ Sẵn sàng</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Bảng comments</div>
+                            <div class="setting-desc">id, user_id, post_id, content, created_at</div>
+                        </div>
+                        <span class="badge badge-active">✓ Sẵn sàng</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Bảng reports</div>
+                            <div class="setting-desc">id, reporter_id, reported_user_id, reason, description, source_type, source_id, status</div>
+                        </div>
+                        <span class="badge badge-active">✓ Sẵn sàng</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Bảng trust_history</div>
+                            <div class="setting-desc">id, user_id, points_change, reason, report_id, admin_id, created_at</div>
+                        </div>
+                        <span class="badge badge-active">✓ Sẵn sàng</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Bảng user_bans</div>
+                            <div class="setting-desc">Chưa tạo — cần để lưu lịch sử ban/unban</div>
+                        </div>
+                        <span class="badge badge-pending">⏳ Chưa có</span>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <div class="settings-section-title"><i class="fa-solid fa-shield-halved"></i> Bảo mật &amp; Quyền truy cập</div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Frontend Access Guard</div>
+                            <div class="setting-desc">Kiểm tra profiles.role === "admin" &amp;&amp; profiles.status !== "banned"</div>
+                        </div>
+                        <span class="badge badge-active">✓ Đã bật</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Supabase RLS</div>
+                            <div class="setting-desc">⚠ Bảo mật thực sự PHẢI được cài đặt qua RLS trên từng bảng Supabase.</div>
+                        </div>
+                        <span class="badge badge-pending">⚠ Cần cấu hình</span>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Admin không tự khóa mình</div>
+                            <div class="setting-desc">Nút khóa bị vô hiệu hóa cho chính admin đang đăng nhập</div>
+                        </div>
+                        <span class="badge badge-active">✓ Đã bật</span>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <div class="settings-section-title"><i class="fa-solid fa-link"></i> Liên kết nhanh</div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Diễn đàn cộng đồng</div>
+                            <div class="setting-desc">forum.html</div>
+                        </div>
+                        <a href="forum.html" class="btn btn-info btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Mở</a>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Trang tìm bạn</div>
+                            <div class="setting-desc">find-friends.html</div>
+                        </div>
+                        <a href="find-friends.html" class="btn btn-info btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Mở</a>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <div class="setting-label">Supabase Dashboard</div>
+                            <div class="setting-desc">Quản lý database trực tiếp</div>
+                        </div>
+                        <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm"><i class="fa-solid fa-database"></i> Mở</a>
+                    </div>
+                </div>
+            </section>
+            <!-- PANEL: TITLES -->
+<section class="admin-panel" id="panel-titles">
+    <div class="panel-header">
+        <h2 class="panel-title">🏷️ Quản lý Danh hiệu</h2>
+        <p class="panel-sub">Tạo, sửa, xóa danh hiệu và cấp/thu hồi cho người dùng.</p>
+    </div>
+
+    <!-- A. DANH SÁCH TITLE -->
+    <div class="card" style="margin-bottom:20px">
+        <div class="card-head">
+            <span class="card-title">📋 Danh sách danh hiệu</span>
+            <button class="btn btn-info btn-sm" onclick="loadTitlesList()" title="Làm mới">
+                <i class="fa-solid fa-rotate-right"></i> Làm mới
+            </button>
+        </div>
+        <div id="adminTitlesList">
+            <div class="empty-state">
+                <div class="loading-spinner" style="width:36px;height:36px;border-width:3px"></div>
+                <div class="empty-title">Đang tải danh sách...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- B. TẠO TITLE MỚI -->
+    <div class="card" style="margin-bottom:20px">
+        <div class="card-head">
+            <span class="card-title">➕ Tạo danh hiệu mới</span>
+        </div>
+        <form id="createTitleForm" style="padding:4px 0">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:14px">
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                    Tên danh hiệu *
+                    <input type="text" name="title_name" class="toolbar-input" placeholder="Ví dụ: Supporter" required maxlength="60">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                    Slug *
+                    <input type="text" name="title_slug" class="toolbar-input" placeholder="supporter" required maxlength="60" pattern="[a-z0-9-]+">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                    Icon (emoji)
+                    <input type="text" name="title_icon" class="toolbar-input" placeholder="💚" maxlength="10" value="🏷️">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                    Màu sắc
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <input type="color" name="title_color" value="#0b8a7b" style="width:40px;height:36px;border:none;border-radius:6px;cursor:pointer;padding:2px">
+                        <span style="font-size:0.75rem;color:var(--text-muted)">Chọn màu</span>
+                    </div>
+                </label>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600;margin-bottom:16px">
+                Mô tả
+                <textarea name="title_description" class="toolbar-input" placeholder="Mô tả ngắn về danh hiệu này..." rows="2" maxlength="200" style="resize:vertical"></textarea>
+            </label>
+            <button type="submit" id="createTitleSubmitBtn" class="btn btn-success">✨ Tạo Danh Hiệu</button>
+        </form>
+    </div>
+
+            <!-- C. CẤP TITLE -->
+            <div class="card" style="margin-bottom:20px">
+                <div class="card-head">
+                    <span class="card-title">🎁 Cấp danh hiệu cho user</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;align-items:end;padding:4px 0">
+                    <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                        Chọn user
+                        <select id="grantUserSelect" class="toolbar-select" style="max-width:100%">
+                            <option value="">— Chọn user —</option>
+                        </select>
+                    </label>
+                    <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                        Chọn danh hiệu
+                        <select id="grantTitleSelect" class="toolbar-select" style="max-width:100%">
+                            <option value="">— Chọn danh hiệu —</option>
+                        </select>
+                    </label>
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                        <button id="grantTitleBtn" class="btn btn-success" onclick="grantTitleToUser()">
+                            <i class="fa-solid fa-gift"></i> Cấp Danh Hiệu
+                        </button>
+                        <p id="grantTitleMessage" style="font-size:0.82rem;min-height:1.2em"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D. QUẢN LÝ TITLE CỦA USER -->
+            <div class="card">
+                <div class="card-head">
+                    <span class="card-title">👤 Xem &amp; thu hồi danh hiệu của user</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;padding:4px 0">
+                    <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600;flex:1;min-width:200px">
+                        Chọn user
+                        <select id="manageTitleUserSelect" class="toolbar-select" onchange="loadUserTitleManagement()" style="max-width:100%">
+                            <option value="">— Chọn user để xem title —</option>
+                        </select>
+                    </label>
+                </div>
+                <div id="userTitleManageList">
+                    <p style="color:var(--text-muted);font-size:0.88rem">Chọn user ở trên để xem danh hiệu.</p>
+                </div>
+            </div>
+        </section>
+
+        </div><!-- /.admin-content -->
+    </div><!-- /.admin-main -->
+</div><!-- /#adminShell -->
+
+<!-- USER DETAIL MODAL -->
+<div class="modal-backdrop" id="userModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalUserTitle">
+        <div class="modal-header">
+            <span class="modal-title" id="modalUserTitle">👤 Chi tiết người dùng</span>
+            <button class="modal-close" onclick="closeUserModal()" aria-label="Đóng">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-user-profile">
+                <div class="modal-avatar" id="modalAvatar">U</div>
+                <div>
+                    <div class="modal-user-name" id="modalUserName">Đang tải...</div>
+                    <div class="modal-user-email" id="modalUserEmail"></div>
+                    <div class="modal-badges" id="modalBadges"></div>
+                </div>
+            </div>
+            <div class="modal-stat-row">
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="modalScore">100</div>
+                    <div class="modal-stat-label">⭐ Điểm uy tín / 100</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="modalWarnings">0</div>
+                    <div class="modal-stat-label">⚠ Số cảnh cáo</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="modalPosts">—</div>
+                    <div class="modal-stat-label">📝 Bài viết</div>
+                </div>
+            </div>
+            <div class="modal-section-title">📋 Lịch sử vi phạm</div>
+            <div class="modal-violation-list" id="modalViolations">
+                <div class="modal-violation-item" style="color:var(--text-muted);font-style:italic">
+                    Đang tải lịch sử điểm uy tín.
+                </div>
+            </div>
+            <div id="modalBanReason" style="display:none;margin-top:14px">
+                <div class="modal-section-title">🔒 Lý do khóa tài khoản</div>
+                <div class="modal-violation-item" id="modalBanReasonText" style="border-left-color:var(--danger)"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-neutral" onclick="closeUserModal()">Đóng</button>
+            <button class="btn btn-info btn-sm" id="modalViewHistory" onclick="viewUserHistory()">
+                <i class="fa-solid fa-clock-rotate-left"></i> Xem lịch sử
+            </button>
+            <button class="btn btn-success" id="modalUnbanBtn" style="display:none" onclick="doUnban()">
+                <i class="fa-solid fa-lock-open"></i> Mở khóa
+            </button>
+            <button class="btn btn-danger" id="modalBanBtn" onclick="doBan()">
+                <i class="fa-solid fa-ban"></i> Khóa tài khoản
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- MODAL: SỬA TITLE -->
+<div class="modal-backdrop" id="editTitleModal" style="display:none;position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center">
+    <div class="modal" style="max-width:520px;width:92%;background:var(--bg-card);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow-lg)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+            <h3 style="font-size:1rem;font-weight:700">✏️ Sửa danh hiệu</h3>
+            <button class="btn btn-neutral btn-sm" onclick="closeEditTitleModal()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <input type="hidden" name="edit_title_id">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                Tên *
+                <input type="text" name="edit_title_name" class="toolbar-input" placeholder="Tên danh hiệu" maxlength="60">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                Slug *
+                <input type="text" name="edit_title_slug" class="toolbar-input" placeholder="slug" maxlength="60">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                Icon
+                <input type="text" name="edit_title_icon" class="toolbar-input" placeholder="💚" maxlength="10">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600">
+                Màu
+                <input type="color" name="edit_title_color" style="width:100%;height:38px;border:1px solid var(--border);border-radius:var(--r-sm);cursor:pointer;padding:2px">
+            </label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:0.85rem;font-weight:600;margin-bottom:20px">
+            Mô tả
+            <textarea name="edit_title_description" class="toolbar-input" rows="2" maxlength="200" style="resize:vertical"></textarea>
+        </label>
+        <div style="display:flex;gap:10px;justify-content:flex-end">
+            <button class="btn btn-neutral" onclick="closeEditTitleModal()">Hủy</button>
+            <button class="btn btn-success" id="editTitleSaveBtn" onclick="saveEditTitle()">Lưu thay đổi</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div id="toastContainer"></div>
+
+<!--
+    SCRIPTS
+    Sử dụng supabaseClient từ JS/supabase.js — KHÔNG tạo client mới.
+    Tận dụng logic ban/unban từ admin.html gốc (changeStatus → changeUserStatus).
+-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="JS/supabase.js"></script>
+<script src="admin-logic.js"></script>
+<script src="JS/admin-titles.js"></script>
+<script>
+// Khởi tạo modal editTitleModal khi click backdrop
+document.getElementById('editTitleModal')?.addEventListener('click', function(e) {
+    if (e.target === this) closeEditTitleModal();
+});
+// Mở modal dưới dạng flex khi có class "open"
+const _editModal = document.getElementById('editTitleModal');
+if (_editModal) {
+    const observer = new MutationObserver(() => {
+        _editModal.style.display = _editModal.classList.contains('open') ? 'flex' : 'none';
+    });
+    observer.observe(_editModal, { attributes: true, attributeFilter: ['class'] });
+}
+</script>
+</body>
+</html>

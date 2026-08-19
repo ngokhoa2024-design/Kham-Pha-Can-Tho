@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá nem nướng với vị thịt thơm, độ dai vừa và kiểu ăn cuốn rất vui.">
+    <title>Nem Nướng</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .nemnuong-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(95, 40, 18, 0.55), rgba(223, 130, 55, 0.35)),
+                url("images/nemnuong.jfif") center/cover;
+        }
+
+        .nemnuong-page .hero-btn.primary {
+            color: #6b2f10;
+            background: linear-gradient(135deg, #ffe2b4, #ffb867);
+            box-shadow: 0 18px 30px rgba(255, 171, 87, 0.28);
+        }
+
+        .nemnuong-page .feature-pill i,
+        .nemnuong-page .highlight-item i,
+        .nemnuong-page .quick-plan li i,
+        .nemnuong-page .travel-tips li i,
+        .nemnuong-page .timeline-time,
+        .nemnuong-page .step-no {
+            color: #b65222;
+        }
+
+        .nemnuong-page .feature-pill i,
+        .nemnuong-page .highlight-item i,
+        .nemnuong-page .step-no {
+            background: rgba(182, 82, 34, 0.12);
+        }
+
+        .flavor-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 26px 0 10px;
+        }
+
+        .flavor-chip {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #fff1da, #ffe0b3);
+            color: #8b4318;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 22px rgba(179, 96, 32, 0.12);
+        }
+
+        .tasting-board {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .tasting-card,
+        .pairing-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(69, 33, 11, 0.08);
+        }
+
+        .tasting-step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 18px;
+        }
+
+        .step-no {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .pairing-card ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .pairing-card li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            color: #5f4b40;
+        }
+
+        .pairing-card li i {
+            color: #c2642c;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .tasting-board {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page nemnuong-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html" class="active"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-drumstick-bite"></i> Thơm lửa, dai nhẹ, rất vui miệng</div>
+            <h1>Nem Nướng</h1>
+            <p class="hero-lead">Nem nướng hấp dẫn bởi mùi thịt nướng thơm, độ dai vừa phải và kiểu ăn cuốn cùng rau, bún, bánh tráng rất dễ khiến người ta ăn mãi không chán.</p>
+            <div class="flavor-strip">
+<span class='flavor-chip'>thơm nướng</span>
+<span class='flavor-chip'>dai nhẹ</span>
+<span class='flavor-chip'>ăn cuốn</span>
+<span class='flavor-chip'>rau sống</span>
+            </div>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#thuong-thuc"><i class="fa-solid fa-utensils"></i> Xem cách thưởng thức</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi thử</h2>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>Điểm vị giác</strong><span>Thơm mùi nướng rất rõ</span></div>
+                <div class="hero-stat"><strong>Hợp nhất khi</strong><span>Hợp ăn cuốn và ăn nhóm</span></div>
+                <div class="hero-stat"><strong>Cảm giác món</strong><span>Nước chấm rất quan trọng</span></div>
+                <div class="hero-stat"><strong>Nên đi cùng</strong><span>Rau giúp món bớt nặng</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Nem nướng có gì khiến người ta mê?</h2>
+            <p>Món này không chỉ ngon vì phần nem. Cái hay nằm ở cả bộ món đi cùng: rau, bún, bánh tráng và nước chấm. Mỗi lần cuốn là một lần điều chỉnh vị theo ý mình.</p>
+            <p>Ở Cần Thơ, nem nướng vừa hợp làm bữa nhẹ vừa hợp cho những buổi ăn đông vui.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/nemnuong.jfif" alt="Nem Nướng">
+            <div class="image-badge">Điểm nhấn<span>Mùi nướng thơm và cảm giác cuốn tại bàn là điều làm món này rất cuốn.</span></div>
+        </div>
+    </div>
+
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-fire"></i>
+            <div>
+                <h3>Thơm mùi lửa</h3>
+                <p>Mùi nướng giúp món có độ hấp dẫn rất trực tiếp.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-wrap"></i>
+            <div>
+                <h3>Ăn cuốn rất vui</h3>
+                <p>Món này làm thực khách có cảm giác tương tác rõ hơn khi ăn.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-droplet"></i>
+            <div>
+                <h3>Nước chấm nâng món lên rõ</h3>
+                <p>Một chén chấm chuẩn sẽ làm nem nổi bật hơn nhiều.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="section-block" id="thuong-thuc">
+        <h2 class="section-heading">Ăn nem nướng sao cho ngon?</h2>
+        <p class="section-copy">Nem nướng ngon nhất khi ăn cuốn tại chỗ, tự chỉnh lượng rau và nước chấm theo đúng gu của mình.</p>
+        <div class="tasting-board">
+            <div class="tasting-card">
+                <h3>Ăn như vậy sẽ hợp nhất</h3>
+            <div class="tasting-step">
+                <div class="step-no">01</div>
+                <div>
+                    <h3>Chuẩn bị lớp cuốn gọn</h3>
+                    <p>Bánh tráng, rau và bún vừa tay sẽ giúp miếng cuốn dễ ăn hơn.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">02</div>
+                <div>
+                    <h3>Để nem là trung tâm vị</h3>
+                    <p>Đừng cho quá nhiều thứ để nem vẫn là vị chính.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">03</div>
+                <div>
+                    <h3>Chấm vừa đủ đậm</h3>
+                    <p>Nước chấm nên đủ để bật vị nhưng không làm lấn mùi nem.</p>
+                </div>
+            </div>
+            </div>
+            <div class="pairing-card">
+                <h3>Nên đi cùng gì?</h3>
+                <ul>
+                    <li><i class="fa-solid fa-mug-hot"></i><span>Rau sống và đồ cuốn là phần không thể thiếu.</span></li>
+                    <li><i class="fa-solid fa-seedling"></i><span>Đi đông sẽ vui hơn vì món này rất hợp ngồi cuốn cùng nhau.</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Ăn chiều hoặc tối là thời điểm hợp nhất.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ khi đi ăn</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box">
+                <strong>Lưu ý nên nhớ</strong>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Nếu chưa quen, hãy cuốn ít thành phần trước rồi tăng dần.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Nước chấm nên thử trước để chỉnh lượng phù hợp.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Nem ngon nhất khi còn ấm.</span></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <strong>Cảm giác món ăn</strong>
+                <p>Nem nướng mang cảm giác vừa vui, vừa thơm và rất dễ ăn kéo dài.</p>
+                <p>Đây là kiểu món càng ngồi lâu càng thấy cuốn đúng nghĩa.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comment-section" data-id="208" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ thực khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Nem Nướng để người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-208"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Khám Phá Cần Thơ</h3>
+            <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact for work</h4>
+            <p>Gmail 1: ngokhoa2024@gmail.com</p>
+            <p>Gmail 2: thiennn0412@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

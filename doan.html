@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Ẩm Thực</title>
+    <link rel="stylesheet" href="doanstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Hương vị Tây Đô</p>
+            <h2>Khám Phá Ẩm Thực Cần Thơ</h2>
+            <p>Thưởng thức những món ăn dân dã, đậm đà hồn miền sông nước.</p>
+            <button class="hero-btn">Khám phá ngay</button>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="about-text">
+            <h2>Ẩm thực Cần Thơ có gì đặc biệt?</h2>
+            <p class="intro-text">
+                Ẩm thực Cần Thơ là sự kết tinh của phù sa, nguyên liệu tươi ngon và phong cách nấu nướng mộc mạc mà tinh tế.
+                Từ bữa sáng với bún nước lèo, bữa trưa với bánh xèo giòn rụm đến buổi tối quây quần bên nồi lẩu mắm,
+                mỗi món ăn đều mang trong mình câu chuyện văn hóa địa phương và sự hiếu khách của người miền Tây.
+            </p>
+        </section>
+
+        <section class="food-advisor" id="ban-do-mon-an">
+            <div class="food-advisor-head">
+                <p class="food-advisor-tag">Tư vấn món ăn thông minh</p>
+                <h2>Để mình gợi ý món hợp gu cho bạn</h2>
+                <p>
+                    Trả lời vài câu hỏi ngắn theo đúng kiểu của phần Lên Kế Hoạch Thông Minh, và web sẽ đề xuất món ăn phù hợp nhất cho nhịp đi Cần Thơ của bạn.
+                </p>
+            </div>
+
+            <div class="food-advisor-shell">
+                <div class="food-advisor-progress">
+                    <div class="food-progress-bar">
+                        <div class="food-progress-fill" id="foodProgressFill"></div>
+                    </div>
+                    <p class="food-progress-text"><span id="foodCurrentStep">1</span> / 4</p>
+                </div>
+
+                <form id="foodAdvisorForm" class="food-advisor-form">
+                    <div class="food-step active" data-step="1">
+                        <h3>⏰ Bạn đang tìm món cho khung giờ nào?</h3>
+                        <div class="advisor-options-grid">
+                            <label class="advisor-option">
+                                <input type="radio" name="mealTime" value="morning">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-sun"></i>
+                                    <span class="advisor-option-text">Buổi sáng</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="mealTime" value="noon">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-bowl-rice"></i>
+                                    <span class="advisor-option-text">Buổi trưa</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="mealTime" value="afternoon">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                    <span class="advisor-option-text">Xế chiều</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="mealTime" value="night">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-moon"></i>
+                                    <span class="advisor-option-text">Tối hoặc đêm</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="food-step" data-step="2">
+                        <h3>👥 Bạn đang đi theo kiểu nào?</h3>
+                        <div class="advisor-options-grid">
+                            <label class="advisor-option">
+                                <input type="radio" name="company" value="solo">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span class="advisor-option-text">Đi một mình</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="company" value="couple">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <span class="advisor-option-text">Đi đôi</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="company" value="friends">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span class="advisor-option-text">Bạn bè</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="company" value="family">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-house-user"></i>
+                                    <span class="advisor-option-text">Gia đình</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="food-step" data-step="3">
+                        <h3>😋 Bạn đang thèm kiểu gì?</h3>
+                        <div class="advisor-options-grid">
+                            <label class="advisor-option">
+                                <input type="radio" name="craving" value="brothy">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-bowl-food"></i>
+                                    <span class="advisor-option-text">Nóng, có nước</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="craving" value="crispy">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-fire-flame-curved"></i>
+                                    <span class="advisor-option-text">Giòn, đậm vị</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="craving" value="snack">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-cookie-bite"></i>
+                                    <span class="advisor-option-text">Ăn vặt, vui miệng</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="craving" value="sweet">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-ice-cream"></i>
+                                    <span class="advisor-option-text">Ngọt hoặc đồ uống</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="food-step" data-step="4">
+                        <h3>💸 Bạn muốn bữa này theo vibe nào?</h3>
+                        <div class="advisor-options-grid">
+                            <label class="advisor-option">
+                                <input type="radio" name="budgetMood" value="cheap">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <span class="advisor-option-text">Gọn nhẹ, tiết kiệm</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="budgetMood" value="local">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-store"></i>
+                                    <span class="advisor-option-text">Đúng chất địa phương</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="budgetMood" value="group">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-people-group"></i>
+                                    <span class="advisor-option-text">Ngồi lâu, ăn cùng nhau</span>
+                                </span>
+                            </label>
+                            <label class="advisor-option">
+                                <input type="radio" name="budgetMood" value="checkin">
+                                <span class="advisor-option-content">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <span class="advisor-option-text">Dễ chụp ảnh, dễ chill</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="food-advisor-nav">
+                        <button type="button" class="advisor-btn advisor-btn-secondary" id="foodPrevBtn" style="display:none;">Quay lại</button>
+                        <button type="button" class="advisor-btn advisor-btn-primary" id="foodNextBtn">Tiếp theo</button>
+                    </div>
+                </form>
+
+                <div class="food-result" id="foodResult" hidden>
+                    <div class="food-result-head">
+                        <h3>Gợi ý món ăn dành cho bạn</h3>
+                        <p id="foodResultSummary"></p>
+                    </div>
+                    <div class="food-result-grid" id="foodResultGrid"></div>
+                    <div class="food-result-actions">
+                        <button type="button" class="advisor-btn advisor-btn-secondary" id="foodRestartBtn">Làm lại</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="food-lucky" id="mon-an-may-man">
+            <div class="food-lucky-copy">
+                <p class="food-lucky-tag">Khám phá ngẫu nhiên</p>
+                <h2>Không biết ăn gì? Để Cần Thơ chọn giúp bạn</h2>
+                <p>
+                    Chọn khung giờ rồi bấm một nút, web sẽ bốc ra một món đáng thử để chuyến đi có cảm giác tự nhiên và thú vị hơn.
+                </p>
+            </div>
+
+            <div class="food-lucky-panel">
+                <div class="food-lucky-controls">
+                    <label for="luckyMealTime" class="food-lucky-label">Bạn muốn bốc món cho lúc nào?</label>
+                    <select id="luckyMealTime" class="food-lucky-select">
+                        <option value="morning">Buổi sáng</option>
+                        <option value="noon">Buổi trưa</option>
+                        <option value="afternoon">Xế chiều</option>
+                        <option value="night">Buổi tối hoặc đêm</option>
+                    </select>
+                    <button type="button" class="advisor-btn advisor-btn-primary food-lucky-btn" id="foodLuckyBtn">Bốc món cho tôi</button>
+                </div>
+
+                <div class="food-lucky-result" id="foodLuckyResult">
+                    <div class="food-lucky-placeholder">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p>Bấm nút để nhận một gợi ý bất ngờ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-grid">
+                <img src="images/Ảnh pizza hủ tiếu 1.webp" alt="pizza hủ tiếu">
+                <img src="images/laumam2.jpg" alt="lẩu mắm">
+            </div>
+        </section>
+
+        <p id="diadiemnoitieng" class="explore-now">Ẩm thực truyền thống miền Tây</p>
+        <div class="famous-text">
+            <p>
+                Món truyền thống ở Cần Thơ nổi bật bởi hương vị đậm đà, nguyên liệu gần gũi và cách chế biến giữ trọn vị quê nhà.
+                Các món như bánh xèo, bún nước lèo, lẩu mắm hay bánh tét lá cẩm đều mang bản sắc rất riêng,
+                khiến ai từng thưởng thức cũng nhớ mãi.
+            </p>
+        </div>
+
+        <section class="tour-grid">
+            <a href="banhxeo.html" class="tour-card">
+                <img src="images/banhxeo4.jpg" alt="Bánh xèo">
+                <h3>Bánh Xèo</h3>
+            </a>
+
+            <a href="bunncleo.html" class="tour-card">
+                <img src="images/bunncleo.jpg" alt="Bún nước lèo">
+                <h3>Bún Nước Lèo</h3>
+            </a>
+
+            <a href="laumam.html" class="tour-card">
+                <img src="images/laumam3.jpg" alt="Lẩu mắm">
+                <h3>Lẩu Mắm</h3>
+            </a>
+
+            <a href="banhtetlacam.html" class="tour-card">
+                <img src="images/banhtet.jpg" alt="Bánh tét lá cẩm">
+                <h3>Bánh Tét Lá Cẩm</h3>
+            </a>
+
+            <a href="hutieugo.html" class="tour-card">
+                <img src="images/hutieu.jpg" alt="Hủ tiếu gõ">
+                <h3>Hủ Tiếu Gõ</h3>
+            </a>
+
+            <a href="Pizza.html" class="tour-card">
+                <img src="images/Ảnh pizza hủ tiếu 1.webp" alt="Pizza hủ tiếu">
+                <h3>Pizza Hủ Tiếu</h3>
+            </a>
+
+            <a href="banhpia.html" class="tour-card">
+                <img src="images/banhpia.jpg" alt="Bánh pía">
+                <h3>Bánh Pía</h3>
+            </a>
+
+            <a href="banhcong.html" class="tour-card">
+                <img src="images/banhcong.webp" alt="Bánh cống">
+                <h3>Bánh Cống</h3>
+            </a>
+        </section>
+
+        <p id="sthai" class="explore-now">Ẩm thực đường phố và hiện đại</p>
+        <div class="sthai-text">
+            <p>
+                Bên cạnh món truyền thống, Cần Thơ còn có văn hóa ăn vặt và quán xá hiện đại rất sôi động.
+                Từ nem nướng, bánh tráng nướng đến trà sữa và các món fusion kiểu mới,
+                bạn sẽ luôn có thêm lựa chọn thú vị để trải nghiệm trọn vẹn vị giác Tây Đô.
+            </p>
+        </div>
+
+        <section class="tour-grid">
+            <a href="nemnuong.html" class="tour-card">
+                <img src="images/nemnuong.jfif" alt="Nem nướng">
+                <h3>Nem nướng</h3>
+            </a>
+
+            <a href="banhtnuong.html" class="tour-card">
+                <img src="images/banhtnuong.jfif" alt="Bánh tráng nướng">
+                <h3>Bánh Tráng Nướng</h3>
+            </a>
+
+            <a href="ocnuongtieu.html" class="tour-card">
+                <img src="images/ocnuongtieu.jfif" alt="Ốc nướng tiêu">
+                <h3>Ốc nướng tiêu</h3>
+            </a>
+
+            <a href="banhmichao.html" class="tour-card">
+                <img src="images/banhmichao.jfif" alt="Bánh mì chảo">
+                <h3>Bánh mì chảo</h3>
+            </a>
+
+            <a href="tramangcau.html" class="tour-card">
+                <img src="images/tramangcau.jpg" alt="Trà mãng cầu">
+                <h3>Trà Mãng Cầu</h3>
+            </a>
+
+            <a href="trasua.html" class="tour-card">
+                <img src="images/trasua.jfif" alt="Trà sữa">
+                <h3>Trà Sữa</h3>
+            </a>
+
+            <a href="chuoinepnuong.html" class="tour-card">
+                <img src="images/chuoinuong.jpg" alt="Chuối nếp nướng">
+                <h3>Chuối nếp nướng</h3>
+            </a>
+
+            <a href="banhdalon.html" class="tour-card">
+                <img src="images/banhdalon.jpg" alt="Bánh da lợn">
+                <h3>Bánh da lợn</h3>
+            </a>
+
+            <a href="ptay.html" class="tour-card">
+                <img src="images/ptay.png" alt="Ẩm thực phương Tây">
+                <h3>Ẩm thực Phương Tây</h3>
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".navbar a");
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "") currentPage = "index.html";
+
+            links.forEach(function (link) {
+                const linkPage = link.getAttribute("href").split("/").pop();
+                if (linkPage === currentPage) link.classList.add("active");
+            });
+
+            const btn = document.querySelector(".hero-btn");
+            const target = document.querySelector("#about");
+            const header = document.querySelector(".header");
+
+            if (btn && target && header) {
+                btn.addEventListener("click", function () {
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight - 12;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                });
+            }
+
+            const foodAdvisorForm = document.getElementById("foodAdvisorForm");
+            const foodResult = document.getElementById("foodResult");
+            const foodResultGrid = document.getElementById("foodResultGrid");
+            const foodResultSummary = document.getElementById("foodResultSummary");
+            const foodPrevBtn = document.getElementById("foodPrevBtn");
+            const foodNextBtn = document.getElementById("foodNextBtn");
+            const foodRestartBtn = document.getElementById("foodRestartBtn");
+            const foodProgressFill = document.getElementById("foodProgressFill");
+            const foodCurrentStep = document.getElementById("foodCurrentStep");
+            const foodSteps = document.querySelectorAll(".food-step");
+            const foodLuckyBtn = document.getElementById("foodLuckyBtn");
+            const luckyMealTime = document.getElementById("luckyMealTime");
+            const foodLuckyResult = document.getElementById("foodLuckyResult");
+
+            const foodDatabase = [
+                { title: "Bún nước lèo", href: "bunncleo.html", icon: "fa-bowl-food", time: ["morning"], craving: ["brothy"], mood: ["cheap", "local"], company: ["solo", "couple", "family"], examples: [
+                    "Bún nước lèo Đề Thám",
+                    "Bà Xã Quán"
+                ] },
+                { title: "Bánh mì chảo", href: "banhmichao.html", icon: "fa-bread-slice", time: ["morning", "late"], craving: ["brothy", "crispy"], mood: ["cheap", "local"], company: ["solo", "friends", "couple"] },
+                { title: "Hủ tiếu gõ", href: "hutieugo.html", icon: "fa-utensils", time: ["morning", "late"], craving: ["brothy"], mood: ["cheap", "local"], company: ["solo", "friends"], examples: [
+                    "Hủ Tiếu Gõ - Mậu Thân",
+                    "Hủ tiếu gõ Trần Văn Hoài"
+                ] },
+                { title: "Bánh xèo", href: "banhxeo.html", icon: "fa-fire", time: ["noon", "night"], craving: ["crispy"], mood: ["local", "group"], company: ["couple", "friends", "family"], examples: [
+                    "Bánh Xèo Cà Mau",
+                    "Bánh xèo Tân Định"
+                ] },
+                { title: "Bánh cống", href: "banhcong.html", icon: "fa-shrimp", time: ["noon"], craving: ["crispy"], mood: ["cheap", "local"], company: ["solo", "couple", "friends"] },
+                { title: "Pizza hủ tiếu", href: "Pizza.html", icon: "fa-pizza-slice", time: ["morning", "noon", "afternoon"], craving: ["crispy", "snack"], mood: ["local", "checkin"], company: ["couple", "friends", "family"], examples: [
+                    "Pizza hủ tiếu Sáu Hoài"
+                ] },
+                { title: "Lẩu mắm", href: "laumam.html", icon: "fa-hot-tub-person", time: ["noon", "night"], craving: ["brothy"], mood: ["group", "local"], company: ["friends", "family"], examples: [
+                    "Lẩu Mắm Kiều Trinh",
+                    "Lẩu Mắm Trần Ngọc Quế"
+                ] },
+                { title: "Nem nướng", href: "nemnuong.html", icon: "fa-skewer", time: ["night"], craving: ["crispy"], mood: ["local", "group"], company: ["couple", "friends", "family"], examples: [
+                    "Bún Nem Nướng - Nguyễn Văn Cừ"
+                ] },
+                { title: "Ốc nướng tiêu", href: "ocnuongtieu.html", icon: "fa-pepper-hot", time: ["night", "late"], craving: ["crispy"], mood: ["group", "local"], company: ["friends", "couple"] },
+                { title: "Chuối nếp nướng", href: "chuoinepnuong.html", icon: "fa-cookie-bite", time: ["afternoon", "night"], craving: ["snack", "sweet"], mood: ["cheap", "local"], company: ["solo", "couple", "family"] },
+                { title: "Bánh tráng nướng", href: "banhtnuong.html", icon: "fa-pizza-slice", time: ["afternoon", "night"], craving: ["snack", "crispy"], mood: ["cheap", "checkin"], company: ["friends", "solo", "couple"] },
+                { title: "Trà mãng cầu", href: "tramangcau.html", icon: "fa-glass-water", time: ["afternoon"], craving: ["sweet"], mood: ["checkin", "cheap"], company: ["solo", "couple", "friends"] },
+                { title: "Trà sữa", href: "trasua.html", icon: "fa-mug-saucer", time: ["afternoon", "late"], craving: ["sweet"], mood: ["checkin", "cheap"], company: ["solo", "friends", "couple"] },
+                { title: "Bánh da lợn", href: "banhdalon.html", icon: "fa-layer-group", time: ["afternoon"], craving: ["sweet", "snack"], mood: ["local", "cheap"], company: ["family", "solo", "couple"] },
+                { title: "Bánh pía", href: "banhpia.html", icon: "fa-cheese", time: ["afternoon"], craving: ["sweet"], mood: ["local", "cheap"], company: ["family", "solo"] }
+            ];
+
+            const foodState = { currentStep: 1, totalSteps: 4 };
+
+            function updateFoodAdvisor() {
+                const percent = (foodState.currentStep / foodState.totalSteps) * 100;
+                foodProgressFill.style.width = percent + "%";
+                foodCurrentStep.textContent = foodState.currentStep;
+                foodPrevBtn.style.display = foodState.currentStep > 1 ? "inline-flex" : "none";
+                foodNextBtn.textContent = foodState.currentStep === foodState.totalSteps ? "Xem gợi ý món ăn" : "Tiếp theo";
+
+                foodSteps.forEach(function (step) {
+                    step.classList.toggle("active", Number(step.dataset.step) === foodState.currentStep);
+                });
+            }
+
+            function validateFoodStep() {
+                const currentStepEl = document.querySelector('.food-step[data-step="' + foodState.currentStep + '"]');
+                return currentStepEl && currentStepEl.querySelector('input:checked');
+            }
+
+            function getFoodAnswers() {
+                const formData = new FormData(foodAdvisorForm);
+                return {
+                    mealTime: formData.get("mealTime"),
+                    company: formData.get("company"),
+                    craving: formData.get("craving"),
+                    budgetMood: formData.get("budgetMood")
+                };
+            }
+
+            function scoreFood(item, answers) {
+                let score = 0;
+                if (item.time.includes(answers.mealTime)) score += 4;
+                if (item.company.includes(answers.company)) score += 2;
+                if (item.craving.includes(answers.craving)) score += 3;
+                if (item.mood.includes(answers.budgetMood)) score += 2;
+                return score;
+            }
+
+            function getFoodSummaryLabel(field, value) {
+                const labels = {
+                    mealTime: { morning: "buổi sáng", noon: "buổi trưa", afternoon: "xế chiều", night: "buổi tối hoặc đêm" },
+                    company: { solo: "đi một mình", couple: "đi đôi", friends: "đi với bạn bè", family: "đi cùng gia đình" },
+                    craving: { brothy: "món nóng có nước", crispy: "món giòn đậm vị", snack: "món ăn vặt vui miệng", sweet: "đồ ngọt hoặc đồ uống" },
+                    budgetMood: { cheap: "gọn nhẹ tiết kiệm", local: "đúng chất địa phương", group: "ngồi lâu ăn cùng nhau", checkin: "dễ chill và chụp ảnh" }
+                };
+                return labels[field][value];
+            }
+
+            function renderExampleShops(item) {
+                if (!item.examples || !item.examples.length) return "";
+
+                const names = item.examples.map(function (shop) {
+                    return `<span class="food-shop-pill">${shop}</span>`;
+                }).join("");
+
+                return `
+                    <div class="food-example-shops">
+                        <strong>Quán tham khảo:</strong>
+                        <div class="food-shop-pill-list">${names}</div>
+                    </div>
+                `;
+            }
+
+            function renderFoodResults() {
+                const answers = getFoodAnswers();
+                const picks = foodDatabase
+                    .map(function (item) {
+                        return { ...item, score: scoreFood(item, answers) };
+                    })
+                    .sort(function (a, b) { return b.score - a.score; })
+                    .slice(0, 3);
+
+                foodResultSummary.textContent =
+                    "Theo lựa chọn " +
+                    getFoodSummaryLabel("mealTime", answers.mealTime) + ", " +
+                    getFoodSummaryLabel("company", answers.company) + ", thích " +
+                    getFoodSummaryLabel("craving", answers.craving) + " và muốn kiểu " +
+                    getFoodSummaryLabel("budgetMood", answers.budgetMood) +
+                    ", đây là các món hợp nhất cho bạn.";
+
+                foodResultGrid.innerHTML = picks.map(function (item, index) {
+                    const notes = [
+                        "Rất hợp khung giờ bạn chọn.",
+                        "Dễ ăn và đúng gu hiện tại của bạn.",
+                        "Đáng thử nếu muốn một bữa đúng chất Cần Thơ."
+                    ];
+
+                    return `
+                        <a class="food-result-card" href="${item.href}">
+                            <div class="food-result-rank">Gợi ý ${index + 1}</div>
+                            <div class="food-result-icon"><i class="fa-solid ${item.icon}"></i></div>
+                            <h4>${item.title}</h4>
+                            <p>${notes[index] || notes[0]}</p>
+                            ${renderExampleShops(item)}
+                            <span class="food-result-link">Xem chi tiết món</span>
+                        </a>
+                    `;
+                }).join("");
+
+                foodAdvisorForm.hidden = true;
+                foodResult.hidden = false;
+            }
+
+            if (foodAdvisorForm && foodPrevBtn && foodNextBtn) {
+                updateFoodAdvisor();
+
+                foodNextBtn.addEventListener("click", function () {
+                    if (!validateFoodStep()) {
+                        alert("Bạn chọn giúp mình một đáp án trước nhé.");
+                        return;
+                    }
+
+                    if (foodState.currentStep < foodState.totalSteps) {
+                        foodState.currentStep += 1;
+                        updateFoodAdvisor();
+                        return;
+                    }
+
+                    renderFoodResults();
+                });
+
+                foodPrevBtn.addEventListener("click", function () {
+                    if (foodState.currentStep > 1) {
+                        foodState.currentStep -= 1;
+                        updateFoodAdvisor();
+                    }
+                });
+
+                foodRestartBtn.addEventListener("click", function () {
+                    foodAdvisorForm.reset();
+                    foodResult.hidden = true;
+                    foodAdvisorForm.hidden = false;
+                    foodState.currentStep = 1;
+                    updateFoodAdvisor();
+                });
+            }
+
+            if (foodLuckyBtn && luckyMealTime && foodLuckyResult) {
+                foodLuckyBtn.addEventListener("click", function () {
+                    const selectedTime = luckyMealTime.value;
+                    const luckyPool = foodDatabase.filter(function (item) {
+                        return item.time.includes(selectedTime);
+                    });
+
+                    if (!luckyPool.length) {
+                        foodLuckyResult.innerHTML = '<p>Chưa có món phù hợp cho lựa chọn này.</p>';
+                        return;
+                    }
+
+                    const picked = luckyPool[Math.floor(Math.random() * luckyPool.length)];
+                    const timeLabelMap = {
+                        morning: "buổi sáng",
+                        noon: "buổi trưa",
+                        afternoon: "xế chiều",
+                        night: "buổi tối hoặc đêm"
+                    };
+
+                    const noteMap = {
+                        morning: "Món này hợp để bắt đầu ngày mới thật đúng kiểu người địa phương.",
+                        noon: "Đây là lựa chọn rất hợp cho bữa chính no bụng và đậm vị.",
+                        afternoon: "Khung giờ này nên ăn thứ gì đó vui miệng và dễ chill.",
+                        night: "Càng về tối, món đậm vị như thế này càng dễ gây nhớ."
+                    };
+
+                    foodLuckyResult.innerHTML = `
+                        <a class="food-lucky-card" href="${picked.href}">
+                            <div class="food-lucky-badge">Gợi ý cho ${timeLabelMap[selectedTime]}</div>
+                            <div class="food-lucky-icon"><i class="fa-solid ${picked.icon}"></i></div>
+                            <h3>${picked.title}</h3>
+                            <p>${noteMap[selectedTime]}</p>
+                            ${renderExampleShops(picked)}
+                            <span class="food-result-link">Xem món này ngay</span>
+                        </a>
+                    `;
+                });
+            }
+        });
+    </script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Tìm Kiếm</title>
+    <link rel="stylesheet" href="timkiem.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        /* Title (danh hiệu) active của user — nhỏ hơn, nhạt hơn tên. Có thể
+           chuyển đoạn này vào timkiem.css nếu muốn quản lý tập trung. */
+        .user-title-badge {
+            display: inline-block;
+            font-size: 0.82em;
+            font-weight: 600;
+            color: #8a94a5;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Tìm nhanh nội dung bạn cần</p>
+            <h2>Trang tìm kiếm</h2>
+            <p>Gõ tên địa điểm, món ăn, lễ hội, tài khoản hoặc chủ đề để xem trang phù hợp.</p>
+        </div>
+    </section>
+
+    <main class="search-page">
+        <section class="search-panel">
+            <label for="searchInput">Nhập từ khóa</label>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Ví dụ: chợ nổi, bánh xèo, tài khoản...">
+            </div>
+            <p class="search-note" id="searchStatus">Đang hiển thị tất cả trang hiện có.</p>
+        </section>
+
+        <section class="result-section">
+            <section class="user-result-section" id="userResultSection" hidden aria-live="polite">
+                <div class="result-section-heading">
+                    <h3><i class="fa-solid fa-user-group"></i> Người dùng</h3>
+                    <span id="userResultCount"></span>
+                </div>
+                <div class="user-result-grid" id="userResultList"></div>
+            </section>
+            <div class="result-grid" id="resultList"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JS/supabase.js"></script>
+    <script src="pages.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".navbar a");
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "") currentPage = "index.html";
+
+            links.forEach(function (link) {
+                const linkPage = link.getAttribute("href").split("/").pop();
+                if (linkPage === currentPage) link.classList.add("active");
+            });
+
+            const input = document.getElementById("searchInput");
+            const resultList = document.getElementById("resultList");
+            const searchStatus = document.getElementById("searchStatus");
+            const userResultSection = document.getElementById("userResultSection");
+            const userResultList = document.getElementById("userResultList");
+            const userResultCount = document.getElementById("userResultCount");
+            let searchTimer;
+            let searchRequest = 0;
+
+            function normalizeText(text) {
+                return text
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace(/đ/g, "d")
+                    .replace(/[^a-z0-9\s]/g, " ")
+                    .replace(/\s+/g, " ")
+                    .trim();
+            }
+
+            function renderResults(query) {
+                const normalizedQuery = normalizeText(query);
+                const filteredPages = pages.filter(function (page) {
+                    const searchableText = normalizeText(
+                        page.title + " " + page.category + " " + page.description + " " + page.keywords.join(" ")
+                    );
+
+                    return normalizedQuery === "" || searchableText.includes(normalizedQuery);
+                });
+
+                resultList.innerHTML = "";
+
+                if (normalizedQuery === "") {
+                    searchStatus.textContent = "Nhập từ khóa để tìm trang, tài khoản phù hợp.";
+                    resultList.innerHTML = '<div class="empty-state"><h3>Chưa có kết quả</h3><p>Nhập tên trang hoặc chủ đề vào ô tìm kiếm để xem trang phù hợp.</p></div>';
+                    return;
+                }
+
+                searchStatus.textContent = 'Có ' + filteredPages.length + ' kết quả cho từ khóa "' + query.trim() + '".';
+
+                if (filteredPages.length === 0) {
+                    resultList.innerHTML = '<div class="empty-state"><h3>Không tìm thấy kết quả</h3><p>Hãy thử từ khóa khác như "du lịch", "bánh xèo", "tài khoản", "diễn đàn" hoặc "nhật kí du lịch".</p></div>';
+                    return;
+                }
+
+                filteredPages.forEach(function (page) {
+                    const card = document.createElement("a");
+                    card.className = "result-card";
+                    card.href = page.href;
+                    card.innerHTML = `
+                        <span class="result-badge">${page.category}</span>
+                        <h3>${page.title}</h3>
+                        <p>${page.description}</p>
+                        <span class="result-link">Mở trang <i class="fa-solid fa-arrow-right"></i></span>
+                    `;
+                    resultList.appendChild(card);
+                });
+            }
+
+            function trustLevel(score) {
+                if (score >= 95) return "Đại sứ Cần Thơ";
+                if (score >= 90) return "Người đóng góp tích cực";
+                if (score >= 80) return "Thành viên uy tín";
+                if (score >= 70) return "Thành viên mới nổi";
+                if (score >= 50) return "Đang được theo dõi";
+                return "Uy tín thấp";
+            }
+
+            function initials(name) {
+                return (name || "ND").trim().split(/\s+/).slice(0, 2).map(function (part) {
+                    return part.charAt(0);
+                }).join("").toUpperCase();
+            }
+
+            function renderUserMessage(title, text, className) {
+                userResultList.innerHTML = "";
+                const message = document.createElement("div");
+                message.className = "user-search-message " + (className || "");
+                const heading = document.createElement("strong");
+                heading.textContent = title;
+                const copy = document.createElement("span");
+                copy.textContent = text;
+                message.append(heading, copy);
+                userResultList.appendChild(message);
+            }
+
+            function normalizeFacebookUrl(value) {
+                const raw = (value || "").trim();
+                if (!/^https?:\/\//i.test(raw)) return null;
+
+                let url;
+                try {
+                    url = new URL(raw);
+                } catch (error) {
+                    return null;
+                }
+
+                const hostname = url.hostname.toLowerCase().replace(/^www\./, "");
+                if (hostname !== "facebook.com") return null;
+
+                const path = url.pathname.replace(/\/+$/, "") || "/";
+                const params = new URLSearchParams(url.search);
+                if (path.toLowerCase() === "/profile.php" && params.has("id")) {
+                    params.set("id", params.get("id").replace(/\/+$/, ""));
+                }
+                const query = params.toString();
+                return "https://facebook.com" + path + (query ? "?" + query : "");
+            }
+
+            function facebookUrlCandidates(normalizedUrl) {
+                const parsed = new URL(normalizedUrl);
+                const suffix = parsed.pathname + parsed.search;
+                return [
+                    "https://facebook.com" + suffix,
+                    "https://www.facebook.com" + suffix,
+                    "http://facebook.com" + suffix,
+                    "http://www.facebook.com" + suffix,
+                    "https://facebook.com" + suffix + "/",
+                    "https://www.facebook.com" + suffix + "/"
+                ];
+            }
+
+            async function searchUsers(query) {
+                const normalizedQuery = query.trim();
+                const normalizedFacebookUrl = normalizeFacebookUrl(normalizedQuery);
+                const requestId = ++searchRequest;
+                userResultList.innerHTML = "";
+
+                if (!normalizedQuery) {
+                    userResultSection.hidden = true;
+                    return;
+                }
+
+                userResultSection.hidden = false;
+                userResultCount.textContent = "Đang tìm...";
+                renderUserMessage("Đang tìm người dùng", "Vui lòng chờ trong giây lát.", "is-loading");
+
+                if (!window.supabaseClient) {
+                    userResultCount.textContent = "";
+                    renderUserMessage("Chưa thể tìm người dùng", "Không thể kết nối hệ thống vào lúc này. Vui lòng thử lại sau.", "is-error");
+                    return;
+                }
+
+                let profileQuery = window.supabaseClient
+                    .from("public_profiles")
+                    .select("id, name, avatar_url, trust_score, active_title_id");
+
+                if (normalizedFacebookUrl) {
+                    profileQuery = profileQuery.in("facebook", facebookUrlCandidates(normalizedFacebookUrl));
+                } else {
+                    profileQuery = profileQuery.ilike("name", "%" + normalizedQuery.replace(/[%_,]/g, "\\$&") + "%");
+                }
+
+                const { data: users, error } = await profileQuery.limit(8);
+
+                if (requestId !== searchRequest) return;
+
+                if (error) {
+                    console.error("Không thể tìm người dùng:", error);
+                    userResultCount.textContent = "";
+                    renderUserMessage("Chưa thể tìm người dùng", "Đã có lỗi khi tải kết quả. Vui lòng thử lại.", "is-error");
+                    return;
+                }
+
+                const safeUsers = users || [];
+                userResultCount.textContent = safeUsers.length + " kết quả";
+                userResultList.innerHTML = "";
+
+                if (!safeUsers.length) {
+                    if (normalizedFacebookUrl) {
+                        renderUserMessage("Facebook này chưa được liên kết với tài khoản nào trên website.", "Hãy kiểm tra lại đường dẫn Facebook hoặc thử tìm theo tên người dùng.");
+                    } else {
+                        renderUserMessage("Không tìm thấy người dùng phù hợp.", "Hãy thử một tên khác.");
+                    }
+                    return;
+                }
+
+                // Lấy Title (danh hiệu) active của các user trong kết quả bằng
+                // MỘT query batch duy nhất — tránh N+1 query riêng từng user.
+                const titleIds = [...new Set(safeUsers.map(function (user) { return user.active_title_id; }).filter(Boolean))];
+                let titleMap = new Map();
+                if (titleIds.length) {
+                    const { data: titlesData, error: titlesError } = await window.supabaseClient
+                        .from("titles")
+                        .select("id, name, slug, icon, color")
+                        .in("id", titleIds);
+                    if (titlesError) {
+                        console.error("Không thể tải titles:", titlesError);
+                    } else {
+                        titleMap = new Map((titlesData || []).map(function (title) { return [title.id, title]; }));
+                    }
+                }
+
+                function createTitleBadge(title) {
+                    if (!title || !title.name) return null;
+                    const badge = document.createElement("span");
+                    badge.className = "user-title-badge";
+                    const isValidColor = /^#[0-9a-fA-F]{3,8}$/.test(title.color || "");
+                    if (isValidColor) badge.style.color = title.color;
+                    badge.textContent = "- " + (title.icon ? title.icon + " " : "") + title.name;
+                    return badge;
+                }
+
+                safeUsers.forEach(function (user) {
+                    const score = Math.max(0, Math.min(100, Number(user.trust_score) || 0));
+                    const card = document.createElement("a");
+                    card.className = "user-result-card";
+                    card.href = "profile-user.html?id=" + encodeURIComponent(user.id);
+
+                    const avatar = document.createElement("span");
+                    avatar.className = "user-result-avatar";
+                    if (user.avatar_url) {
+                        const image = document.createElement("img");
+                        image.src = user.avatar_url;
+                        image.alt = "Ảnh đại diện của " + (user.name || "người dùng");
+                        image.loading = "lazy";
+                        avatar.appendChild(image);
+                    } else {
+                        avatar.textContent = initials(user.name);
+                    }
+
+                    const details = document.createElement("span");
+                    details.className = "user-result-details";
+                    const name = document.createElement("strong");
+                    name.textContent = user.name || "Người dùng";
+                    const titleBadge = createTitleBadge(titleMap.get(user.active_title_id));
+                    const scoreText = document.createElement("span");
+                    scoreText.className = "user-result-score";
+                    scoreText.innerHTML = '<i class="fa-solid fa-star"></i> ' + score + "/100";
+                    const level = document.createElement("small");
+                    level.textContent = trustLevel(score);
+                    details.append(name);
+                    if (titleBadge) details.append(titleBadge);
+                    details.append(scoreText, level);
+                    card.append(avatar, details);
+                    userResultList.appendChild(card);
+                });
+            }
+
+            input.addEventListener("input", function () {
+                renderResults(input.value);
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(function () {
+                    searchUsers(input.value);
+                }, 350);
+            });
+
+            renderResults("");
+        });
+    </script>
+
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

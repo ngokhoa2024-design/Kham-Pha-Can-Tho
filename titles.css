@@ -1,0 +1,504 @@
+/* ============================================================
+   titles.css — Trang Danh Hiệu / Title
+   Khám Phá Cần Thơ
+   Đồng bộ với account.css (cùng tokens màu, font Roboto)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --bg-soft:   #f8f4eb;
+    --bg-main:   #fffdf8;
+    --text-main: #1f2833;
+    --text-sub:  #4f5c6a;
+    --primary:   #0b8a7b;
+    --accent:    #f27a3b;
+    --line:      #e9dfd2;
+    --card:      #ffffff;
+    --shadow:    0 16px 30px rgba(21, 32, 41, 0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 90% 8%,  #ffe8d2 0%, transparent 30%),
+        radial-gradient(circle at 10% 30%, #daf1ed 0%, transparent 28%),
+        var(--bg-main);
+    min-height: 100vh;
+}
+
+/* ─── HERO ──────────────────────────────────────────────────── */
+.hero {
+    min-height: 38vh;
+    display: grid;
+    place-items: center;
+    padding: 60px 20px;
+    background:
+        linear-gradient(rgba(10, 18, 27, 0.56), rgba(10, 18, 27, 0.62)),
+        url('images/114.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 780px;
+    color: #fff;
+}
+
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(242, 122, 59, 0.22);
+    border: 1px solid rgba(255, 210, 184, 0.4);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.hero-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.hero-content p { color: #edf6f5; font-size: 1.05rem; }
+
+/* ─── MAIN LAYOUT ───────────────────────────────────────────── */
+.titles-page {
+    width: min(880px, 92%);
+    margin: 42px auto 80px;
+}
+
+/* ─── USER STATUS CARD ──────────────────────────────────────── */
+.user-status-card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.user-status-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #0a6a5f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.user-status-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-status-info { flex: 1; min-width: 0; }
+
+.user-status-username {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.user-status-display {
+    font-size: 1rem;
+    color: var(--text-sub);
+}
+
+.user-status-display strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.user-status-hint {
+    font-size: 0.82rem;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+/* ─── SECTION TITLE ─────────────────────────────────────────── */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.section-count {
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+}
+
+/* ─── TITLE GRID ────────────────────────────────────────────── */
+.titles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+/* ─── TITLE CARD ────────────────────────────────────────────── */
+.title-card {
+    background: var(--card);
+    border-radius: 16px;
+    border: 2px solid var(--line);
+    padding: 22px 20px;
+    position: relative;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title-card:hover {
+    box-shadow: 0 8px 28px rgba(11, 138, 123, 0.14);
+    transform: translateY(-2px);
+}
+
+/* Unlocked card */
+.title-card.unlocked {
+    border-color: var(--badge-color, var(--primary));
+    background: linear-gradient(135deg, #fff 85%, color-mix(in srgb, var(--badge-color, var(--primary)) 8%, white));
+}
+
+/* Active card */
+.title-card.active-title {
+    border-color: var(--badge-color, var(--primary));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--badge-color, var(--primary)) 20%, transparent), var(--shadow);
+}
+
+/* Locked card */
+.title-card.locked {
+    opacity: 0.72;
+    background: #f9f9f9;
+}
+
+/* ─── TITLE CARD INNER ──────────────────────────────────────── */
+.title-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    font-size: 2rem;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+}
+
+.title-card.locked .title-icon { filter: grayscale(1) opacity(0.5); }
+
+.title-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.title-card.unlocked .title-name { color: var(--badge-color, var(--primary)); }
+
+.title-description {
+    font-size: 0.87rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+}
+
+/* ─── STATUS ROW ────────────────────────────────────────────── */
+.title-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.title-status-text {
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-unlocked { color: var(--primary); }
+.status-locked   { color: #aaa; }
+.status-active   { color: var(--accent); }
+
+/* ─── BUTTONS ───────────────────────────────────────────────── */
+.btn-use-title {
+    padding: 7px 18px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+    white-space: nowrap;
+}
+
+.btn-use-title.use {
+    background: var(--badge-color, var(--primary));
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.btn-use-title.use:hover {
+    filter: brightness(1.1);
+    transform: scale(1.04);
+}
+
+.btn-use-title.using {
+    background: transparent;
+    border: 2px solid var(--badge-color, var(--primary));
+    color: var(--badge-color, var(--primary));
+    cursor: default;
+}
+
+.btn-use-title.unuse {
+    background: transparent;
+    border: 1.5px solid #ccc;
+    color: var(--text-sub);
+    font-size: 0.75rem;
+    padding: 5px 13px;
+}
+
+.btn-use-title.unuse:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.btn-use-title:disabled {
+    background: #ddd;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ─── ACTIVE INDICATOR ──────────────────────────────────────── */
+.active-indicator {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--badge-color, var(--primary));
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+}
+
+/* ─── LOCKED OVERLAY ────────────────────────────────────────── */
+.lock-overlay {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 1.1rem;
+    opacity: 0.45;
+}
+
+/* ─── TITLE BADGE (dùng chung trên toàn site) ───────────────── */
+.title-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: color-mix(in srgb, var(--badge-color, #0b8a7b) 12%, white);
+    color: var(--badge-color, #0b8a7b);
+    border: 1.5px solid color-mix(in srgb, var(--badge-color, #0b8a7b) 30%, white);
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: transform 0.15s;
+}
+
+.title-badge:hover { transform: scale(1.05); }
+
+/* ─── NOT LOGGED IN / EMPTY STATE ───────────────────────────── */
+.titles-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-sub);
+}
+
+.titles-empty .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+.titles-empty h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-main); }
+.titles-empty p  { font-size: 0.9rem; }
+.titles-empty a  { color: var(--primary); font-weight: 600; }
+
+/* ─── LOGIN PROMPT ──────────────────────────────────────────── */
+.login-prompt {
+    background: var(--card);
+    border-radius: 18px;
+    border: 2px dashed var(--line);
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--text-sub);
+}
+
+.login-prompt .lp-icon { font-size: 2.8rem; margin-bottom: 16px; }
+.login-prompt h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text-main); }
+.login-prompt p  { font-size: 0.88rem; margin-bottom: 18px; }
+
+.btn-login-prompt {
+    display: inline-block;
+    padding: 11px 28px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.18s, transform 0.15s;
+    text-decoration: none;
+}
+
+.btn-login-prompt:hover {
+    background: #0a6a5f;
+    transform: translateY(-1px);
+}
+
+/* ─── LOADING SKELETON ──────────────────────────────────────── */
+.skeleton-card {
+    background: var(--card);
+    border-radius: 16px;
+    border: 2px solid var(--line);
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skeleton-line {
+    background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+    background-size: 200% 100%;
+    border-radius: 6px;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ─── TOAST ─────────────────────────────────────────────────── */
+#titlesToast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.t-toast {
+    background: #1f2833;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    opacity: 1;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+    min-width: 220px;
+    max-width: 340px;
+}
+
+.t-toast.success { border-left: 4px solid #27ae60; }
+.t-toast.error   { border-left: 4px solid #e74c3c; }
+.t-toast.info    { border-left: 4px solid var(--primary); }
+.t-toast.fade-out { opacity: 0; }
+
+/* ─── FOOTER ────────────────────────────────────────────────── */
+.footer {
+    background: #1f2833;
+    color: #c4cdd6;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-col p { font-size: 0.88rem; line-height: 1.7; }
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 20px auto 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #8fa8b0;
+}
+
+.footer-credit { max-width: 1100px; margin: 6px auto 0; text-align: center; font-size: 0.75rem; color: #6b7f8a; }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .titles-grid { grid-template-columns: 1fr; }
+
+    .user-status-card { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+    .title-status-row { flex-direction: column; align-items: flex-start; }
+
+    .hero-content h2 { font-size: 1.5rem; }
+
+    #titlesToast { left: 16px; right: 16px; bottom: 16px; }
+    .t-toast { min-width: unset; max-width: 100%; }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+    .titles-grid { grid-template-columns: repeat(2, 1fr); }
+}

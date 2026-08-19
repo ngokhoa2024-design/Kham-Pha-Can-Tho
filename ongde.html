@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Khu Du Lịch Sinh Thái Ông Đề - điểm đến vui chơi ngoài trời mang đậm chất miền Tây với nhiều hoạt động trải nghiệm.">
+    <title>Khu Du Lịch Sinh Thái Ông Đề</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .ongde-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(20, 20, 20, 0.15), rgba(20, 20, 20, 0.08)),
+                url("images/ông đề đẹp.webp") center/cover;
+        }
+
+        .ongde-page .hero-btn.primary {
+            color: #2a6127;
+            background: linear-gradient(135deg, #dff7b9, #9ddc73);
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.14);
+        }
+
+        .ongde-page .feature-pill i,
+        .ongde-page .highlight-item i,
+        .ongde-page .quick-plan li i,
+        .ongde-page .travel-tips li i,
+        .ongde-page .timeline-time {
+            color: #3c8a37;
+        }
+
+        .ongde-page .feature-pill i,
+        .ongde-page .highlight-item i {
+            background: rgba(60, 138, 55, 0.12);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page ongde-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ">
+            </a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html" class="active"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-tree"></i> Điểm sinh thái vui nhộn và gần gũi</div>
+            <h1>Khu Du Lịch Sinh Thái Ông Đề</h1>
+            <p class="hero-lead">Một điểm đến phù hợp cho những ai thích hoạt động ngoài trời, không gian xanh và cảm giác vui chơi mang đậm chất miền Tây. Ông Đề thường được yêu thích bởi sự năng động nhưng vẫn giữ được vẻ mộc mạc dễ gần.</p>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem gợi ý tham quan</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi ghé</h2>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Không gian ngoài trời</strong>
+                    <span>Rất hợp cho nhóm bạn hoặc gia đình thích vận động và thư giãn</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Đậm chất miền Tây</strong>
+                    <span>Cảnh quan và cách tổ chức trải nghiệm giữ được cảm giác mộc mạc</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Nhiều hoạt động vui</strong>
+                    <span>Không dễ bị nhàm chán trong suốt buổi tham quan</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Dễ chụp ảnh trải nghiệm</strong>
+                    <span>Ảnh có người tham gia hoạt động thường lên rất sống</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Vài nét về Ông Đề</h2>
+            <p>Ông Đề là kiểu điểm đến sinh thái có nhịp vui rất rõ. Không gian cây xanh, mặt nước và các hoạt động trải nghiệm giúp nơi này rất phù hợp cho một ngày đi chơi cần nhiều tiếng cười và cảm giác thoải mái.</p>
+            <p>Thay vì chỉ ngắm cảnh đơn thuần, nơi đây hấp dẫn ở việc người tham quan thực sự được nhập vào không gian, được di chuyển, thử hoạt động và tận hưởng nhịp vui mang màu sắc miền Tây.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/ông đề đẹp.webp" alt="Khu Du Lịch Sinh Thái Ông Đề">
+            <div class="image-badge">Điểm nổi bật<span>Không khí vui vẻ và những hoạt động ngoài trời là sức hút lớn nhất</span></div>
+        </div>
+    </div>
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-face-smile"></i>
+            <div>
+                <h3>Không khí rất vui</h3>
+                <p>Điểm đến này phù hợp với những ngày muốn xả stress và đi chơi năng động.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-seedling"></i>
+            <div>
+                <h3>Gần gũi thiên nhiên</h3>
+                <p>Cây xanh và không gian mở giúp trải nghiệm vẫn giữ được sự thoáng đãng.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-camera-retro"></i>
+            <div>
+                <h3>Ảnh trải nghiệm đẹp</h3>
+                <p>Những khoảnh khắc đang chơi, đang cười thường là phần ảnh hấp dẫn nhất.</p>
+            </div>
+        </div>
+    </div>
+    <hr class="separator">
+    <div class="section-block">
+        <h2 class="section-heading">Điều làm Ông Đề hấp dẫn</h2>
+        <p class="section-copy">Điểm mạnh của nơi này nằm ở cảm giác đi để trải nghiệm, không quá tĩnh cũng không quá ngắm cảnh đơn thuần. Chính sự tương tác ấy làm chuyến đi dễ vui hơn.</p>
+        <div class="highlights">
+            <div class="highlight-item">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Nhịp điệu sôi động</h3>
+                <p>Thích hợp cho những ai muốn một điểm đến có nhiều năng lượng hơn.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-users"></i>
+                <h3>Rất hợp đi theo nhóm</h3>
+                <p>Nhiều hoạt động chỉ thực sự vui khi đi cùng bạn bè hoặc gia đình.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Màu sắc địa phương rõ nét</h3>
+                <p>Dù vui chơi nhiều, nơi đây vẫn giữ được cảm giác rất miền Tây.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-block" id="hanh-trinh">
+        <h2 class="section-heading">Gợi ý một buổi đi Ông Đề</h2>
+        <p class="section-copy">Bạn có thể chia thời gian theo nhịp đơn giản để vừa chơi, vừa nghỉ hợp lý hơn.</p>
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <div class="timeline-item">
+                    <div class="timeline-time">Đầu buổi</div>
+                    <div>
+                        <h3>Đến sớm để tranh thủ thời tiết mát</h3>
+                        <p>Buổi đầu ngày thường dễ chịu hơn cho các hoạt động ngoài trời.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Giữa buổi</div>
+                    <div>
+                        <h3>Tham gia các hoạt động nổi bật</h3>
+                        <p>Đây là lúc không khí vui nhất và cũng là phần đáng nhớ nhất của chuyến đi.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Sau đó</div>
+                    <div>
+                        <h3>Nghỉ và chụp ảnh</h3>
+                        <p>Nên dành một khoảng dừng để không bị đuối nhịp và vẫn có ảnh đẹp lưu lại.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Cuối buổi</div>
+                    <div>
+                        <h3>Kết hợp ăn uống nhẹ</h3>
+                        <p>Một bữa ăn hoặc món nước sau khi vui chơi sẽ giúp chuyến đi trọn vẹn hơn.</p>
+                    </div>
+                </div>
+            </div>
+            <aside class="quick-plan">
+                <h3>Một chuyến đi vui hơn thường có</h3>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Đi theo nhóm để tương tác tốt hơn.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Trang phục thoải mái cho hoạt động ngoài trời.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Pin điện thoại đủ để chụp nhiều khoảnh khắc.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Thời gian rộng để không phải gấp gáp.</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu ý nhỏ</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box"><strong>Cho trải nghiệm</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Nên mặc đồ thoải mái vì bạn sẽ di chuyển khá nhiều.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ưu tiên đi lúc thời tiết dịu để đỡ mệt hơn.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Đi đông người sẽ vui và đúng tinh thần nơi này hơn.</span></li>
+            </ul></div>
+            <div class="tip-box"><strong>Cho ảnh đẹp</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Hãy chụp lúc đang tham gia hoạt động thay vì chỉ đứng tạo dáng.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Các góc có cây xanh và nước thường tạo ảnh sinh thái đẹp hơn.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ảnh có cảm xúc thật sẽ rất hợp với điểm đến này.</span></li>
+            </ul></div>
+        </div>
+    </div>
+    <div class="card comment-section" data-id="11" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Khu Du Lịch Sinh Thái Ông Đề để những người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-11"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div>
+        <div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

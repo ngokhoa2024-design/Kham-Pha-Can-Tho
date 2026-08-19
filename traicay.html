@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Lễ hội Trái cây Phụng Hiệp với sắc màu miệt vườn, nông sản vùng sông nước và nét vui tươi của mùa vụ miền Tây.">
+    <title>Lễ hội Trái cây Phụng Hiệp</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .traicay-page .sub-header { background: linear-gradient(135deg, rgba(54, 82, 21, 0.78), rgba(158, 189, 70, 0.46)), url("images/lehoitraicay.jpg") center/cover; }
+        .traicay-page .hero-btn.primary { color: #486919; background: linear-gradient(135deg, #eff8c7, #cbe57e); box-shadow: 0 18px 30px rgba(158, 189, 70, 0.24); }
+        .traicay-page .feature-pill i, .traicay-page .highlight-item i, .traicay-page .quick-plan li i, .traicay-page .travel-tips li i, .traicay-page .timeline-time { color: #5b8a20; }
+        .traicay-page .feature-pill i, .traicay-page .highlight-item i { background: rgba(91, 138, 32, 0.12); }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page traicay-page">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<header class="header"><div class="container"><div class="logo-area"><a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a><h1 class="site-title">Khám Phá Cần Thơ</h1></div><nav class="navbar" aria-label="Điều hướng chính"><ul><li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li><li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li><li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li><li><a href="vanhoa.html" class="active"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li><li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li><li class="dropdown"><a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a><ul class="dropdown-menu"><li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li><li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li><li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li></ul></li><li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li><li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li></ul></nav></div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header"><div class="hero-shell"><div class="hero-copy"><div class="eyebrow"><i class="fa-solid fa-apple-whole"></i> Mùa vụ miền Tây bước vào ngày hội</div><h1>Lễ hội Trái cây Phụng Hiệp</h1><p class="hero-lead">Lễ hội là bức tranh tươi rói của miệt vườn Nam Bộ, nơi nông sản không chỉ để bán mà còn để kể chuyện về mùa vụ, đất đai, sự cần cù và niềm vui hào sảng của người miền Tây.</p><div class="hero-actions"><a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem nhịp trải nghiệm</a><a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a></div></div><div class="hero-panel"><h2>Điểm nhanh trước khi ghé</h2><div class="hero-stats"><div class="hero-stat"><strong>Màu sắc rất bắt mắt</strong><span>Trái cây bày biện thành từng mảng màu tạo hiệu ứng thị giác rất vui mắt</span></div><div class="hero-stat"><strong>Đậm chất miệt vườn</strong><span>Không khí gần gũi, tươi vui và gắn chặt với đời sống nông nghiệp</span></div><div class="hero-stat"><strong>Dễ trải nghiệm</strong><span>Ai cũng có thể hòa vào lễ hội qua việc thưởng thức, ngắm nhìn và chụp ảnh</span></div><div class="hero-stat"><strong>Hợp mùa hè</strong><span>Cảm giác tràn đầy năng lượng, rất hợp cho chuyến đi thư giãn</span></div></div></div></div></header>
+<section class="tour-detail"><div class="intro-section"><div class="intro-text"><h2>Vài nét về lễ hội</h2><p>Lễ hội Trái cây Phụng Hiệp hấp dẫn bởi vẻ tươi mới rất tự nhiên. Những loại trái cây quen thuộc của miền Tây khi bước vào không gian lễ hội lại trở nên rực rỡ, sinh động và mang nhiều câu chuyện hơn về vùng đất đã nuôi dưỡng chúng.</p><p>Điều thú vị là lễ hội không chỉ thiên về vui chơi mà còn làm nổi bật bản sắc nông nghiệp của đồng bằng. Đây là dịp để du khách thấy rõ cách sản vật địa phương gắn với khí hậu, phù sa, mùa vụ và đời sống người dân.</p></div><div class="image-placeholder"><img src="images/lehoitraicay.jpg" alt="Lễ hội Trái cây Phụng Hiệp"><div class="image-badge">Nét riêng nên thử<span>Đi chậm giữa các gian trưng bày để thấy trái cây cũng có thể kể chuyện văn hóa</span></div></div></div><div class="feature-band"><div class="feature-pill"><i class="fa-solid fa-basket-shopping"></i><div><h3>Đầy ắp sản vật vùng miền</h3><p>Mỗi quầy trái cây đều mang màu sắc và cá tính riêng của vùng đất miệt vườn.</p></div></div><div class="feature-pill"><i class="fa-solid fa-tree"></i><div><h3>Cảm giác rất gần thiên nhiên</h3><p>Mọi thứ từ hương thơm đến sắc màu đều cho thấy sức sống của mùa vụ miền Tây.</p></div></div><div class="feature-pill"><i class="fa-solid fa-face-smile"></i><div><h3>Không khí vui vẻ, dễ chịu</h3><p>Đây là kiểu lễ hội dễ khiến người ta thấy nhẹ nhàng và đầy năng lượng tích cực.</p></div></div></div><hr class="separator"><div class="section-block"><h2 class="section-heading">Điều làm lễ hội này nổi bật</h2><p class="section-copy">Điểm đẹp nhất của lễ hội nằm ở việc sản vật nông nghiệp được nâng thành trải nghiệm văn hóa. Bạn sẽ thấy miệt vườn không chỉ là nơi trồng trái cây, mà còn là nơi nuôi dưỡng cách sống hào sảng và yêu thiên nhiên của người miền Tây.</p><div class="highlights"><div class="highlight-item"><i class="fa-solid fa-palette"></i><h3>Sắc màu rất điện ảnh</h3><p>Những cụm trái cây chín tạo nên khung cảnh vừa dân dã vừa rực rỡ hiếm có.</p></div><div class="highlight-item"><i class="fa-solid fa-seedling"></i><h3>Gắn chặt với mùa vụ</h3><p>Mỗi loại trái cây là một phần của nhịp thời gian nông nghiệp miền Tây.</p></div><div class="highlight-item"><i class="fa-solid fa-heart"></i><h3>Niềm vui rất đời thường</h3><p>Lễ hội làm người xem nhớ rằng vẻ đẹp văn hóa đôi khi đến từ những điều bình dị nhất.</p></div></div></div><div class="section-block" id="hanh-trinh"><h2 class="section-heading">Gợi ý một nhịp trải nghiệm</h2><p class="section-copy">Để chuyến đi không bị lướt qua quá nhanh, bạn nên kết hợp ngắm, thử và trò chuyện với người bán hoặc người trồng.</p><div class="timeline-grid"><div class="timeline-card"><div class="timeline-item"><div class="timeline-time">Mở đầu</div><div><h3>Dạo một vòng nhìn toàn cảnh</h3><p>Hãy để mắt quen với bảng màu rực rỡ trước khi chọn điểm ghé sâu hơn.</p></div></div><div class="timeline-item"><div class="timeline-time">Tiếp nối</div><div><h3>Chọn vài quầy có cách trưng bày đẹp</h3><p>Những nơi này thường cũng là nơi kể nhiều câu chuyện thú vị về giống trái cây.</p></div></div><div class="timeline-item"><div class="timeline-time">Điểm vui</div><div><h3>Thử trái cây theo mùa</h3><p>Ăn đúng mùa luôn cho cảm giác ngon hơn và cũng đúng tinh thần lễ hội nhất.</p></div></div><div class="timeline-item"><div class="timeline-time">Kết lại</div><div><h3>Mua một ít đặc sản mang về</h3><p>Một phần quà nhỏ cũng đủ kéo dài dư vị vui tươi của chuyến đi.</p></div></div></div><aside class="quick-plan"><h3>Một chuyến đi hợp lý thường có</h3><ul><li><i class="fa-solid fa-check"></i><span>Đi khi thời tiết còn dịu để thoải mái đi bộ và chụp ảnh.</span></li><li><i class="fa-solid fa-check"></i><span>Mang túi gọn để tiện mua trái cây hoặc quà quê.</span></li><li><i class="fa-solid fa-check"></i><span>Thử theo nhóm nhỏ để không bị quá no khi còn nhiều món hấp dẫn.</span></li><li><i class="fa-solid fa-check"></i><span>Ưu tiên trò chuyện với người địa phương để hiểu hơn về giống trái cây và mùa vụ.</span></li></ul></aside></div></div><div class="travel-tips"><h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ trước khi ghé</h3><div class="travel-tips-grid"><div class="tip-box"><strong>Cho trải nghiệm</strong><ul><li><i class="fa-solid fa-water-bottle"></i><span>Thời tiết miền Tây có thể nóng, nên mang theo nước uống cá nhân.</span></li><li><i class="fa-solid fa-money-bill-wave"></i><span>Tiền mặt mệnh giá nhỏ sẽ giúp mua hàng nhanh và thuận tiện hơn.</span></li><li><i class="fa-solid fa-comments"></i><span>Hỏi thêm về nguồn gốc và cách ăn sẽ khiến trải nghiệm thú vị hơn nhiều.</span></li></ul></div><div class="tip-box"><strong>Cho ảnh đẹp</strong><ul><li><i class="fa-solid fa-sun"></i><span>Ánh sáng tự nhiên giúp màu trái cây lên ảnh rất trong và tươi.</span></li><li><i class="fa-solid fa-camera"></i><span>Chụp cận từng cụm trái cây thường tạo cảm giác đầy đặn và bắt mắt.</span></li><li><i class="fa-solid fa-images"></i><span>Ảnh có thêm người bán hoặc du khách sẽ làm khung hình sống động hơn.</span></li></ul></div></div></div><div class="card comment-section" data-id="25" id="danh-gia"><h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3><p>Hãy chia sẻ cảm nhận của bạn về sắc màu và không khí miệt vườn tại lễ hội nhé.</p><div class="rating" id="rating-25"></div><div class="comment-box"></div></div></section>
+<footer class="footer"><div class="footer-container"><div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div><div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div></div><div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div></footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

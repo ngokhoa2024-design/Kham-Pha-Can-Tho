@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Hồ sơ người dùng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="profile-user.css">
+    <style>
+        /* Title (danh hiệu) active của user — có thể chuyển vào profile-user.css nếu muốn */
+        .user-title-badge {
+            display: inline-block;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #8a94a5;
+            margin: 2px 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="profile-nav"><a href="index.html" class="brand"><i class="fa-solid fa-compass"></i> Khám Phá Cần Thơ</a><a href="timkiem.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Quay lại tìm kiếm</a></header>
+    <main class="profile-page">
+        <p class="profile-state" id="profileState" role="status">Đang tải hồ sơ người dùng...</p>
+        <section id="profileContent" hidden>
+            <article class="profile-card">
+                <div class="cover-banner"></div>
+                <div class="profile-summary">
+                    <div class="profile-avatar" id="profileAvatar"></div>
+                    <div class="profile-title"><h1 id="profileName"></h1><span id="profileTitleBadge" class="user-title-badge" hidden></span><p id="trustLevel"></p></div>
+                    <div class="trust-badge"><i class="fa-solid fa-star"></i><strong id="trustScore"></strong><span>Trust Score</span></div>
+                    <div id="reportSlot"></div>
+                </div>
+            </article>
+            <section class="content-card facebook-public-card" id="facebookPublicCard" hidden>
+                <div class="section-title"><h2><i class="fa-brands fa-facebook"></i> Facebook</h2></div>
+                <p id="facebookPublicInfo"></p>
+            </section>
+            <section class="content-card"><div class="section-title"><h2><i class="fa-solid fa-pen-to-square"></i> Bài đăng</h2><span id="postCount"></span></div><div id="postList" class="profile-posts"></div></section>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JS/supabase.js"></script>
+    <script src="report.js"></script>
+    <script src="profile-user.js"></script>
+</body>
+</html>

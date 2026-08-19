@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Lên Kế Hoạch Thông Minh</title>
+    <link rel="stylesheet" href="plantrip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Cá nhân hóa hành trình của bạn</p>
+            <h2> Kế Hoạch Du Lịch Thông Minh</h2>
+            <p>Trả lời một số câu hỏi đơn giản, chúng tôi sẽ tạo lịch trình du lịch phù hợp nhất cho bạn tại Cần Thơ.</p>
+            <div class="hero-actions">
+                <a href="#quizSection" class="btn btn-primary hero-btn">Bắt đầu tạo lịch trình</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="planner-page">
+        <section class="planner-container">
+            <div class="quiz-section" id="quizSection">
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text"><span id="currentStep">1</span> / 6</p>
+                </div>
+
+                <form id="quizForm" class="quiz-form">
+                    <div class="quiz-step active" data-step="1">
+                        <h3>⏱️ Bạn sẽ ở Cần Thơ bao lâu?</h3>
+                        <div class="options-grid">
+                            <label class="option-radio">
+                                <input type="radio" name="duration" value="1">
+                                <span class="option-content">
+                                    <i class="fas fa-sun"></i>
+                                    <span class="option-text">1 Ngày</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="duration" value="2-3">
+                                <span class="option-content">
+                                    <i class="fas fa-moon"></i>
+                                    <span class="option-text">2-3 Ngày</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="duration" value="4-5">
+                                <span class="option-content">
+                                    <i class="fas fa-calendar"></i>
+                                    <span class="option-text">4-5 Ngày</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="duration" value="7+">
+                                <span class="option-content">
+                                    <i class="fas fa-hourglass-end"></i>
+                                    <span class="option-text">Một tuần trở lên</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="2">
+                        <h3>💝 Sở thích chính của bạn? (Chọn 2-3)</h3>
+                        <div class="options-checkbox">
+                            <label class="option-check">
+                                <input type="checkbox" name="interests" value="food">
+                                <span class="option-content">
+                                    <i class="fas fa-utensils"></i>
+                                    <span class="option-text">Ẩm Thực</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="interests" value="culture">
+                                <span class="option-content">
+                                    <i class="fas fa-landmark"></i>
+                                    <span class="option-text">Văn Hóa & Lịch Sử</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="interests" value="nature">
+                                <span class="option-content">
+                                    <i class="fas fa-tree"></i>
+                                    <span class="option-text">Thiên Nhiên & Sinh Thái</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="interests" value="adventure">
+                                <span class="option-content">
+                                    <i class="fas fa-bicycle"></i>
+                                    <span class="option-text">Phiêu Lưu & Hoạt Động</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="interests" value="photo">
+                                <span class="option-content">
+                                    <i class="fas fa-camera"></i>
+                                    <span class="option-text">Chụp Ảnh</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="interests" value="relax">
+                                <span class="option-content">
+                                    <i class="fas fa-spa"></i>
+                                    <span class="option-text">Thư Giãn & Yên Bình</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="3">
+                        <h3>💰 Mức ngân sách mỗi ngày?</h3>
+                        <div class="options-grid">
+                            <label class="option-radio">
+                                <input type="radio" name="budget" value="budget">
+                                <span class="option-content">
+                                    <i class="fas fa-coins"></i>
+                                    <span class="option-text">Tiết Kiệm (&lt; 300k/ngày)</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="budget" value="medium">
+                                <span class="option-content">
+                                    <i class="fas fa-wallet"></i>
+                                    <span class="option-text">Trung Bình (300-700k/ngày)</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="budget" value="comfort">
+                                <span class="option-content">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span class="option-text">Thoải Mái (700k-1.5m/ngày)</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="budget" value="luxury">
+                                <span class="option-content">
+                                    <i class="fas fa-gem"></i>
+                                    <span class="option-text">Cao Cấp (1.5m+/ngày)</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="4">
+                        <h3>🎯 Kiểu du lịch ưa thích?</h3>
+                        <div class="options-grid">
+                            <label class="option-radio">
+                                <input type="radio" name="style" value="solo">
+                                <span class="option-content">
+                                    <i class="fas fa-user"></i>
+                                    <span class="option-text">Một Mình</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="style" value="couple">
+                                <span class="option-content">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="option-text">Đôi</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="style" value="family">
+                                <span class="option-content">
+                                    <i class="fas fa-home"></i>
+                                    <span class="option-text">Gia Đình</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="style" value="group">
+                                <span class="option-content">
+                                    <i class="fas fa-users"></i>
+                                    <span class="option-text">Nhóm Bạn</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="5">
+                        <h3>🚶 Bạn thích nhịp độ nào?</h3>
+                        <div class="options-grid">
+                            <label class="option-radio">
+                                <input type="radio" name="pace" value="relaxed">
+                                <span class="option-content">
+                                    <i class="fas fa-wind"></i>
+                                    <span class="option-text">Chậm Rãi (2-3 điểm/ngày)</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="pace" value="moderate">
+                                <span class="option-content">
+                                    <i class="fas fa-walking"></i>
+                                    <span class="option-text">Vừa Phải (4-5 điểm/ngày)</span>
+                                </span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="pace" value="active">
+                                <span class="option-content">
+                                    <i class="fas fa-person-running"></i>
+                                    <span class="option-text">Năng Động (6+ điểm/ngày)</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="6">
+                        <h3>✨ Có nhu cầu đặc biệt không?</h3>
+                        <div class="options-checkbox">
+                            <label class="option-check">
+                                <input type="checkbox" name="needs" value="wheelchair">
+                                <span class="option-content">
+                                    <i class="fas fa-wheelchair"></i>
+                                    <span class="option-text">Tiếp Cận Cho Người Khuyết Tật</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="needs" value="vegetarian">
+                                <span class="option-content">
+                                    <i class="fas fa-leaf"></i>
+                                    <span class="option-text">Chế Độ Ăn Chay</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="needs" value="petfriendly">
+                                <span class="option-content">
+                                    <i class="fas fa-paw"></i>
+                                    <span class="option-text">Thân Thiện Với Thú Cưng</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="needs" value="kids">
+                                <span class="option-content">
+                                    <i class="fas fa-child"></i>
+                                    <span class="option-text">An Toàn Cho Trẻ Em</span>
+                                </span>
+                            </label>
+                            <label class="option-check">
+                                <input type="checkbox" name="needs" value="wifi">
+                                <span class="option-content">
+                                    <i class="fas fa-wifi"></i>
+                                    <span class="option-text">Wi-Fi & Công Việc</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display:none;" onclick="previousStep()">
+                            <i class="fas fa-arrow-left"></i> Quay Lại
+                        </button>
+                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()">
+                            Tiếp Theo <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display:none;">
+                <div class="results-header">
+                    <h2>📋 Lịch Trình Du Lịch Được Cá Nhân Hóa</h2>
+                    <p id="tripInfo"></p>
+                </div>
+
+                <div class="itinerary-container" id="itineraryContainer"></div>
+
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="downloadItinerary()">
+                        <i class="fas fa-download"></i> Tải Lịch Trình
+                    </button>
+                    <button class="btn btn-secondary" onclick="shareItinerary()">
+                        <i class="fas fa-share-alt"></i> Chia Sẻ
+                    </button>
+                    <button class="btn btn-outline" onclick="startOver()">
+                        <i class="fas fa-redo"></i> Tạo Lịch Trình Mới
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>
+                    Khám phá vẻ đẹp miền Tây sông nước,
+                    trải nghiệm văn hóa và ẩm thực đặc sắc.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa
+        </div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+        </div>
+    </footer>
+
+    <script src="plantrip.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".navbar a");
+            let currentPage = window.location.pathname.split("/").pop();
+
+            if (currentPage === "") currentPage = "plantrip.html";
+
+            links.forEach(function (link) {
+                const href = link.getAttribute("href");
+                if (!href || href === "#") return;
+                const linkPage = href.split("/").pop();
+                if (linkPage === currentPage) link.classList.add("active");
+            });
+        });
+    </script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>

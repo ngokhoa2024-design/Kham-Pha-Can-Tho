@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá lẩu mắm miền Tây với hương vị đậm đà, nồi lẩu đầy topping và rau.">
+    <title>Lẩu Mắm</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .laumam-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(95, 40, 18, 0.55), rgba(223, 130, 55, 0.35)),
+                url("images/laumam3.jpg") center/cover;
+        }
+
+        .laumam-page .hero-btn.primary {
+            color: #6b2f10;
+            background: linear-gradient(135deg, #ffe2b4, #ffb867);
+            box-shadow: 0 18px 30px rgba(255, 171, 87, 0.28);
+        }
+
+        .laumam-page .feature-pill i,
+        .laumam-page .highlight-item i,
+        .laumam-page .quick-plan li i,
+        .laumam-page .travel-tips li i,
+        .laumam-page .timeline-time,
+        .laumam-page .step-no {
+            color: #b65222;
+        }
+
+        .laumam-page .feature-pill i,
+        .laumam-page .highlight-item i,
+        .laumam-page .step-no {
+            background: rgba(182, 82, 34, 0.12);
+        }
+
+        .flavor-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 26px 0 10px;
+        }
+
+        .flavor-chip {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #fff1da, #ffe0b3);
+            color: #8b4318;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 22px rgba(179, 96, 32, 0.12);
+        }
+
+        .tasting-board {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .tasting-card,
+        .pairing-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(69, 33, 11, 0.08);
+        }
+
+        .tasting-step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 18px;
+        }
+
+        .step-no {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .pairing-card ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .pairing-card li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            color: #5f4b40;
+        }
+
+        .pairing-card li i {
+            color: #c2642c;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .tasting-board {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page laumam-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html" class="active"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-pot-food"></i> Đậm đà, nghi ngút, ăn là nhớ</div>
+            <h1>Lẩu Mắm</h1>
+            <p class="hero-lead">Lẩu mắm là kiểu món đại diện cho tinh thần ăn uống miền Tây: đậm, nhiều, vui và càng ăn đông càng thấy ngon. Mùi mắm, rau và đồ nhúng hòa lại tạo nên một nồi lẩu rất khó quên.</p>
+            <div class="flavor-strip">
+<span class='flavor-chip'>đậm đà</span>
+<span class='flavor-chip'>nghi ngút</span>
+<span class='flavor-chip'>rau miền Tây</span>
+<span class='flavor-chip'>ngọt hậu</span>
+            </div>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#thuong-thuc"><i class="fa-solid fa-utensils"></i> Xem cách thưởng thức</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi thử</h2>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>Điểm vị giác</strong><span>Đậm mùi, rất đầy đặn</span></div>
+                <div class="hero-stat"><strong>Hợp nhất khi</strong><span>Ngon nhất khi ăn theo nhóm</span></div>
+                <div class="hero-stat"><strong>Cảm giác món</strong><span>Rau và đồ nhúng là phần cực quan trọng</span></div>
+                <div class="hero-stat"><strong>Nên đi cùng</strong><span>Càng ăn càng thấy ngọt hậu</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Lẩu mắm vì sao luôn là món “quây quần”?</h2>
+            <p>Đây không phải kiểu món ăn một mình cho gọn. Lẩu mắm ngon nhất khi có nhiều người, nhiều loại rau, nhiều đồ nhúng và cả tiếng chuyện trò quanh nồi lẩu đang sôi.</p>
+            <p>Điểm đáng giá nhất của món là chiều sâu nước lẩu. Nếu nấu khéo, mùi mắm lên rõ nhưng không gắt, thay vào đó là vị ngọt đậm rất đã.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/laumam3.jpg" alt="Lẩu Mắm">
+            <div class="image-badge">Điểm nhấn<span>Nồi lẩu sôi với nhiều rau và đồ nhúng luôn là phần khiến món này hấp dẫn nhất.</span></div>
+        </div>
+    </div>
+
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-users"></i>
+            <div>
+                <h3>Ăn đông sẽ ngon hơn</h3>
+                <p>Lẩu mắm là món rất hợp với nhịp quây quần.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-seedling"></i>
+            <div>
+                <h3>Rau là linh hồn thứ hai</h3>
+                <p>Nhiều loại rau giúp nồi lẩu vừa đậm vừa thanh.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-fire-burner"></i>
+            <div>
+                <h3>Nước lẩu quyết định tất cả</h3>
+                <p>Một nồi lẩu ngon phải vừa thơm mắm vừa có hậu ngọt.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="section-block" id="thuong-thuc">
+        <h2 class="section-heading">Ăn lẩu mắm sao cho ngon?</h2>
+        <p class="section-copy">Ăn lẩu mắm ngon là phải giữ nhịp nhúng vừa đủ, ăn nóng và đổi nhiều loại rau để không bị nặng vị.</p>
+        <div class="tasting-board">
+            <div class="tasting-card">
+                <h3>Ăn lẩu mắm sao cho không bị ngấy</h3>
+            <div class="tasting-step">
+                <div class="step-no">01</div>
+                <div>
+                    <h3>Nếm nước lẩu trước</h3>
+                    <p>Hãy thử nước lẩu ngay lúc vừa sôi để cảm độ đậm nền của món.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">02</div>
+                <div>
+                    <h3>Nhúng rau theo đợt</h3>
+                    <p>Đừng cho tất cả vào cùng lúc, nhúng vừa ăn sẽ giữ độ tươi ngon hơn.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">03</div>
+                <div>
+                    <h3>Luân phiên đồ nhúng</h3>
+                    <p>Đổi giữa cá, thịt, hải sản và rau giúp nồi lẩu luôn thú vị.</p>
+                </div>
+            </div>
+            </div>
+            <div class="pairing-card">
+                <h3>Nên đi cùng gì?</h3>
+                <ul>
+                    <li><i class="fa-solid fa-mug-hot"></i><span>Đi cùng nhóm bạn hoặc gia đình là hợp nhất.</span></li>
+                    <li><i class="fa-solid fa-seedling"></i><span>Rau tươi nhiều loại sẽ làm món đúng chất hơn.</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Buổi chiều tối là thời điểm rất hợp để ăn lẩu.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ khi đi ăn</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box">
+                <strong>Lưu ý nên nhớ</strong>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Nên gọi theo nhóm để ăn được nhiều loại nhúng hơn.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Nếu chưa quen đậm vị, hãy bắt đầu bằng phần rau và cá trước.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Nước lẩu ngon nhất khi luôn giữ nóng đều.</span></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <strong>Cảm giác món ăn</strong>
+                <p>Đây là kiểu món mang cảm giác no nê, ấm và rất “đã” khi ăn đúng dịp.</p>
+                <p>Không chỉ là món ăn, nó còn là không khí của một bữa quây quần.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comment-section" data-id="203" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ thực khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Lẩu Mắm để người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-203"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Khám Phá Cần Thơ</h3>
+            <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact for work</h4>
+            <p>Gmail 1: ngokhoa2024@gmail.com</p>
+            <p>Gmail 2: thiennn0412@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

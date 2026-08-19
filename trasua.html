@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá trà sữa với vị béo ngọt quen thuộc và không khí quán xá hiện đại của Cần Thơ.">
+    <title>Trà Sữa</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .trasua-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(95, 40, 18, 0.55), rgba(223, 130, 55, 0.35)),
+                url("images/trasua.jfif") center/cover;
+        }
+
+        .trasua-page .hero-btn.primary {
+            color: #6b2f10;
+            background: linear-gradient(135deg, #ffe2b4, #ffb867);
+            box-shadow: 0 18px 30px rgba(255, 171, 87, 0.28);
+        }
+
+        .trasua-page .feature-pill i,
+        .trasua-page .highlight-item i,
+        .trasua-page .quick-plan li i,
+        .trasua-page .travel-tips li i,
+        .trasua-page .timeline-time,
+        .trasua-page .step-no {
+            color: #b65222;
+        }
+
+        .trasua-page .feature-pill i,
+        .trasua-page .highlight-item i,
+        .trasua-page .step-no {
+            background: rgba(182, 82, 34, 0.12);
+        }
+
+        .flavor-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 26px 0 10px;
+        }
+
+        .flavor-chip {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #fff1da, #ffe0b3);
+            color: #8b4318;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 22px rgba(179, 96, 32, 0.12);
+        }
+
+        .tasting-board {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .tasting-card,
+        .pairing-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(69, 33, 11, 0.08);
+        }
+
+        .tasting-step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 18px;
+        }
+
+        .step-no {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .pairing-card ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .pairing-card li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            color: #5f4b40;
+        }
+
+        .pairing-card li i {
+            color: #c2642c;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .tasting-board {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-item {
+            margin-top: 6px;
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 150, 136, 0.16);
+            background: linear-gradient(135deg, rgba(0, 150, 136, 0.08), rgba(255, 255, 255, 0.96));
+            box-shadow: 0 8px 20px rgba(0, 150, 136, 0.08);
+            transition: transform 0.28s ease, background-color 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, 0.55) 50%, transparent 82%);
+            transform: translateX(-130%);
+            transition: transform 0.55s ease;
+            pointer-events: none;
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-link i {
+            color: #009688;
+            transition: transform 0.28s ease, color 0.28s ease;
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-link:hover {
+            border-color: rgba(0, 150, 136, 0.28);
+            background: linear-gradient(135deg, rgba(0, 150, 136, 0.14), rgba(255, 255, 255, 1));
+            box-shadow: 0 14px 30px rgba(0, 150, 136, 0.14);
+            transform: translateY(-2px);
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-link:hover::before {
+            transform: translateX(130%);
+        }
+
+        .trasua-page .navbar .dropdown-menu .find-friends-link:hover i {
+            color: #0b7f74;
+            transform: scale(1.08);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page trasua-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html" class="active"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                        <li class="find-friends-item"><a href="find-friends.html" class="find-friends-link"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-glass-water"></i> Ngọt béo, chill quán xá, rất dễ gọi</div>
+            <h1>Trà Sữa</h1>
+            <p class="hero-lead">Trà sữa ở Cần Thơ là một phần rất rõ của nhịp ăn uống hiện đại. Từ ly truyền thống đến các biến thể topping, đây là món uống đi cùng tụ tập, học nhóm và những buổi ngồi quán rất nhiều.</p>
+            <div class="flavor-strip">
+<span class='flavor-chip'>ngọt béo</span>
+<span class='flavor-chip'>topping vui</span>
+<span class='flavor-chip'>mát lạnh</span>
+<span class='flavor-chip'>quán xá</span>
+            </div>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#thuong-thuc"><i class="fa-solid fa-utensils"></i> Xem cách thưởng thức</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi thử</h2>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>Điểm vị giác</strong><span>Ngọt béo, dễ uống</span></div>
+                <div class="hero-stat"><strong>Hợp nhất khi</strong><span>Hợp ngồi quán lâu</span></div>
+                <div class="hero-stat"><strong>Cảm giác món</strong><span>Topping tạo niềm vui riêng</span></div>
+                <div class="hero-stat"><strong>Nên đi cùng</strong><span>Rất hợp giới trẻ</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Trà sữa vì sao vẫn luôn hot?</h2>
+            <p>Sức hút của trà sữa nằm ở sự dễ tiếp cận. Dễ chọn vị, dễ chỉnh ngọt đá, dễ thêm topping và rất hợp với những buổi tụ tập không cần quá cầu kỳ.</p>
+            <p>Ở Cần Thơ, trà sữa không chỉ là món uống mà còn là một phần của văn hóa quán xá hiện đại.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/trasua.jfif" alt="Trà Sữa">
+            <div class="image-badge">Điểm nhấn<span>Ly trà sữa mát lạnh cùng topping luôn là hình ảnh quen thuộc của những buổi ngồi quán.</span></div>
+        </div>
+    </div>
+
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-ice-cream"></i>
+            <div>
+                <h3>Dễ uống, dễ chọn</h3>
+                <p>Món này có rất nhiều biến thể để hợp nhiều gu khác nhau.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-gem"></i>
+            <div>
+                <h3>Topping tạo vui miệng</h3>
+                <p>Topping là phần khiến mỗi ly có cá tính riêng.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-users"></i>
+            <div>
+                <h3>Rất hợp tụ tập</h3>
+                <p>Đây là món uống gắn với nhịp ngồi quán rất rõ.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="section-block" id="thuong-thuc">
+        <h2 class="section-heading">Ăn trà sữa sao cho ngon?</h2>
+        <p class="section-copy">Trà sữa ngon hay không nằm ở tỷ lệ trà, sữa và mức ngọt đá hợp gu. Chọn đúng là uống rất cuốn.</p>
+        <div class="tasting-board">
+            <div class="tasting-card">
+                <h3>Gọi sao cho hợp gu</h3>
+            <div class="tasting-step">
+                <div class="step-no">01</div>
+                <div>
+                    <h3>Chọn nền trà trước</h3>
+                    <p>Nền trà quyết định ly của bạn thiên thơm, béo hay thanh.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">02</div>
+                <div>
+                    <h3>Chỉnh ngọt đá vừa</h3>
+                    <p>Giảm một chút ngọt thường sẽ dễ uống lâu hơn.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">03</div>
+                <div>
+                    <h3>Thêm topping đúng kiểu</h3>
+                    <p>Chọn topping bạn thật sự thích sẽ làm ly nước đáng tiền hơn.</p>
+                </div>
+            </div>
+            </div>
+            <div class="pairing-card">
+                <h3>Nên đi cùng gì?</h3>
+                <ul>
+                    <li><i class="fa-solid fa-mug-hot"></i><span>Ngồi cùng bạn bè hoặc học nhóm là đúng vibe nhất.</span></li>
+                    <li><i class="fa-solid fa-seedling"></i><span>Hợp nhất với món ăn vặt nhẹ hoặc bánh ngọt.</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Buổi chiều và tối là thời điểm quán xá sôi động nhất.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ khi đi ăn</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box">
+                <strong>Lưu ý nên nhớ</strong>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Giảm ngọt nếu bạn dễ ngán.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Đừng thêm quá nhiều topping nếu muốn giữ vị trà rõ.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Chọn ly size vừa nếu muốn uống gọn mà vẫn đủ vui.</span></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <strong>Cảm giác món ăn</strong>
+                <p>Trà sữa mang cảm giác thoải mái, hiện đại và rất đúng nhịp quán xá.</p>
+                <p>Đây là món uống của tụ tập, trò chuyện và thư giãn nhiều hơn là chỉ giải khát.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comment-section" data-id="213" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ thực khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Trà Sữa để người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-213"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Khám Phá Cần Thơ</h3>
+            <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact for work</h4>
+            <p>Gmail 1: ngokhoa2024@gmail.com</p>
+            <p>Gmail 2: thiennn0412@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
