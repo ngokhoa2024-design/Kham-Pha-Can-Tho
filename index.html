@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khám Phá Cần Thơ</title>
     <link rel="stylesheet" href="styletrangchu.css">
+    <link rel="stylesheet" href="newsfeed.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="donate.css">
     <link rel="stylesheet" href="responsive.css">
@@ -150,11 +151,16 @@
         </div>
     </section>
 
-    <section class="gallery">
-        <h2>Khoảnh Khắc Cần Thơ</h2>
-        <div class="gallery-grid">
-            <img src="images/ct1.webp" alt="Cần Thơ 1" title="Cầu Cần Thơ lúc hoàng hôn">
-            <img src="images/ct2.webp" alt="Cần Thơ 2" title="Bến Ninh Kiều nhộn nhịp về đêm">
+    <section class="newsfeed" id="newsfeedSection">
+        <div class="newsfeed-head">
+            <h2>Bảng Tin Cộng Đồng</h2>
+            <p>Những chia sẻ, câu chuyện và trải nghiệm mới nhất từ Diễn Đàn Khám Phá Cần Thơ.</p>
+        </div>
+        <div class="newsfeed-list" id="newsfeedList">
+            <p class="nf-empty">Đang tải bài viết mới nhất...</p>
+        </div>
+        <div class="newsfeed-head">
+            <a href="forum.html" class="newsfeed-link"><i class="fa-solid fa-comments"></i> Xem tất cả bài viết trong Diễn Đàn</a>
         </div>
     </section>
 
@@ -208,6 +214,11 @@
     </section>
     <script src="donate.js"></script>
     <script src="mobile-nav.js"></script>
+
+    <!-- Kết nối Supabase (dùng chung với forum.html) + tải Bảng Tin Cộng Đồng -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JS/supabase.js"></script>
+    <script src="newsfeed.js"></script>
 </body>
 </html>
 
