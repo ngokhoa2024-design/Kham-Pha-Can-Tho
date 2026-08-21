@@ -1,6 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="vi">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-08FX3TRNL9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-08FX3TRNL9');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khám Phá Cần Thơ</title>
@@ -11,6 +21,7 @@
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="navbar.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -19,7 +30,8 @@
                 <h1 class="site-title">Khám Phá Cần Thơ</h1>
             </div>
 
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu"
+                aria-expanded="false"><span></span><span></span><span></span></button>
             <nav class="navbar" aria-label="Điều hướng chính">
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
@@ -30,55 +42,61 @@
                     <li class="dropdown">
                         <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
                         <ul class="dropdown-menu">
-                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông
+                                    Minh</a></li>
                             <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
-                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a>
+                            </li>
                             <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
-                            <li class="go-cantho-item"><a href="buddy-don   g-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                            <li class="go-cantho-item"><a href="buddy-don   g-hanh.html" class="go-cantho-link"><i
+                                        class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
                         </ul>
                     </li>
-                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i
+                                class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i
+                                class="fa-solid fa-user"></i></a></li>
                 </ul>
             </nav>
         </div>
-    
 
-    <!-- MOBILE OVERLAY -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <!-- MOBILE SIDEBAR NAV -->
-    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
-        <div class="mobile-nav-header">
-            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
-            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <ul class="mobile-nav-list">
-            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
-            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
-            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
-            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
-            <li class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis"></i> Khác
-                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+
+        <!-- MOBILE OVERLAY -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <!-- MOBILE SIDEBAR NAV -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
-                <ul class="mobile-submenu">
-                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
-                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
-                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
-                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
-                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
-                </ul>
-            </li>
-            <li class="mobile-divider" role="separator"></li>
-            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
-            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
-        </ul>
-    </nav>
-</header>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" aria-expanded="false">
+                        <i class="fa-solid fa-ellipsis"></i> Khác
+                        <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                    </button>
+                    <ul class="mobile-submenu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                        <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                        <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i
+                                    class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-divider" role="separator"></li>
+                <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+                <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="hero">
         <div class="hero-content">
@@ -98,11 +116,13 @@
                 <h2>Giới Thiệu Thành Phố Cần Thơ</h2>
                 <p>
                     Chào mừng bạn đến với Cần Thơ, thủ phủ miền Tây sông nước nơi nhịp sống hiền hòa luôn song hành cùng
-                    nét năng động hiện đại. Từ chợ nổi Cái Răng lúc bình minh, bến Ninh Kiều về đêm đến những vườn trái cây
+                    nét năng động hiện đại. Từ chợ nổi Cái Răng lúc bình minh, bến Ninh Kiều về đêm đến những vườn trái
+                    cây
                     xanh mát quanh năm, mỗi điểm đến đều mang một vẻ đẹp riêng đầy cuốn hút.
                 </p>
                 <p>
-                    Website này giúp bạn tìm nhanh nơi nên đi, món nên thử và các trải nghiệm văn hóa đáng nhớ khi khám phá
+                    Website này giúp bạn tìm nhanh nơi nên đi, món nên thử và các trải nghiệm văn hóa đáng nhớ khi khám
+                    phá
                     vùng đất Tây Đô.
                 </p>
             </div>
@@ -160,7 +180,8 @@
             <p class="nf-empty">Đang tải bài viết mới nhất...</p>
         </div>
         <div class="newsfeed-head">
-            <a href="forum.html" class="newsfeed-link"><i class="fa-solid fa-comments"></i> Xem tất cả bài viết trong Diễn Đàn</a>
+            <a href="forum.html" class="newsfeed-link"><i class="fa-solid fa-comments"></i> Xem tất cả bài viết trong
+                Diễn Đàn</a>
         </div>
     </section>
 
@@ -185,7 +206,8 @@
             © 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa
         </div>
         <div class="footer-credit">
-            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân
+                thành cảm ơn.</p>
         </div>
     </footer>
 
@@ -206,7 +228,8 @@
         <div class="donate-card">
             <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
             <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
-            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link"
+                aria-label="Ủng hộ dự án qua mã QR">
                 <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
             </a>
             <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
@@ -220,5 +243,5 @@
     <script src="JS/supabase.js"></script>
     <script src="newsfeed.js"></script>
 </body>
-</html>
 
+</html>
