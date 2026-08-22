@@ -259,6 +259,15 @@ async function loadStats() {
         const { count: reportCount } = await supabaseClient.from('reports').select('id', { count: 'exact', head: true }).eq('status', 'pending');
         if (reportCount !== null) updateReportCounts(reportCount);
 
+        const { data: stats, error: statsError } = await supabaseClient
+            .from('website_stats')
+            .select('total_visitors')
+            .eq('id', 1)
+            .single();
+        if (!statsError && stats) {
+            document.getElementById('statTotalVisitors').textContent = stats.total_visitors.toLocaleString('vi-VN');
+        }
+
     } catch (err) {
         console.error('Lỗi tải stats:', err);
     }

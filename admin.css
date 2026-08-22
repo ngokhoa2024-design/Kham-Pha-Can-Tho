@@ -238,9 +238,11 @@ ul, ol { list-style: none; }
 .stat-card.danger-card::before  { background: var(--danger); }
 .stat-card.warning-card::before { background: var(--warning); }
 .stat-card.accent-card::before  { background: var(--accent); }
+.stat-card.info-card::before  { background: var(--info); }
 .stat-icon { font-size: 2rem; width: 52px; height: 52px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--primary-light); }
 .stat-card.danger-card  .stat-icon { background: var(--danger-light); }
 .stat-card.warning-card .stat-icon { background: var(--warning-light); }
+.stat-card.info-card .stat-icon { background: var(--info-light); }
 .stat-card.accent-card  .stat-icon { background: var(--accent-light); }
 .stat-info { min-width: 0; }
 .stat-label { font-size: 0.8rem; color: var(--text-sub); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
