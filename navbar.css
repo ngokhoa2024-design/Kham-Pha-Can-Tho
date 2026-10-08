@@ -1,0 +1,233 @@
+﻿/* ============================================================
+   navbar.css — CSS Navbar Dùng Chung Toàn Website
+   Nguồn chuẩn: styletrangchu.css / index.html
+   KHÔNG sửa file này trừ khi muốn thay đổi navbar toàn site.
+   ============================================================ */
+
+/* Biến CSS cần thiết cho navbar */
+:root {
+    --primary: #0b8a7b;
+    --primary-deep: #0a6a5f;
+    --accent: #f27a3b;
+    --line: #e9dfd2;
+    --shadow: 0 16px 30px rgba(21, 32, 41, 0.12);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+    background: rgba(248, 245, 233, 0.92);
+    backdrop-filter: blur(8px);
+    padding: 14px 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header > .container {
+    width: calc(100% - 24px);
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px 28px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   LOGO AREA
+   ============================================================ */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    height: 80px;
+    width: auto;
+}
+
+.site-title {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   NAVBAR WRAPPER
+   ============================================================ */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    flex: 1 1 720px;
+    min-width: 0;
+}
+
+/* ============================================================
+   NAVBAR UL — thanh chua cac item, glass effect
+   ============================================================ */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 24px rgba(21, 32, 41, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   NAVBAR LINKS
+   ============================================================ */
+.navbar a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #2a3642;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary);
+    background: rgba(11, 138, 123, 0.08);
+    transform: translateY(-1px);
+}
+
+.navbar a.active::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.navbar a i {
+    margin-right: 0;
+    font-size: 0.95em;
+}
+
+/* ============================================================
+   DROPDOWN
+   ============================================================ */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 14px;
+}
+
+.navbar .dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 220px;
+    width: max-content;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #fff;
+    box-shadow: var(--shadow);
+    display: none;
+    z-index: 1200;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .dropdown-menu li a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #2a3642;
+    background: transparent;
+    transform: none;
+}
+
+.navbar .dropdown-menu li a:hover {
+    background: rgba(11, 138, 123, 0.08);
+}
+
+/* ============================================================
+   GO CAN THO — item dac biet trong dropdown
+   ============================================================ */
+.navbar .dropdown-menu .go-cantho-item {
+    margin-top: 6px;
+}
+
+.navbar .dropdown-menu .go-cantho-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f7c96c, #f27a3b 58%, #0b8a7b 140%);
+    color: #1f2833;
+    font-weight: 800;
+    box-shadow: 0 10px 22px rgba(242, 122, 59, 0.2);
+}
+
+.navbar .dropdown-menu .go-cantho-link:hover,
+.navbar .dropdown-menu .go-cantho-link.active {
+    background: linear-gradient(135deg, #ffd883, #f2914f 58%, #10a192 140%);
+    color: #152029;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   SEARCH & ACCOUNT BUTTON (icon buttons)
+   ============================================================ */
+.navbar .search-link,
+.navbar .account-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 14px;
+}
+
+.navbar .search-link {
+    background: rgba(11, 138, 123, 0.1);
+}
+
+.navbar .account-link {
+    background: rgba(242, 122, 59, 0.14);
+}
+
+.navbar .search-link i,
+.navbar .account-link i {
+    margin-right: 0;
+}
