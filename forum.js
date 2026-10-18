@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         { label: "óc chó", severity: 2, category: "công kích", variants: ["óc chó", "oc cho"] },
         { label: "địt mẹ", severity: 3, category: "chửi thề nặng", variants: ["địt mẹ", "dit me"] },
         { label: "đụ má", severity: 3, category: "chửi thề nặng", variants: ["đụ má", "đu má", "du ma"] },
-        { label: "cặc", severity: 2, category: "tục tĩu", variants: ["cặc", "cac"] },
-        { label: "lồn", severity: 2, category: "tục tĩu", variants: ["lồn", "lon"] },
+        { label: "cặc", severity: 2, category: "tục tĩu", variants: ["cặc"] },
+        { label: "lồn", severity: 2, category: "tục tĩu", variants: ["lồn"] },
         { label: "bọn mọi", severity: 4, category: "phân biệt vùng miền", variants: ["bọn mọi", "bon moi"] },
         { label: "đồ bắc kỳ", severity: 4, category: "phân biệt vùng miền", variants: ["đồ bắc kỳ", "do bac ky"] },
         { label: "đồ nam kỳ", severity: 4, category: "phân biệt vùng miền", variants: ["đồ nam kỳ", "do nam ky"] }
@@ -119,15 +119,31 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    function hasPhraseBoundaryMatch(text, phrase) {
-        return (" " + text + " ").includes(" " + phrase + " ");
+    function stripAccents(text) {
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
     }
 
+    function tokenizeWords(text) {
+        return (text || "").toLowerCase().normalize("NFC")
+            .replace(/[^\p{L}\p{N}\s]/gu, " ")
+            .split(/\s+/).filter(Boolean);
+    }
+
+    // Variant có dấu -> chỉ khớp văn bản giữ nguyên dấu.
+    // Variant không dấu -> chỉ khớp những từ người dùng thật sự gõ không dấu.
     function detectBannedWord(text) {
-        const normalized = normalizeText(text);
+        const words = tokenizeWords(text);
+        const accentedText = " " + words.join(" ") + " ";
+        const plainText = " " + words.map(function (w) {
+            return stripAccents(w) === w ? w : "#";
+        }).join(" ") + " ";
+
         const matchedTerm = BANNED_TERMS.find(function (term) {
             return term.variants.some(function (variant) {
-                return hasPhraseBoundaryMatch(normalized, normalizeText(variant));
+                const v = variant.toLowerCase().normalize("NFC");
+                const phrase = " " + tokenizeWords(v).join(" ") + " ";
+                const variantHasAccent = stripAccents(v) !== v;
+                return (variantHasAccent ? accentedText : plainText).includes(phrase);
             });
         });
         return matchedTerm || null;
@@ -610,8 +626,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             const wrapper = document.createElement("div");
             wrapper.className = "preview-item";
             wrapper.innerHTML = item.type === "image"
-                ? '<img src="' + item.src + '" alt="Ảnh đính kèm">'
-                : '<video src="' + item.src + '" controls></video>';
+                ? '<img src="' + item.src + '" alt="' + escapeHtml(item.name) + '"><div class="preview-caption">' + escapeHtml(item.name) + '</div>'
+                : '<video src="' + item.src + '" controls></video><div class="preview-caption">' + escapeHtml(item.name) + '</div>';
             mediaPreview.appendChild(wrapper);
         });
     }
@@ -627,9 +643,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (!media || !media.length) return "";
         return '<div class="media-grid">' + media.map(function (item) {
             if (item.type === "image") {
-                return '<div class="media-item"><img src="' + item.src + '" alt="Ảnh đính kèm"></div>';
+                return '<div class="media-item"><img src="' + item.src + '" alt="' + escapeHtml(item.name) + '"><div class="media-caption">' + escapeHtml(item.name) + '</div></div>';
             }
-            return '<div class="media-item"><video src="' + item.src + '" controls></video></div>';
+            return '<div class="media-item"><video src="' + item.src + '" controls></video><div class="media-caption">' + escapeHtml(item.name) + '</div></div>';
         }).join("") + '</div>';
     }
 
@@ -639,96 +655,27 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         return comments.map(function (comment) {
-            return createSingleCommentHtml(comment);
-        }).join("");
-    }
+            const adminActions = isAdmin(currentUser)
+                ? '<div class="comment-tools">'
+                    + '<button type="button" class="delete-btn mini" data-action="delete-comment" data-comment-id="' + comment.id + '">Xóa</button>'
+                    + (currentUser.id !== comment.userId ? '<button type="button" class="secondary-btn mini" data-action="ban-comment-user" data-user-id="' + comment.userId + '">Khóa tài khoản</button>' : '')
+                    + '</div>'
+                : '';
 
-    // Tạo HTML cho một comment đơn lẻ — dùng chung cho cả renderPosts và inline insert
-    function createSingleCommentHtml(comment) {
-        const adminActions = isAdmin(currentUser)
-            ? '<div class="comment-tools">'
-                + '<button type="button" class="delete-btn mini" data-action="delete-comment" data-comment-id="' + comment.id + '">Xóa</button>'
-                + (currentUser.id !== comment.userId ? '<button type="button" class="secondary-btn mini" data-action="ban-comment-user" data-user-id="' + comment.userId + '">Khóa tài khoản</button>' : '')
+            // Nút báo cáo bình luận — chỉ hiện cho người khác
+            const reportCommentBtn = (!currentUser || currentUser.id !== comment.userId)
+                ? '<button type="button" class="rpt-trigger-btn" data-action="report-comment" data-comment-id="' + comment.id + '" data-comment-user="' + comment.userId + '" title="Báo cáo bình luận này" style="margin-left:4px"><i class="fa-solid fa-flag"></i> Báo cáo</button>'
+                : '';
+
+            return '<div class="comment-item">'
+                + '<div class="comment-head"><div class="comment-author">' + renderAvatarHtml({ name: comment.authorName, avatar: comment.authorAvatar || "" }, "tiny") + '<strong>' + escapeHtml(comment.authorName) + '</strong>' + formatUserTitleBadgeHtml(comment.authorTitle) + '</div>'
+                + '<span class="comment-time">' + formatDate(comment.createdAt) + '</span>'
+                + reportCommentBtn
                 + '</div>'
-            : '';
-
-        const reportCommentBtn = (!currentUser || currentUser.id !== comment.userId)
-            ? '<button type="button" class="rpt-trigger-btn" data-action="report-comment" data-comment-id="' + comment.id + '" data-comment-user="' + comment.userId + '" title="Báo cáo bình luận này" style="margin-left:4px"><i class="fa-solid fa-flag"></i> Báo cáo</button>'
-            : '';
-
-        return '<div class="comment-item">'
-            + '<div class="comment-head"><div class="comment-author">' + renderAvatarHtml({ name: comment.authorName, avatar: comment.authorAvatar || "" }, "tiny") + '<strong>' + escapeHtml(comment.authorName) + '</strong>' + formatUserTitleBadgeHtml(comment.authorTitle) + '</div>'
-            + '<span class="comment-time">' + formatDate(comment.createdAt) + '</span>'
-            + reportCommentBtn
-            + '</div>'
-            + '<div class="comment-body">' + escapeHtml(comment.content) + '</div>'
-            + adminActions
-            + '</div>';
-    }
-
-    // Tạo DOM element cho một post card — dùng để chèn bài mới không cần re-render toàn bộ
-    function buildPostCard(post) {
-        var card = document.createElement("article");
-        card.className = post.pinned ? "post-card pinned" : "post-card";
-        card.dataset.postId = post.id;
-        card.dataset.isPinned = post.pinned;
-
-        var isOwner = currentUser && currentUser.id === post.userId;
-        var isCurrentAdmin = isAdmin(currentUser);
-        var commentCount = (post.comments || []).length;
-
-        card.innerHTML = ''
-            + '<div class="post-head">'
-            + '  <div style="display:flex;align-items:flex-start;gap:10px;flex:1;">'
-            + '    ' + renderAvatarHtml({ name: post.authorName, avatar: post.authorAvatar || "" }, "")
-            + '    <div style="flex:1;min-width:0;">'
-            + '      <span class="author-badge">' + escapeHtml(post.authorName) + '</span>' + formatUserTitleBadgeHtml(post.authorTitle)
-            + '      <span class="post-time">' + formatDate(post.createdAt) + '</span>'
-            + '      <div class="post-meta" style="margin-top:6px;">'
-            + '        <span class="topic-badge"><i class="fa-solid fa-hashtag"></i> ' + escapeHtml(post.topic) + '</span>'
-            +          (post.pinned ? '<span class="pin-badge"><i class="fa-solid fa-thumbtack"></i> Đã ghim</span>' : '')
-            + '      </div>'
-            + '    </div>'
-            + '  </div>'
-            + '</div>'
-            + '<div style="padding:8px 16px 0;"><h3 class="" style="font-size:1.05rem;font-weight:700;color:var(--text-primary);line-height:1.35;">' + escapeHtml(post.title) + '</h3></div>'
-            + '<p class="post-body">' + escapeHtml(post.content) + '</p>'
-            + createMediaHtml(post.media)
-            + createReactionHtml(post.id)
-            + (!isOwner
-                ? '<div style="padding:0 16px 6px;display:flex;justify-content:flex-end;gap:4px"><button type="button" class="rpt-trigger-btn" data-action="report-profile" data-profile-user="' + post.userId + '" title="Báo cáo người dùng này"><i class="fa-solid fa-user-flag"></i> Báo cáo người dùng</button><button type="button" class="rpt-trigger-btn" data-action="report-post" data-post-user="' + post.userId + '" title="Báo cáo bài viết này"><i class="fa-solid fa-flag"></i> Báo cáo</button></div>'
-                : '')
-            + (isOwner || isCurrentAdmin
-                ? '<div class="post-actions">'
-                  + (isOwner ? '<button type="button" class="pin-btn" data-action="toggle-pin"><i class="fa-solid fa-thumbtack"></i> ' + (post.pinned ? 'Bỏ ghim' : 'Ghim') + '</button>' : '')
-                  + (isOwner || isCurrentAdmin ? '<button type="button" class="delete-btn" data-action="delete-post"><i class="fa-solid fa-trash"></i> Xóa</button>' : '')
-                  + (isCurrentAdmin && (!currentUser || currentUser.id !== post.userId) ? '<button type="button" class="secondary-btn mini" data-action="ban-post-user" data-user-id="' + post.userId + '"><i class="fa-solid fa-ban"></i> Khóa tác giả</button>' : '')
-                  + '</div>'
-                : '')
-            + '<div class="comments" id="comments-' + post.id + '">'
-            + '  <div class="comment-list">' + createCommentsHtml(post.comments) + '</div>'
-            + '  <form class="comment-form" data-post-id="' + post.id + '">'
-            + '    <div style="display:flex;align-items:flex-start;gap:10px;">'
-            + '      ' + renderAvatarHtml(currentUser || { name: "" }, "tiny")
-            + '      <div style="flex:1;"><textarea name="comment" rows="2" placeholder="Viết bình luận..." style="border-radius:999px;padding:9px 18px;min-height:unset;resize:none;"></textarea></div>'
-            + '    </div>'
-            + '    <div class="form-actions" style="padding-left:40px;">'
-            + '      <button type="submit" class="comment-btn" style="background:var(--primary);color:#fff;border:none;border-radius:var(--radius-sm);padding:8px 18px;font:inherit;font-size:0.88rem;font-weight:700;cursor:pointer;"><i class="fa-solid fa-paper-plane"></i> Gửi</button>'
-            + '      <p class="form-message" role="status"></p>'
-            + '    </div>'
-            + '  </form>'
-            + '</div>';
-
-        // Disable comment nếu chưa đăng nhập hoặc bị khóa
-        var commentTextarea = card.querySelector('textarea[name="comment"]');
-        var commentButton = card.querySelector('.comment-btn');
-        if (!currentUser || isUserBanned(currentUser)) {
-            commentTextarea.disabled = true;
-            commentButton.disabled = true;
-            commentTextarea.placeholder = !currentUser ? 'Đăng nhập để bình luận.' : 'Tài khoản đã bị khóa nên không thể bình luận.';
-        }
-
-        return card;
+                + '<div class="comment-body">' + escapeHtml(comment.content) + '</div>'
+                + adminActions
+                + '</div>';
+        }).join("");
     }
 
     async function renderPosts() {
@@ -904,17 +851,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        // Disable nút submit + hiện loading
-        const submitBtn = postForm.querySelector('button[type="submit"]');
-        const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang đăng...';
-        }
-
-        const savedMedia = pendingMedia.slice();
-
-        const { data: newPost, error } = await supabaseClient
+        const { error } = await supabaseClient
             .from("posts")
             .insert({
                 user_id: currentUser.id,
@@ -922,16 +859,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 title: title,
                 content: content,
                 pinned: false,
-                media: savedMedia
-            })
-            .select()
-            .single();
-
-        // Bật lại nút submit
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnHtml;
-        }
+                media: pendingMedia
+            });
 
         if (error) {
             console.error(error);
@@ -940,70 +869,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        // Reset form
         postForm.reset();
         mediaInput.value = "";
         pendingMedia = [];
         renderMediaPreview();
         postMessage.textContent = "Đăng bài thành công.";
-
-        // Đóng composer nếu đang mở
-        var composerCard = document.getElementById("composerCard");
-        if (composerCard) composerCard.classList.remove("open");
-
-        // Tạo object post chuẩn để render trực tiếp (không cần gọi lại getPosts)
-        var postObj = {
-            id: String(newPost.id),
-            userId: newPost.user_id,
-            topic: newPost.topic || "Câu chuyện cá nhân",
-            title: newPost.title || "",
-            content: newPost.content || "",
-            authorName: currentUser.name,
-            authorEmail: currentUser.email || "",
-            authorAvatar: currentUser.avatar || "",
-            authorTitle: null,
-            createdAt: newPost.created_at,
-            pinned: newPost.pinned || false,
-            media: newPost.media || [],
-            comments: []
-        };
-
-        // Lấy active_title nếu có
-        try {
-            var { data: profileData } = await supabaseClient
-                .from("profiles")
-                .select("active_title:active_title_id ( id, name, slug, icon, color )")
-                .eq("id", currentUser.id)
-                .single();
-            if (profileData && profileData.active_title) {
-                postObj.authorTitle = profileData.active_title;
-            }
-        } catch (e) { /* bỏ qua */ }
-
-        // Init reactions cho post mới
-        reactionsMap[postObj.id] = { like: 0, heart: 0, userReaction: null };
-
-        // Build card HTML và chèn vào đầu danh sách
-        var card = buildPostCard(postObj);
-
-        // Xóa empty-state nếu có
-        var emptyState = postList.querySelector('.empty-state');
-        if (emptyState) emptyState.remove();
-
-        // Chèn bài mới lên đầu (sau các bài đã ghim nếu có)
-        var firstUnpinned = postList.querySelector('.post-card:not(.pinned)');
-        if (firstUnpinned) {
-            postList.insertBefore(card, firstUnpinned);
-        } else {
-            postList.appendChild(card);
-        }
-
-        // Cập nhật bộ đếm
-        var currentCount = postList.querySelectorAll('.post-card').length;
-        postCounter.textContent = currentCount + ' bài viết';
-
-        // Scroll đến bài mới
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        await renderPosts();
     });
 
     postList.addEventListener("click", async function (event) {
@@ -1179,26 +1050,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         const postId = form.dataset.postId;
-
-        // Disable nút gửi + hiện loading
-        const commentBtn = form.querySelector('.comment-btn');
-        const originalBtnHtml = commentBtn ? commentBtn.innerHTML : '';
-        if (commentBtn) {
-            commentBtn.disabled = true;
-            commentBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
-        }
-
-        const { data: newComment, error } = await supabaseClient.from("comments").insert({
+        
+        const { error } = await supabaseClient.from("comments").insert({
             post_id: postId,
             user_id: currentUser.id,
             content: content
-        }).select().single();
-
-        // Bật lại nút gửi
-        if (commentBtn) {
-            commentBtn.disabled = false;
-            commentBtn.innerHTML = originalBtnHtml;
-        }
+        });
 
         if (error) {
             console.error("Lỗi đăng bình luận:", error);
@@ -1207,54 +1064,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        // Xóa nội dung ô nhập
         textarea.value = "";
-
-        // Lấy active_title nếu có
-        var commentAuthorTitle = null;
-        try {
-            var { data: profileData } = await supabaseClient
-                .from("profiles")
-                .select("active_title:active_title_id ( id, name, slug, icon, color )")
-                .eq("id", currentUser.id)
-                .single();
-            if (profileData && profileData.active_title) {
-                commentAuthorTitle = profileData.active_title;
-            }
-        } catch (e) { /* bỏ qua */ }
-
-        // Tạo object comment
-        var commentObj = {
-            id: String(newComment.id),
-            userId: newComment.user_id,
-            authorName: currentUser.name,
-            authorEmail: currentUser.email || "",
-            authorAvatar: currentUser.avatar || "",
-            authorTitle: commentAuthorTitle,
-            content: newComment.content || "",
-            createdAt: newComment.created_at
-        };
-
-        // Tìm comment-list trong post card tương ứng
-        var postCard = postList.querySelector('[data-post-id="' + postId + '"]');
-        if (postCard) {
-            var commentListEl = postCard.querySelector('.comment-list');
-            if (commentListEl) {
-                // Xóa placeholder "Chưa có bình luận nào" nếu có
-                var placeholder = commentListEl.querySelector('.meta-text');
-                if (placeholder) placeholder.remove();
-
-                // Tạo HTML comment mới
-                var commentHtml = createSingleCommentHtml(commentObj);
-                var tempDiv = document.createElement('div');
-                tempDiv.innerHTML = commentHtml;
-                var newCommentEl = tempDiv.firstElementChild;
-                commentListEl.appendChild(newCommentEl);
-
-                // Scroll đến comment mới
-                newCommentEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        }
+        await renderPosts();
     });
 
     topicFilter.addEventListener("change", renderPosts);
