@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Làng Du Lịch Mỹ Khánh - điểm du lịch sinh thái nổi tiếng của Cần Thơ với không gian xanh và nhiều trải nghiệm vui chơi đa dạng.">
+    <title>Làng Du Lịch Mỹ Khánh</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .mykhanh-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(20, 20, 20, 0.15), rgba(20, 20, 20, 0.08)),
+                url("images/my khánh đẹp.jpg") center/cover;
+        }
+
+        .mykhanh-page .hero-btn.primary {
+            color: #1f5a2a;
+            background: linear-gradient(135deg, #dff5c8, #95df7f);
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.14);
+        }
+
+        .mykhanh-page .feature-pill i,
+        .mykhanh-page .highlight-item i,
+        .mykhanh-page .quick-plan li i,
+        .mykhanh-page .travel-tips li i,
+        .mykhanh-page .timeline-time {
+            color: #2f7d3d;
+        }
+
+        .mykhanh-page .feature-pill i,
+        .mykhanh-page .highlight-item i {
+            background: rgba(47, 125, 61, 0.12);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page mykhanh-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ">
+            </a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html" class="active"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-tree"></i> Một trong những điểm sinh thái nổi bật nhất Cần Thơ</div>
+            <h1>Làng Du Lịch Mỹ Khánh</h1>
+            <p class="hero-lead">Không gian xanh rộng, nhiều hoạt động vui chơi và cảm giác miệt vườn rõ nét giúp Mỹ Khánh trở thành điểm đến hợp cho cả gia đình lẫn nhóm bạn khi muốn có một ngày đi chơi thật trọn.</p>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem gợi ý tham quan</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi ghé</h2>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Không gian xanh rộng</strong>
+                    <span>Phù hợp cho một ngày đi chơi theo kiểu thư thả và nhiều trải nghiệm</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Nhiều hoạt động</strong>
+                    <span>Từ đi dạo, chụp ảnh đến vui chơi và thưởng thức đặc sản</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Rất hợp gia đình</strong>
+                    <span>Không gian mở giúp trẻ em và người lớn đều dễ tận hưởng</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Đậm chất miền Tây</strong>
+                    <span>Cảnh quan và nhịp điệu nơi đây tạo cảm giác miệt vườn rõ rệt</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Vài nét về Mỹ Khánh</h2>
+            <p>Mỹ Khánh là một điểm đến tiêu biểu khi nhắc đến du lịch sinh thái Cần Thơ. Nơi đây có đủ sự xanh mát, thoáng đãng và những trải nghiệm gần gũi với đời sống miền Tây để tạo nên một ngày đi chơi khá trọn vẹn.</p>
+            <p>Điều hay của Mỹ Khánh là không chỉ có cảnh mà còn có nhịp. Bạn có thể vừa đi dạo, vừa tham gia hoạt động, vừa thưởng thức món ăn và giữ cho hành trình luôn có sự thay đổi thú vị.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/my khánh đẹp.jpg" alt="Làng Du Lịch Mỹ Khánh">
+            <div class="image-badge">Điểm nổi bật<span>Không gian xanh và các hoạt động trải nghiệm là phần thu hút nhất của nơi này</span></div>
+        </div>
+    </div>
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-seedling"></i>
+            <div>
+                <h3>Không gian rất thoáng</h3>
+                <p>Rất phù hợp để tránh nhịp đô thị và dành thời gian thư giãn.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-person-running"></i>
+            <div>
+                <h3>Hoạt động đa dạng</h3>
+                <p>Đây là điểm đến không dễ gây chán vì luôn có nhiều lựa chọn trải nghiệm.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-people-group"></i>
+            <div>
+                <h3>Đi nhóm hay gia đình đều hợp</h3>
+                <p>Nhiều khoảng không và nhiều nhịp trải nghiệm giúp nơi này khá dễ đi.</p>
+            </div>
+        </div>
+    </div>
+    <hr class="separator">
+    <div class="section-block">
+        <h2 class="section-heading">Điều làm Mỹ Khánh được yêu thích</h2>
+        <p class="section-copy">Sự hấp dẫn của nơi này đến từ việc cân bằng được giữa cảnh quan, hoạt động và cảm giác gần gũi. Không quá tĩnh cũng không quá ồn, đủ để một ngày đi chơi trở nên nhẹ mà vẫn vui.</p>
+        <div class="highlights">
+            <div class="highlight-item">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Cảnh quan dễ chịu</h3>
+                <p>Không gian xanh là thứ giúp nơi này luôn tạo cảm giác thư thái ngay từ đầu.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <h3>Dễ kết hợp ăn uống</h3>
+                <p>Một chuyến đi ở đây có thể vừa chơi vừa thưởng thức hương vị miền Tây.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-camera-retro"></i>
+                <h3>Ảnh rất có sức sống</h3>
+                <p>Cây xanh, đường dạo và khung cảnh miệt vườn luôn tạo ảnh du lịch khá đẹp.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-block" id="hanh-trinh">
+        <h2 class="section-heading">Gợi ý một ngày đi Mỹ Khánh</h2>
+        <p class="section-copy">Nếu muốn đi trọn mà không bị vội, bạn có thể chia thời gian theo nhịp dưới đây.</p>
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <div class="timeline-item">
+                    <div class="timeline-time">Buổi sáng</div>
+                    <div>
+                        <h3>Đến sớm để tận hưởng không khí mát</h3>
+                        <p>Sáng là lúc cảnh quan dễ chịu và phù hợp để bắt đầu hành trình nhẹ nhàng nhất.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Giữa buổi</div>
+                    <div>
+                        <h3>Đi dạo và tham gia hoạt động</h3>
+                        <p>Đây là lúc bạn có thể khám phá những trải nghiệm đặc trưng của khu du lịch.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Buổi trưa</div>
+                    <div>
+                        <h3>Nghỉ và ăn uống</h3>
+                        <p>Khoảng dừng giữa ngày giúp chuyến đi không bị mệt và vẫn giữ được năng lượng.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Buổi chiều</div>
+                    <div>
+                        <h3>Chụp ảnh và kết thúc thong thả</h3>
+                        <p>Khi ánh sáng dịu hơn, khuôn viên xanh rất hợp để lưu lại những tấm hình đẹp.</p>
+                    </div>
+                </div>
+            </div>
+            <aside class="quick-plan">
+                <h3>Một chuyến đi trọn vẹn thường có</h3>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Trang phục thoải mái để đi bộ và tham gia hoạt động.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Thời gian đủ rộng để không phải chạy lịch.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Mũ, nước uống và điện thoại đủ pin.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Đi nhóm sẽ vui hơn vì có nhiều trải nghiệm để cùng tham gia.</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu ý nhỏ</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box"><strong>Cho trải nghiệm</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Ưu tiên đi từ sáng hoặc chiều để tránh nắng gắt giữa ngày.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Nên mang nước vì bạn có thể di chuyển khá nhiều trong khuôn viên.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Đi cùng bạn bè hoặc gia đình thường vui hơn rất nhiều.</span></li>
+            </ul></div>
+            <div class="tip-box"><strong>Cho ảnh đẹp</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Hãy tận dụng các lối đi xanh và khoảng trống rộng để tạo chiều sâu ảnh.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ánh sáng sáng sớm và chiều muộn luôn cho ảnh mềm hơn.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ảnh có người trong khung hình thường tạo cảm giác sống động hơn ở nơi này.</span></li>
+            </ul></div>
+        </div>
+    </div>
+    <div class="card comment-section" data-id="10" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Làng Du Lịch Mỹ Khánh để những người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-10"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div>
+        <div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

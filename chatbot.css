@@ -1,0 +1,655 @@
+/* =========================================
+   KHÁM PHÁ CẦN THƠ - AI CHATBOT
+   Consolidated Modern UI
+   ========================================= */
+
+:root {
+  --cb-primary: #0f9d85;
+  --cb-primary-dark: #087f6c;
+  --cb-primary-light: #e6f7f2;
+  --cb-text: #1e293b;
+  --cb-text-muted: #64748b;
+  --cb-border: #e2e8f0;
+  --cb-surface: #ffffff;
+  --cb-bg: #f5faf8;
+  --cb-error-bg: #fef2f2;
+  --cb-error-border: #fecaca;
+  --cb-error-text: #991b1b;
+  --cb-shadow: 0 20px 60px rgba(15, 45, 40, 0.18);
+  --cb-radius: 22px;
+  --cb-font: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+}
+
+/* ── Box Sizing Reset ── */
+#chatbot-panel,
+#chatbot-panel *,
+#chatbot-toggle {
+  box-sizing: border-box;
+}
+
+/* ============================
+   NÚT MỞ CHATBOT (Toggle)
+   ============================ */
+#chatbot-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9998;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 56px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, var(--cb-primary), var(--cb-primary-dark));
+  color: #fff;
+  font-family: var(--cb-font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+
+  box-shadow: 0 8px 24px rgba(15, 157, 133, 0.25);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#chatbot-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 157, 133, 0.35);
+}
+
+#chatbot-toggle:active {
+  transform: scale(0.97);
+}
+
+.chatbot-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* ============================
+   KHUNG CHAT CHÍNH (Panel)
+   ============================ */
+#chatbot-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 94px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 400px;
+  max-width: calc(100vw - 32px);
+  height: min(600px, calc(100dvh - 125px));
+  min-height: 360px;
+
+  overflow: hidden;
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius);
+
+  background: var(--cb-surface);
+  box-shadow: var(--cb-shadow);
+  font-family: var(--cb-font);
+  color: var(--cb-text);
+
+  animation: cb-panel-in 0.3s ease-out;
+}
+
+#chatbot-panel[hidden] {
+  display: none !important;
+}
+
+@keyframes cb-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ============================
+   THANH TIÊU ĐỀ (Header)
+   ============================ */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 16px;
+  flex-shrink: 0;
+  background: linear-gradient(120deg, #10a88e, #087f6c);
+  color: #fff;
+}
+
+/* Logo header: 40×40 */
+.chatbot-avatar-header {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.chatbot-avatar-header img,
+.chatbot-avatar-small img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.chatbot-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.chatbot-heading strong {
+  display: block;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 1.45;
+}
+
+.chatbot-heading p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.chatbot-online-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15);
+}
+
+/* Nút đóng */
+#chatbot-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#chatbot-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================
+   KHU VỰC TIN NHẮN (Messages)
+   ============================ */
+#chatbot-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+  padding: 16px 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--cb-bg);
+  scrollbar-width: thin;
+  scrollbar-color: #cbded7 transparent;
+}
+
+#chatbot-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #cbded7;
+}
+
+/* ============================
+   BONG BÓNG TIN NHẮN
+   ============================ */
+.bot-message,
+.user-message {
+  max-width: 88%;
+  width: fit-content;
+  margin: 0;
+  padding: 12px 16px;
+  font-family: var(--cb-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-indent: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  animation: cb-msg-in 0.25s ease-out;
+}
+
+@keyframes cb-msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tin nhắn AI */
+.bot-message {
+  align-self: flex-start;
+  color: var(--cb-text);
+  background: #fff;
+  border: 1px solid var(--cb-border);
+  border-radius: 5px 16px 16px 16px;
+  box-shadow: 0 2px 8px rgba(15, 45, 40, 0.035);
+}
+
+/* Tin nhắn người dùng */
+.user-message {
+  align-self: flex-end;
+  color: #fff;
+  background: linear-gradient(135deg, #12a98e, #07816c);
+  border: 1px solid rgba(8, 127, 108, 0.12);
+  border-radius: 16px 5px 16px 16px;
+  box-shadow: 0 4px 12px rgba(15, 157, 133, 0.12);
+  white-space: pre-wrap;
+}
+
+/* Tin nhắn lỗi */
+.bot-message.error-message {
+  background: var(--cb-error-bg);
+  border-color: var(--cb-error-border);
+  color: var(--cb-error-text);
+}
+
+/* ============================
+   TIN NHẮN CHÀO MỪNG (Welcome)
+   ============================ */
+.chatbot-welcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Avatar nhỏ bên cạnh lời chào: 32×32 */
+.chatbot-avatar-small {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.chatbot-welcome .bot-message {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ============================
+   NỘI DUNG MARKDOWN TRONG BOT
+   ============================ */
+.bot-message h3,
+.bot-message h4 {
+  margin: 12px 0 6px;
+  padding: 0;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--cb-text);
+}
+
+.bot-message h3:first-child,
+.bot-message h4:first-child {
+  margin-top: 0;
+}
+
+.bot-message h3 {
+  font-size: 15px;
+}
+
+.bot-message h4 {
+  font-size: 14px;
+  color: var(--cb-primary-dark);
+}
+
+.bot-message p {
+  margin: 0 0 8px;
+  padding: 0;
+  text-indent: 0;
+}
+
+.bot-message p:last-child {
+  margin-bottom: 0;
+}
+
+.bot-message ul,
+.bot-message ol {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+
+.bot-message li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.bot-message li:last-child {
+  margin-bottom: 0;
+}
+
+.bot-message strong {
+  font-weight: 600;
+  color: var(--cb-text);
+}
+
+.bot-message em {
+  font-style: italic;
+}
+
+/* ============================
+   NÚT GỢI Ý NHANH (Quick Replies)
+   ============================ */
+.chatbot-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 40px;
+  margin: 0;
+}
+
+.chatbot-quick-replies.hidden {
+  display: none;
+}
+
+.chatbot-quick-reply {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #cce8de;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--cb-primary-dark);
+  font-family: var(--cb-font);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.chatbot-quick-reply:hover {
+  background: var(--cb-primary-light);
+  border-color: var(--cb-primary);
+  transform: translateY(-1px);
+}
+
+.chatbot-quick-reply:active {
+  transform: scale(0.97);
+}
+
+/* ============================
+   ANIMATION 3 DẤU CHẤM (Typing)
+   ============================ */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 0;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cb-primary);
+  opacity: 0.4;
+  animation: cb-typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes cb-typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* ============================
+   KHUNG NHẬP LIỆU (Form)
+   ============================ */
+.chatbot-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  flex-shrink: 0;
+  border-top: 1px solid var(--cb-border);
+  background: #fff;
+}
+
+#chatbot-input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: var(--cb-text);
+  font-family: var(--cb-font);
+  font-size: 14px;
+  font-weight: 400;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#chatbot-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+#chatbot-input:focus {
+  border-color: var(--cb-primary);
+  box-shadow: 0 0 0 3px rgba(15, 157, 133, 0.1);
+}
+
+#chatbot-input:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+#chatbot-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--cb-primary);
+  color: #fff;
+  font-family: var(--cb-font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#chatbot-send:hover:not(:disabled) {
+  background: var(--cb-primary-dark);
+}
+
+#chatbot-send:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+#chatbot-send:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ============================
+   FOCUS VISIBLE (Keyboard Nav)
+   ============================ */
+#chatbot-toggle:focus-visible,
+#chatbot-close:focus-visible,
+#chatbot-send:focus-visible,
+.chatbot-quick-reply:focus-visible {
+  outline: 3px solid #f5c451;
+  outline-offset: 2px;
+}
+
+/* ============================
+   GIAO DIỆN MOBILE (≤ 480px)
+   ============================ */
+@media (max-width: 480px) {
+  #chatbot-toggle {
+    right: 16px;
+    bottom: 16px;
+    min-height: 52px;
+    padding: 0 17px;
+    font-size: 13px;
+  }
+
+  #chatbot-panel {
+    right: 8px;
+    bottom: 78px;
+    width: calc(100vw - 16px);
+    max-width: none;
+    height: min(650px, calc(100dvh - 90px));
+    min-height: 320px;
+    border-radius: 20px;
+  }
+
+  .chatbot-header {
+    padding: 14px 12px;
+    gap: 9px;
+  }
+
+  .chatbot-heading strong {
+    font-size: 14px;
+  }
+
+  .chatbot-heading p {
+    font-size: 11px;
+  }
+
+  #chatbot-messages {
+    padding: 14px 10px;
+  }
+
+  .bot-message,
+  .user-message {
+    max-width: 92%;
+    font-size: 13.5px;
+  }
+
+  .chatbot-quick-replies {
+    padding-left: 0;
+  }
+
+  .chatbot-quick-reply {
+    font-size: 12px;
+  }
+
+  .chatbot-form {
+    padding: 10px;
+    gap: 7px;
+  }
+
+  #chatbot-input,
+  #chatbot-send {
+    height: 42px;
+  }
+}
+
+/* ============================
+   GIẢM CHUYỂN ĐỘNG
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+  #chatbot-panel,
+  .bot-message,
+  .user-message {
+    animation: none;
+  }
+
+  #chatbot-toggle,
+  #chatbot-close,
+  #chatbot-send,
+  #chatbot-input,
+  .chatbot-quick-reply {
+    transition: none;
+  }
+
+  .typing-indicator span {
+    animation: none;
+    opacity: 0.7;
+  }
+}

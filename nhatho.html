@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Nhà thờ Chánh Tòa Cần Thơ - công trình kiến trúc tôn giáo thanh lịch với vẻ đẹp cổ điển và không gian trang nghiêm giữa lòng thành phố.">
+    <title>Nhà thờ Chánh Tòa Cần Thơ</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .nhatho-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(70, 89, 118, 0.62), rgba(164, 177, 196, 0.48)),
+                url("images/chanhtoa đẹp.jpg") center/cover;
+        }
+
+        .nhatho-page .hero-btn.primary {
+            color: #3d4e65;
+            background: linear-gradient(135deg, #edf5ff, #cfddee);
+            box-shadow: 0 18px 30px rgba(112, 132, 166, 0.24);
+        }
+
+        .nhatho-page .feature-pill i,
+        .nhatho-page .highlight-item i,
+        .nhatho-page .quick-plan li i,
+        .nhatho-page .travel-tips li i,
+        .nhatho-page .timeline-time {
+            color: #5d728d;
+        }
+
+        .nhatho-page .feature-pill i,
+        .nhatho-page .highlight-item i {
+            background: rgba(93, 114, 141, 0.12);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page nhatho-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ">
+            </a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html" class="active"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow">
+                <i class="fa-solid fa-church"></i>
+                Công trình tôn giáo thanh lịch giữa lòng thành phố
+            </div>
+            <h1>Nhà thờ Chánh Tòa Cần Thơ</h1>
+            <p class="hero-lead">
+                Một điểm dừng rất đặc trưng của trung tâm Cần Thơ, nơi vẻ đẹp cổ điển, màu sắc sáng và không khí yên tĩnh hòa vào nhau để tạo nên một trải nghiệm tham quan nhẹ nhàng nhưng rất có chiều sâu.
+            </p>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#hanh-trinh">
+                    <i class="fa-solid fa-route"></i>
+                    Xem gợi ý tham quan
+                </a>
+                <a class="hero-btn secondary" href="#danh-gia">
+                    <i class="fa-solid fa-star"></i>
+                    Đọc đánh giá du khách
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi ghé</h2>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Kiến trúc sáng và thanh</strong>
+                    <span>Mặt tiền sáng màu cùng các đường nét cổ điển giúp công trình rất dễ tạo thiện cảm ngay từ cái nhìn đầu tiên</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Không gian trang nghiêm</strong>
+                    <span>Phù hợp với kiểu tham quan chậm, nhẹ và tôn trọng sự yên tĩnh của địa điểm</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Rất hợp chụp ảnh kiến trúc</strong>
+                    <span>Bố cục công trình rõ ràng nên ảnh chính diện hoặc ảnh góc rộng đều khá đẹp</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Dễ kết hợp lịch trình</strong>
+                    <span>Nằm ở khu trung tâm nên có thể đi cùng Bến Ninh Kiều hoặc Chùa Ông rất thuận tiện</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Vài nét về Nhà thờ Chánh Tòa</h2>
+            <p>
+                Nhà thờ Chánh Tòa Cần Thơ gây ấn tượng bởi vẻ đẹp sáng, gọn và cân đối. Không quá phô trương, công trình này thu hút người xem bằng sự thanh lịch và cảm giác bình yên rất khác với nhịp sôi động quen thuộc của khu trung tâm.
+            </p>
+            <p>
+                Đây là kiểu địa điểm càng đứng ngắm kỹ càng thấy đẹp hơn. Từ màu tường, vòm cửa cho đến tổng thể mặt tiền đều tạo nên một cảm giác cổ điển, trang nhã và rất dễ để lại ấn tượng cho người ghé thăm.
+            </p>
+        </div>
+
+        <div class="image-placeholder">
+            <img src="images/chanhtoa đẹp.jpg" alt="Nhà thờ Chánh Tòa Cần Thơ">
+            <div class="image-badge">
+                Khoảnh khắc nổi bật
+                <span>Mặt tiền sáng màu là chi tiết giúp công trình luôn nổi rõ và rất hợp với ảnh kiến trúc</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-cross"></i>
+            <div>
+                <h3>Không khí trang nghiêm</h3>
+                <p>Không gian tại đây phù hợp với những ai thích một điểm dừng yên tĩnh, nhẹ nhàng và có chiều sâu cảm xúc.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-building"></i>
+            <div>
+                <h3>Mặt tiền rất thanh lịch</h3>
+                <p>Những đường nét gọn gàng và cân đối khiến công trình có vẻ đẹp dễ nhìn, dễ nhớ và rất bền hình.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-image"></i>
+            <div>
+                <h3>Hợp với ảnh công trình</h3>
+                <p>Ảnh chính diện, ảnh toàn cảnh hay ảnh tập trung vào các chi tiết kiến trúc đều cho cảm giác khá đẹp mắt.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="section-block">
+        <h2 class="section-heading">Điều gì làm nơi này đáng ghé?</h2>
+        <p class="section-copy">
+            Nhà thờ Chánh Tòa không phải kiểu điểm đến quá ồn ào, nhưng chính sự nền nã và tinh tế của công trình lại khiến nơi này tạo được sức hút riêng. Đây là một điểm dừng phù hợp cho người thích nhìn kỹ, cảm chậm và yêu vẻ đẹp kiến trúc.
+        </p>
+
+        <div class="highlights">
+            <div class="highlight-item">
+                <i class="fa-solid fa-feather-pointed"></i>
+                <h3>Vẻ đẹp nhẹ nhàng</h3>
+                <p>Một cảm giác thanh thoát và dễ chịu là điều còn đọng lại khá rõ sau khi ghé qua địa điểm này.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-landmark-dome"></i>
+                <h3>Giá trị kiến trúc rõ nét</h3>
+                <p>Công trình cho thấy sự chỉn chu trong bố cục, màu sắc và hình khối, rất phù hợp với người thích ngắm công trình đẹp.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Hợp với lịch trình chậm</h3>
+                <p>Đây là nơi rất hợp để xen vào một buổi đi chơi trung tâm như một khoảng dừng nhẹ và yên hơn.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block" id="hanh-trinh">
+        <h2 class="section-heading">Gợi ý tham quan ngắn</h2>
+        <p class="section-copy">
+            Chỉ cần một khoảng thời gian vừa phải, bạn vẫn có thể cảm nhận khá trọn vẹn vẻ đẹp của Nhà thờ Chánh Tòa nếu đi theo nhịp tham quan đơn giản dưới đây.
+        </p>
+
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <div class="timeline-item">
+                    <div class="timeline-time">Đầu buổi</div>
+                    <div>
+                        <h3>Ngắm tổng thể mặt tiền</h3>
+                        <p>Đứng đủ xa để cảm nhận trọn vẹn bố cục cân đối và vẻ sáng, thanh đặc trưng của công trình.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Tiếp theo</div>
+                    <div>
+                        <h3>Quan sát kỹ các chi tiết kiến trúc</h3>
+                        <p>Những đường nét ở cửa, vòm và phần mặt tiền thường là thứ khiến công trình đẹp hơn khi nhìn gần.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Sau đó</div>
+                    <div>
+                        <h3>Chụp vài góc chính diện</h3>
+                        <p>Đây là kiểu nơi mà ảnh bố cục sạch, ít chi tiết thừa thường lên rất gọn và sang.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Kết thúc</div>
+                    <div>
+                        <h3>Nối sang điểm trung tâm khác</h3>
+                        <p>Bạn có thể đi tiếp Bến Ninh Kiều hoặc Chùa Ông để hành trình khu trung tâm liền mạch hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="quick-plan">
+                <h3>Một lượt tham quan dễ chịu thường có</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i><span>Thời gian vừa phải, không cần quá lâu nhưng cũng không nên đi quá vội.</span></li>
+                    <li><i class="fa-solid fa-check"></i><span>Sự nhẹ nhàng và tôn trọng không gian tôn giáo khi tham quan.</span></li>
+                    <li><i class="fa-solid fa-check"></i><span>Điện thoại hoặc máy ảnh đủ pin nếu bạn muốn chụp mặt tiền công trình.</span></li>
+                    <li><i class="fa-solid fa-check"></i><span>Một lịch trình kết hợp sẵn với các điểm gần đó để tối ưu thời gian.</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu ý nhỏ</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box">
+                <strong>Cho trải nghiệm</strong>
+                <ul>
+                    <li><i class="fa-solid fa-volume-low"></i><span>Nên giữ trật tự để phù hợp với không gian trang nghiêm của địa điểm.</span></li>
+                    <li><i class="fa-solid fa-clock"></i><span>Đi vào thời điểm ít nắng gắt thường sẽ dễ chịu hơn cho cả tham quan lẫn chụp ảnh.</span></li>
+                    <li><i class="fa-solid fa-route"></i><span>Rất hợp để ghép cùng lịch trình tham quan khu trung tâm Cần Thơ.</span></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <strong>Cho ảnh đẹp</strong>
+                <ul>
+                    <li><i class="fa-solid fa-border-all"></i><span>Ảnh chính diện thường cho cảm giác gọn, đẹp và rõ bố cục nhất.</span></li>
+                    <li><i class="fa-solid fa-sun"></i><span>Ánh sáng mềm sẽ giúp màu công trình nhìn thanh hơn và bớt gắt.</span></li>
+                    <li><i class="fa-solid fa-camera"></i><span>Nên giữ khung hình sạch để tôn các đường nét kiến trúc vốn đã là điểm mạnh của nơi này.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comment-section" data-id="8" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Nhà thờ Chánh Tòa Cần Thơ để những người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-8"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Khám Phá Cần Thơ</h3>
+            <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact for work</h4>
+            <p>Gmail 1: ngokhoa2024@gmail.com</p>
+            <p>Gmail 2: thiennn0412@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit">
+        <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+    </div>
+</footer>
+
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

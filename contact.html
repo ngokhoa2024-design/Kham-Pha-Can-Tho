@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Hỗ Trợ</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo Khám Phá Cần Thơ"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <p class="hero-kicker">Đồng hành cùng học sinh THCS - THPT</p>
+            <h2>Giới thiệu dự án và kênh liên hệ hỗ trợ</h2>
+            <p class="hero-desc">Nơi tụi mình chia sẻ mục tiêu, đội ngũ thực hiện và nhận góp ý để website ngày càng tốt hơn.</p>
+            <a class="hero-btn" href="#support"> Hỗ trợ</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="about-wrap" id="about" data-aos="fade-up">
+            <article class="about-card">
+                <h2>Về chúng tôi</h2>
+                <p>
+                    Trang hỗ trợ này được xây dựng bởi Nhật Thiên và Nguyên Khoa, học sinh trường THPT Châu Văn Liêm,
+                    dưới sự hướng dẫn của thầy Huỳnh Nghĩa Trung. Dự án là một cột mốc nhỏ trong hành trình học tập,
+                    khám phá và sáng tạo với công nghệ.
+                </p>
+                <p>
+                    Không chỉ là sản phẩm học tập, website còn là nơi tụi mình gửi gắm tinh thần tự học và mong muốn
+                    tạo ra nội dung hữu ích, gần gũi cho học sinh.
+                </p>
+            </article>
+
+            <div class="about-grid">
+                <div class="img-card">
+                    <img src="images/cantho1.jpg" alt="Nhóm thực hiện dự án">
+                    <div class="overlay">Đội ngũ</div>
+                </div>
+                <div class="img-card">
+                    <img src="images/cantho2.jpg" alt="Quá trình phát triển website">
+                    <div class="overlay">Thực hiện</div>
+                </div>
+                <div class="img-card">
+                    <img src="images/cantho3.webp" alt="Sản phẩm website hoàn thiện">
+                    <div class="overlay">Sản phẩm</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="purpose" data-aos="fade-up">
+            <h2>Mục tiêu của website</h2>
+            <p>
+                Website giúp học sinh mở rộng kiến thức thực tế qua các nội dung du lịch, văn hóa, ẩm thực và tạo một
+                không gian học tập nhẹ nhàng sau giờ học. Tụi mình hướng đến trải nghiệm dễ dùng, trực quan và có giá trị thực tế.
+            </p>
+            <div class="pill-row">
+                <span class="pill">Học tập trực quan</span>
+                <span class="pill">Nội dung địa phương</span>
+                <span class="pill">Giao diện thân thiện</span>
+                <span class="pill">Liên tục cải tiến</span>
+            </div>
+        </section>
+
+        <section class="support" id="support">
+            <div class="section-head" data-aos="fade-up">
+                <p class="eyebrow">Hỗ trợ</p>
+                <h2>Liên hệ hỗ trợ</h2>
+            </div>
+
+            <div class="contact-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Liên hệ trực tiếp</h3>
+                <p>Nhấn vào email để sao chép nhanh hoặc mở ứng dụng mail.</p>
+                <div class="mail-list">
+                    <button type="button" class="copy-email" data-email="thiennn0412@gmail.com">
+                        <i class="fa-regular fa-copy"></i> thiennn0412@gmail.com
+                        <span class="copied-text">Đã copy</span>
+                    </button>
+                    <button type="button" class="copy-email" data-email="ngokhoa2024@gmail.com">
+                        <i class="fa-regular fa-copy"></i> ngokhoa2024@gmail.com
+                        <span class="copied-text">Đã copy</span>
+                    </button>
+                </div>
+                <a class="mail-action" href="mailto:thiennn0412@gmail.com?subject=Ho%20tro%20website%20Kham%20Pha%20Can%20Tho">Gửi mail ngay</a>
+            </div>
+
+            <div class="form-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Biểu mẫu liên hệ nhanh</h3>
+                <form id="contactForm" novalidate>
+                    <div class="form-grid">
+                        <label>
+                            Họ và tên
+                            <input type="text" name="name" required placeholder="Ví dụ: Trần Minh Anh">
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email" required placeholder="Ví dụ: ten@email.com">
+                        </label>
+                    </div>
+                    <label>
+                        Nội dung
+                        <textarea name="message" rows="5" required placeholder="Bạn muốn góp ý hoặc cần hỗ trợ gì?"></textarea>
+                    </label>
+                    <button type="submit" class="btn submit-btn">Gửi liên hệ</button>
+                    <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>
+                    Khám phá vẻ đẹp miền Tây sông nước,
+                    trải nghiệm văn hóa và ẩm thực đặc sắc.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa
+        </div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Ảnh đầu chụp bởi Nguyễn Chí Thiện - Học sinh THPT An Khánh. Xin chân thành cảm ơn.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true, offset: 30 });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".navbar a");
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "") currentPage = "index.html";
+
+            links.forEach(function (link) {
+                const linkPage = link.getAttribute("href").split("/").pop();
+                if (linkPage === currentPage) link.classList.add("active");
+            });
+
+            const heroBtn = document.querySelector(".hero-btn");
+            const support = document.querySelector("#support");
+            const header = document.querySelector(".header");
+
+            if (heroBtn && support && header) {
+                heroBtn.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const y = support.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 12;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                });
+            }
+
+            const copyButtons = document.querySelectorAll(".copy-email");
+            copyButtons.forEach(function (button) {
+                button.addEventListener("click", async function () {
+                    const email = button.getAttribute("data-email");
+                    try {
+                        await navigator.clipboard.writeText(email);
+                    } catch (error) {
+                        const area = document.createElement("textarea");
+                        area.value = email;
+                        document.body.appendChild(area);
+                        area.select();
+                        document.execCommand("copy");
+                        document.body.removeChild(area);
+                    }
+
+                    const text = button.querySelector(".copied-text");
+                    text.style.opacity = "1";
+                    setTimeout(function () {
+                        text.style.opacity = "0";
+                    }, 1500);
+                });
+            });
+
+            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyo1Hr2MazAzvoNbo2ebJa4Du07VC_Vk-nstV6Gmvuc7jzMRrsYOLgu9n2QYPDJZHjhew/exec";
+            const form = document.querySelector("#contactForm");
+            const formNote = document.querySelector("#formNote");
+            if (form && formNote) {
+                form.addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    if (!form.checkValidity()) {
+                        formNote.textContent = "Vui lòng điền đầy đủ thông tin trước khi gửi.";
+                        formNote.classList.add("error");
+                        return;
+                    }
+
+                    const payload = new URLSearchParams({
+                        name: form.name.value.trim(),
+                        email: form.email.value.trim(),
+                        message: form.message.value.trim()
+                    });
+
+                    try {
+                        formNote.textContent = "Đang gửi liên hệ...";
+                        formNote.classList.remove("error");
+
+                        const response = await fetch(WEB_APP_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+                            body: payload.toString()
+                        });
+
+                        formNote.textContent = "Đã gửi thành công. Tụi mình sẽ phản hồi sớm nhất có thể.";
+                        formNote.classList.remove("error");
+                        form.reset();
+                    } catch (error) {
+                        formNote.textContent = "Gửi thất bại, vui lòng thử lại sau ít phút.";
+                        formNote.classList.add("error");
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+
+
+

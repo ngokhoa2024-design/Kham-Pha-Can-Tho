@@ -1,0 +1,646 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-soft: #f8f4eb;
+    --bg-main: #fffdf8;
+    --text-main: #1f2833;
+    --text-sub: #4f5c6a;
+    --primary: #0b8a7b;
+    --accent: #f27a3b;
+    --line: #e9dfd2;
+    --card: #ffffff;
+    --shadow: 0 16px 30px rgba(21, 32, 41, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 90% 8%, #ffe8d2 0%, transparent 30%),
+        radial-gradient(circle at 10% 30%, #daf1ed 0%, transparent 28%),
+        var(--bg-main);
+}
+
+
+/* ============================================================
+   Navbar CSS da duoc chuyen sang navbar.css (dung chung toan site)
+   ============================================================ */
+
+
+.hero {
+    min-height: 82vh;
+    display: grid;
+    place-items: center;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(10, 18, 27, 0.5), rgba(10, 18, 27, 0.64)),
+        url('images/banhxeo3.jpg') center/cover no-repeat;
+}
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+}
+.hero::before {
+    width: 260px;
+    height: 260px;
+    top: -80px;
+    left: -60px;
+    background: rgba(255, 189, 89, 0.16);
+}
+.hero::after {
+    width: 340px;
+    height: 340px;
+    right: -110px;
+    bottom: -130px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 860px;
+    color: #fff;
+    padding: clamp(28px, 5vw, 46px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.2);
+}
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(242, 122, 59, 0.22);
+    border: 1px solid rgba(255, 210, 184, 0.4);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+.hero-content h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    text-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    max-width: 100%;
+}
+.hero-content p {
+    margin: 18px auto 26px;
+    max-width: 700px;
+    font-size: clamp(1rem, 1.8vw, 1.12rem);
+    color: #edf6f5;
+    line-height: 1.8;
+}
+.hero-btn {
+    margin-top: 4px;
+    padding: 12px 26px;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), #ff9b65);
+    box-shadow: 0 12px 24px rgba(242, 122, 59, 0.35);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.hero-btn:hover { transform: translateY(-2px); filter: brightness(0.97); }
+
+main { width: min(1120px, 92%); margin: 48px auto 88px; }
+.about-text, .famous-text, .sthai-text {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: clamp(20px, 3vw, 32px);
+}
+.about-text h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    color: #173f32;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.intro-text, .famous-text p, .sthai-text p { color: var(--text-sub); font-size: 1rem; line-height: 1.8; }
+
+.food-advisor {
+    margin: 34px 0 22px;
+    padding: clamp(24px, 4vw, 38px);
+    border-radius: 30px;
+    border: 1px solid rgba(14, 107, 96, 0.12);
+    background:
+        linear-gradient(135deg, rgba(255, 247, 236, 0.96), rgba(240, 249, 247, 0.96)),
+        radial-gradient(circle at top right, rgba(242, 122, 59, 0.14), transparent 28%);
+    box-shadow: 0 18px 34px rgba(21, 32, 41, 0.1);
+}
+.food-advisor-head {
+    max-width: 760px;
+}
+.food-advisor-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(242, 122, 59, 0.12);
+    color: #a5531d;
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.food-advisor-head h2 {
+    margin: 16px 0 12px;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #173f32;
+}
+.food-advisor-head p {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+.food-advisor-shell {
+    margin-top: 28px;
+    padding: clamp(20px, 3vw, 28px);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(233, 223, 210, 0.92);
+    box-shadow: 0 14px 28px rgba(21, 32, 41, 0.08);
+}
+.food-advisor-progress {
+    margin-bottom: 24px;
+}
+.food-progress-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: #e6ddd1;
+    overflow: hidden;
+}
+.food-progress-fill {
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: inherit;
+    transition: width 0.25s ease;
+}
+.food-progress-text {
+    margin-top: 12px;
+    text-align: right;
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: #466255;
+}
+.food-step {
+    display: none;
+    animation: fadeStep 0.28s ease;
+}
+.food-step.active {
+    display: block;
+}
+.food-step h3 {
+    margin-bottom: 18px;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    color: #173f32;
+}
+.advisor-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+.advisor-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.advisor-option {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.advisor-option-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 88px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px solid #e6dacb;
+    background: #fffdfa;
+    box-shadow: 0 8px 18px rgba(21, 32, 41, 0.06);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.advisor-option-content i {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(11, 138, 123, 0.1);
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+.advisor-option-text {
+    font-weight: 700;
+    color: #22463a;
+    line-height: 1.5;
+}
+.advisor-option:hover .advisor-option-content,
+.advisor-option input:checked + .advisor-option-content {
+    transform: translateY(-2px);
+    border-color: rgba(11, 138, 123, 0.4);
+    box-shadow: 0 14px 24px rgba(21, 32, 41, 0.1);
+    background: linear-gradient(135deg, rgba(235, 248, 245, 0.96), rgba(255, 247, 238, 0.96));
+}
+.food-advisor-nav,
+.food-result-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 26px;
+}
+.advisor-btn {
+    border: 0;
+    border-radius: 14px;
+    padding: 12px 20px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.advisor-btn-primary {
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary), #18a091);
+    box-shadow: 0 12px 24px rgba(11, 138, 123, 0.24);
+}
+.advisor-btn-secondary {
+    color: #22463a;
+    background: #eef6f4;
+    border: 1px solid rgba(11, 138, 123, 0.12);
+}
+.food-result[hidden] {
+    display: none;
+}
+.food-result-head h3 {
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    color: #173f32;
+}
+.food-result-head p {
+    margin-top: 10px;
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+.food-result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+.food-result-card {
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #fffdfa, #fff7ef);
+    border: 1px solid #ead9c7;
+    box-shadow: 0 10px 22px rgba(21, 32, 41, 0.07);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.food-result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(21, 32, 41, 0.12);
+}
+.food-result-rank {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(242, 122, 59, 0.12);
+    color: #ad5922;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.food-result-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    background: rgba(11, 138, 123, 0.12);
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+.food-result-card h4 {
+    font-size: 1.12rem;
+    color: #173f32;
+    margin-bottom: 10px;
+}
+.food-result-card p {
+    color: var(--text-sub);
+    line-height: 1.7;
+}
+.food-example-shops {
+    margin-top: 14px;
+    color: #4c5b67;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+.food-example-shops strong {
+    color: #21463a;
+}
+.food-shop-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+.food-shop-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #eef7f5;
+    border: 1px solid #d4e7e2;
+    color: #1e5b50;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+.food-result-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 800;
+    color: #b85b23;
+}
+
+.food-lucky {
+    margin: 0 0 30px;
+    padding: clamp(24px, 4vw, 34px);
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(11, 138, 123, 0.12), transparent 26%),
+        linear-gradient(135deg, #fffaf1, #f5fcfa);
+    border: 1px solid rgba(14, 107, 96, 0.1);
+    box-shadow: 0 14px 30px rgba(21, 32, 41, 0.08);
+}
+.food-lucky-copy h2 {
+    margin: 12px 0 10px;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    color: #173f32;
+}
+.food-lucky-copy p {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+.food-lucky-tag {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(242, 122, 59, 0.12);
+    color: #ac5a24;
+    font-size: 0.84rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.food-lucky-panel {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+.food-lucky-controls,
+.food-lucky-result {
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid #eadfd2;
+    padding: 22px;
+    box-shadow: 0 10px 22px rgba(21, 32, 41, 0.06);
+}
+.food-lucky-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.food-lucky-label {
+    font-weight: 700;
+    color: #21463a;
+}
+.food-lucky-select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid #d7c8b8;
+    font: inherit;
+    color: #22463a;
+    background: #fffdfa;
+}
+.food-lucky-btn {
+    width: 100%;
+}
+.food-lucky-placeholder {
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--text-sub);
+    gap: 12px;
+}
+.food-lucky-placeholder i {
+    font-size: 2rem;
+    color: var(--accent);
+}
+.food-lucky-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.food-lucky-badge {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(11, 138, 123, 0.12);
+    color: #0d6c61;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+.food-lucky-icon {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    background: rgba(242, 122, 59, 0.12);
+    color: #c86428;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+}
+.food-lucky-card h3 {
+    font-size: 1.3rem;
+    color: #173f32;
+    margin-bottom: 10px;
+}
+.food-lucky-card p {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+@keyframes fadeStep {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery { margin: 30px 0; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.gallery-grid img {
+    width: 100%;
+    height: clamp(220px, 27vw, 340px);
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 16px 28px rgba(21, 32, 41, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-grid img:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 22px 34px rgba(21, 32, 41, 0.18);
+}
+
+.explore-now {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    margin: 52px 0 24px;
+    color: #173f32;
+}
+.explore-now::after {
+    content: "";
+    width: 96px;
+    height: 3px;
+    background: linear-gradient(90deg, #f1bc58, #f27a3b);
+    display: block;
+    margin: 14px auto 0;
+}
+
+.tour-grid {
+    margin: 22px 0 8px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+.tour-card {
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #e5ddd2;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 22px rgba(21, 32, 41, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.tour-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 32px rgba(21, 32, 41, 0.15);
+    border-color: #d6c5ae;
+}
+.tour-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.tour-card h3 {
+    font-size: 1rem;
+    text-align: center;
+    color: #174638;
+    padding: 16px 14px 18px;
+    line-height: 1.5;
+}
+
+.footer {
+    background: #f8f5e9;
+    color: #000;
+    padding: 56px 10% 20px;
+    border-top: 1px solid #e3d8c9;
+}
+.footer-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; text-align: center; }
+.footer-col { flex: 1 1 250px; }
+.footer-col h3, .footer-col h4 { margin-bottom: 12px; }
+.footer-col p { color: #414f5d; }
+.footer-bottom { margin-top: 34px; border-top: 1px solid #bfb3a3; padding-top: 15px; font-size: 14px; text-align: center; }
+.footer-credit { text-align: center; margin-top: 9px; font-size: 13px; opacity: 0.78; }
+
+#about, #diadiemnoitieng, #sthai { scroll-margin-top: 140px; }
+
+@media (max-width: 1024px) {
+    .food-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-lucky-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: min(92%, 1200px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .navbar {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .navbar ul {
+        justify-content: flex-start;
+    }
+
+    .hero {
+        min-height: 74vh;
+        padding: 42px 16px;
+    }
+
+    .hero-content {
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+
+    main {
+        width: min(94%, 1100px);
+        margin: 34px auto 70px;
+    }
+
+    .advisor-options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo-area img { height: 68px; }
+    .gallery-grid, .tour-grid { grid-template-columns: 1fr; }
+    .hero-btn { width: 100%; }
+    .footer { padding: 42px 6% 16px; }
+    .food-advisor-nav,
+    .food-result-actions {
+        flex-direction: column;
+    }
+    .advisor-btn {
+        width: 100%;
+    }
+}
+
+/* hover-fix da duoc tich hop vao navbar.css */

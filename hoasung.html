@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Khu Du Lịch Sinh Thái Hoa Súng - không gian đồng quê, hồ nước và cảnh sắc dịu dàng rất hợp cho một buổi thư giãn.">
+    <title>Khu Du Lịch Sinh Thái Hoa Súng</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .hoasung-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(20, 20, 20, 0.15), rgba(20, 20, 20, 0.08)),
+                url("images/hosung đẹp.jfif") center/cover;
+        }
+
+        .hoasung-page .hero-btn.primary {
+            color: #466e57;
+            background: linear-gradient(135deg, #e9f7ee, #cfe4d7);
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.14);
+        }
+
+        .hoasung-page .feature-pill i,
+        .hoasung-page .highlight-item i,
+        .hoasung-page .quick-plan li i,
+        .hoasung-page .travel-tips li i,
+        .hoasung-page .timeline-time {
+            color: #5c8b6d;
+        }
+
+        .hoasung-page .feature-pill i,
+        .hoasung-page .highlight-item i {
+            background: rgba(92, 139, 109, 0.12);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page hoasung-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ">
+            </a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html" class="active"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-water-ladder"></i> Cảnh sắc mềm và đậm chất đồng quê</div>
+            <h1>Khu Du Lịch Sinh Thái Hoa Súng</h1>
+            <p class="hero-lead">Một điểm đến nhẹ nhàng và dễ chịu, nơi mặt nước, cây xanh và không khí đồng quê hòa vào nhau để tạo nên một cảm giác rất êm. Hoa Súng phù hợp với những ai thích vẻ đẹp sinh thái mềm và có phần thơ hơn.</p>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem gợi ý tham quan</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi ghé</h2>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Không gian dịu và mềm</strong>
+                    <span>Phù hợp với những buổi đi thiên về thư giãn, ngắm cảnh và chụp ảnh</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Đậm chất đồng quê</strong>
+                    <span>Nhịp điệu nơi đây gợi cảm giác gần gũi, chậm và rất dễ chịu</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Hợp ảnh sinh thái</strong>
+                    <span>Cảnh nước và cây luôn tạo khung hình mộc mạc nhưng đẹp</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Đi chậm sẽ thích hơn</strong>
+                    <span>Đây là kiểu điểm đến cần sự thong thả để cảm nhận hết</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Vài nét về Hoa Súng</h2>
+            <p>Hoa Súng gợi một cảm giác mềm và yên, khác với những điểm sinh thái thiên về hoạt động. Ở đây, cảnh quan là phần quan trọng nhất: mặt nước, cây cối và không khí dịu giúp chuyến đi trở nên thư thái hơn.</p>
+            <p>Đây là kiểu nơi càng đi chậm càng thấy đẹp. Không quá nhiều chi tiết cầu kỳ, nhưng nhờ sự hài hòa tự nhiên mà nơi này dễ được yêu thích theo cách rất nhẹ nhàng.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/hosung đẹp.jfif" alt="Khu Du Lịch Sinh Thái Hoa Súng">
+            <div class="image-badge">Điểm nổi bật<span>Cảnh nước và cây xanh tạo nên cảm giác rất mềm cho toàn bộ không gian</span></div>
+        </div>
+    </div>
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-droplet"></i>
+            <div>
+                <h3>Cảnh nước dịu mắt</h3>
+                <p>Mặt nước là yếu tố khiến nơi đây luôn tạo cảm giác êm và thư giãn.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-feather"></i>
+            <div>
+                <h3>Không gian rất nhẹ</h3>
+                <p>Phù hợp với người thích đi dạo và ngắm cảnh hơn là chơi quá nhiều hoạt động.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-camera-retro"></i>
+            <div>
+                <h3>Ảnh mang chất thơ</h3>
+                <p>Đây là nơi rất hợp với những khung hình mềm, sáng và tự nhiên.</p>
+            </div>
+        </div>
+    </div>
+    <hr class="separator">
+    <div class="section-block">
+        <h2 class="section-heading">Điều làm nơi này đáng ghé</h2>
+        <p class="section-copy">Sức hấp dẫn nằm ở nhịp điệu rất riêng: chậm hơn, mềm hơn và dễ để người xem cảm thấy lòng mình dịu xuống sau một quãng đường di chuyển.</p>
+        <div class="highlights">
+            <div class="highlight-item">
+                <i class="fa-solid fa-spa"></i>
+                <h3>Thư giãn rõ rệt</h3>
+                <p>Đây là nơi rất phù hợp cho một buổi muốn nghỉ đầu óc và nhìn nhiều màu xanh.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>Gần thiên nhiên</h3>
+                <p>Cảm giác đồng quê và sinh thái được giữ khá rõ trong toàn bộ trải nghiệm.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-image"></i>
+                <h3>Ảnh rất có cảm xúc</h3>
+                <p>Vẻ đẹp nơi này không quá mạnh nhưng lại rất dễ chạm vào cảm giác người xem.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-block" id="hanh-trinh">
+        <h2 class="section-heading">Gợi ý tham quan ngắn</h2>
+        <p class="section-copy">Một lịch trình đơn giản và ít gấp gáp sẽ giúp bạn thấy rõ hơn vẻ dễ thương của nơi này.</p>
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <div class="timeline-item">
+                    <div class="timeline-time">Đầu buổi</div>
+                    <div>
+                        <h3>Đi một vòng làm quen cảnh quan</h3>
+                        <p>Hãy bắt đầu bằng việc đi chậm quanh khu để cảm nhận nhịp và màu sắc tổng thể.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Tiếp theo</div>
+                    <div>
+                        <h3>Tìm góc có nước và cây</h3>
+                        <p>Đây thường là những điểm đẹp nhất để dừng lại và chụp vài tấm ảnh.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Sau đó</div>
+                    <div>
+                        <h3>Ngồi nghỉ một lúc</h3>
+                        <p>Chỉ cần cho mình một khoảng ngồi yên, bạn sẽ thấy địa điểm này đáng hơn khá nhiều.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Cuối buổi</div>
+                    <div>
+                        <h3>Kết hợp điểm sinh thái khác hoặc về thành phố</h3>
+                        <p>Đây là một điểm rất hợp để nối vào lịch trình nghỉ nhịp trước khi quay lại trung tâm.</p>
+                    </div>
+                </div>
+            </div>
+            <aside class="quick-plan">
+                <h3>Một buổi đi đúng nhịp thường có</h3>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Tâm thế thong thả và không vội.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Trang phục nhẹ, thoải mái.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Pin điện thoại đủ cho ảnh cảnh.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Thời điểm mát để cảnh và màu lên đẹp hơn.</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu ý nhỏ</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box"><strong>Cho trải nghiệm</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Ánh sáng dịu sẽ khiến chuyến đi dễ chịu hơn rất nhiều.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Đi chậm và nghỉ vài lần sẽ đúng nhịp nhất với nơi này.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Nên có nước uống nếu bạn đi vào ban ngày.</span></li>
+            </ul></div>
+            <div class="tip-box"><strong>Cho ảnh đẹp</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Ảnh ngang và ảnh có mặt nước thường rất hợp với địa điểm này.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ánh sáng đầu ngày hoặc cuối chiều sẽ giúp cảnh mềm hơn.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Nên giữ ảnh tự nhiên thay vì cố làm quá nhiều bố cục phức tạp.</span></li>
+            </ul></div>
+        </div>
+    </div>
+    <div class="card comment-section" data-id="14" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Khu Du Lịch Sinh Thái Hoa Súng để những người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-14"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div>
+        <div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

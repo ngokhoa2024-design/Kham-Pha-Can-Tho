@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá bánh tét lá cẩm Cần Thơ với màu tím đẹp mắt và hương vị dẻo thơm.">
+    <title>Bánh Tét Lá Cẩm</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .banhtet-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(95, 40, 18, 0.55), rgba(223, 130, 55, 0.35)),
+                url("images/banhtet.jpg") center/cover;
+        }
+
+        .banhtet-page .hero-btn.primary {
+            color: #6b2f10;
+            background: linear-gradient(135deg, #ffe2b4, #ffb867);
+            box-shadow: 0 18px 30px rgba(255, 171, 87, 0.28);
+        }
+
+        .banhtet-page .feature-pill i,
+        .banhtet-page .highlight-item i,
+        .banhtet-page .quick-plan li i,
+        .banhtet-page .travel-tips li i,
+        .banhtet-page .timeline-time,
+        .banhtet-page .step-no {
+            color: #b65222;
+        }
+
+        .banhtet-page .feature-pill i,
+        .banhtet-page .highlight-item i,
+        .banhtet-page .step-no {
+            background: rgba(182, 82, 34, 0.12);
+        }
+
+        .flavor-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 26px 0 10px;
+        }
+
+        .flavor-chip {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #fff1da, #ffe0b3);
+            color: #8b4318;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 22px rgba(179, 96, 32, 0.12);
+        }
+
+        .tasting-board {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .tasting-card,
+        .pairing-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(69, 33, 11, 0.08);
+        }
+
+        .tasting-step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 18px;
+        }
+
+        .step-no {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .pairing-card ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .pairing-card li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            color: #5f4b40;
+        }
+
+        .pairing-card li i {
+            color: #c2642c;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .tasting-board {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page banhtet-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html" class="active"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-cake-candles"></i> Dẻo thơm, đẹp mắt, rất riêng Cần Thơ</div>
+            <h1>Bánh Tét Lá Cẩm</h1>
+            <p class="hero-lead">Bánh tét lá cẩm là món vừa mang vẻ đẹp thị giác rất riêng vừa giữ được chất truyền thống. Màu tím từ lá cẩm, nếp dẻo và nhân đậm làm món này luôn nổi bật trong ký ức về ẩm thực Tây Đô.</p>
+            <div class="flavor-strip">
+<span class='flavor-chip'>dẻo thơm</span>
+<span class='flavor-chip'>lá cẩm</span>
+<span class='flavor-chip'>nhân mặn ngọt</span>
+<span class='flavor-chip'>truyền thống</span>
+            </div>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#thuong-thuc"><i class="fa-solid fa-utensils"></i> Xem cách thưởng thức</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi thử</h2>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>Điểm vị giác</strong><span>Dẻo nếp, thơm lá cẩm</span></div>
+                <div class="hero-stat"><strong>Hợp nhất khi</strong><span>Hợp làm quà và ăn nhẹ</span></div>
+                <div class="hero-stat"><strong>Cảm giác món</strong><span>Nhân là phần tạo chiều sâu</span></div>
+                <div class="hero-stat"><strong>Nên đi cùng</strong><span>Đẹp cả vị lẫn hình</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Bánh tét lá cẩm có gì làm người ta nhớ?</h2>
+            <p>Khác với nhiều món ăn nóng phải ăn ngay, bánh tét lá cẩm có sức hút ở sự chỉn chu và cảm giác ấm áp rất truyền thống. Nhìn lát cắt đẹp thôi đã thấy muốn thử.</p>
+            <p>Món này vừa hợp để ăn, vừa hợp để biếu tặng vì mang nhiều dấu ấn Cần Thơ cả về hình thức lẫn hương vị.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/banhtet.jpg" alt="Bánh Tét Lá Cẩm">
+            <div class="image-badge">Điểm nhấn<span>Màu tím đẹp và lát cắt rõ lớp nếp, nhân luôn là điểm gây ấn tượng đầu tiên.</span></div>
+        </div>
+    </div>
+
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-gift"></i>
+            <div>
+                <h3>Rất hợp làm quà</h3>
+                <p>Món này vừa đẹp mắt vừa đậm chất địa phương.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-cookie-bite"></i>
+            <div>
+                <h3>Dẻo và thơm</h3>
+                <p>Nếp dẻo kết hợp với lá cẩm tạo ra cảm giác rất riêng.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-heart"></i>
+            <div>
+                <h3>Mang nhiều cảm giác truyền thống</h3>
+                <p>Đây là kiểu món gợi ngay không khí sum vầy và lễ tết.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="section-block" id="thuong-thuc">
+        <h2 class="section-heading">Ăn bánh tét lá cẩm sao cho ngon?</h2>
+        <p class="section-copy">Bánh tét lá cẩm không cần ăn vội. Cắt đẹp, ăn chậm và cảm phần nếp lẫn nhân là đã thấy ngon theo cách rất khác.</p>
+        <div class="tasting-board">
+            <div class="tasting-card">
+                <h3>Cách thưởng thức trọn vị</h3>
+            <div class="tasting-step">
+                <div class="step-no">01</div>
+                <div>
+                    <h3>Cắt lát vừa</h3>
+                    <p>Một lát vừa tay sẽ giúp thấy rõ độ dẻo của nếp và độ đầy của nhân.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">02</div>
+                <div>
+                    <h3>Ăn khi bánh còn mềm</h3>
+                    <p>Nếu bánh quá nguội, cảm giác dẻo thơm sẽ giảm đi chút ít.</p>
+                </div>
+            </div>
+            <div class="tasting-step">
+                <div class="step-no">03</div>
+                <div>
+                    <h3>Thử riêng phần nếp rồi phần nhân</h3>
+                    <p>Cách này giúp bạn cảm rõ hơn từng lớp vị của món.</p>
+                </div>
+            </div>
+            </div>
+            <div class="pairing-card">
+                <h3>Nên đi cùng gì?</h3>
+                <ul>
+                    <li><i class="fa-solid fa-mug-hot"></i><span>Một tách trà nóng rất hợp với món này.</span></li>
+                    <li><i class="fa-solid fa-seedling"></i><span>Ăn nhẹ buổi sáng hoặc xế đều ổn.</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Rất phù hợp để mua làm quà mang về.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ khi đi ăn</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box">
+                <strong>Lưu ý nên nhớ</strong>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Nên chọn bánh mới để nếp còn mềm và thơm.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Nếu mua làm quà, nên hỏi thời gian dùng tốt nhất.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Cắt lát mỏng vừa phải sẽ dễ cảm vị hơn.</span></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <strong>Cảm giác món ăn</strong>
+                <p>Đây là kiểu món nhẹ nhàng nhưng để lại cảm giác rất đằm.</p>
+                <p>Không ồn ào, nhưng nhìn và ăn đều thấy rất có chất riêng.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comment-section" data-id="204" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ thực khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Bánh Tét Lá Cẩm để người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-204"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Khám Phá Cần Thơ</h3>
+            <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact for work</h4>
+            <p>Gmail 1: ngokhoa2024@gmail.com</p>
+            <p>Gmail 2: thiennn0412@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

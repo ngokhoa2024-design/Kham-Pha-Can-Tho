@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Hiệu | Khám Phá Cần Thơ</title>
+    <meta name="description" content="Xem và chọn danh hiệu của bạn trên website Khám Phá Cần Thơ.">
+    <link rel="stylesheet" href="titles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- MOBILE OVERLAY -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <!-- MOBILE SIDEBAR NAV -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" aria-expanded="false">
+                        <i class="fa-solid fa-ellipsis"></i> Khác
+                        <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                    </button>
+                    <ul class="mobile-submenu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                        <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                        <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-divider" role="separator"></li>
+                <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+                <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">🏷️ Danh Hiệu</p>
+            <h2>Title của bạn</h2>
+            <p>Xem và chọn danh hiệu để hiển thị cạnh tên của bạn trên website.</p>
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <main class="titles-page" id="titlesMain">
+
+        <!-- Trạng thái chưa đăng nhập -->
+        <div id="notLoggedIn" hidden>
+            <div class="login-prompt">
+                <div class="lp-icon">🔐</div>
+                <h3>Bạn chưa đăng nhập</h3>
+                <p>Hãy đăng nhập để xem và chọn danh hiệu của mình.</p>
+                <a href="account.html" class="btn-login-prompt">Đăng nhập ngay</a>
+            </div>
+        </div>
+
+        <!-- Trạng thái đã đăng nhập -->
+        <div id="loggedInContent" hidden>
+
+            <!-- Thẻ thông tin user -->
+            <div class="user-status-card" id="userStatusCard">
+                <div class="user-status-avatar" id="statusAvatar">U</div>
+                <div class="user-status-info">
+                    <div class="user-status-username" id="statusUsername">Đang tải...</div>
+                    <div class="user-status-display">
+                        Hiển thị: <strong id="statusDisplayName">...</strong>
+                    </div>
+                    <div class="user-status-hint" id="statusHint"></div>
+                </div>
+            </div>
+
+            <!-- Danh sách title -->
+            <div class="section-header">
+                <span class="section-title">🏷️ Danh sách danh hiệu</span>
+                <span class="section-count" id="titleCount">0</span>
+            </div>
+
+            <div class="titles-grid" id="titlesGrid">
+                <!-- Skeleton loading -->
+                <div class="skeleton-card">
+                    <div class="skeleton-line" style="height:24px;width:60%"></div>
+                    <div class="skeleton-line" style="height:14px;width:90%"></div>
+                    <div class="skeleton-line" style="height:14px;width:70%"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-line" style="height:24px;width:55%"></div>
+                    <div class="skeleton-line" style="height:14px;width:85%"></div>
+                    <div class="skeleton-line" style="height:14px;width:65%"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-line" style="height:24px;width:50%"></div>
+                    <div class="skeleton-line" style="height:14px;width:80%"></div>
+                    <div class="skeleton-line" style="height:14px;width:60%"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="titlesToast"></div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JS/supabase.js"></script>
+    <script src="JS/titles-helper.js"></script>
+
+    <script>
+    'use strict';
+
+    /* ── STATE ── */
+    let currentUser    = null;
+    let currentProfile = null;
+    let allTitles      = [];    // Tất cả title trong hệ thống
+    let myTitleIds     = new Set(); // Set<string> các title_id user đã sở hữu
+    let activeTitleId  = null;
+
+    /* ── INIT ── */
+    document.addEventListener('DOMContentLoaded', async function () {
+        await initTitlesPage();
+    });
+
+    async function initTitlesPage() {
+        try {
+            const { data: { user }, error } = await supabaseClient.auth.getUser();
+
+            if (error || !user) {
+                showNotLoggedIn();
+                return;
+            }
+
+            currentUser = user;
+            showLoggedIn();
+
+            // Tải song song: profile + tất cả titles + titles của user
+            const [profileRes, titlesRes, userTitlesRes] = await Promise.all([
+                supabaseClient
+                    .from('profiles')
+                    .select('*, titles:active_title_id(id, name, slug, icon, color)')
+                    .eq('id', user.id)
+                    .single(),
+                supabaseClient
+                    .from('titles')
+                    .select('*')
+                    .order('created_at', { ascending: true }),
+                supabaseClient
+                    .from('user_titles')
+                    .select('title_id')
+                    .eq('user_id', user.id)
+            ]);
+
+            if (profileRes.error) throw profileRes.error;
+            if (titlesRes.error)  throw titlesRes.error;
+
+            currentProfile = profileRes.data;
+            allTitles      = titlesRes.data || [];
+            activeTitleId  = currentProfile?.active_title_id || null;
+
+            // Build set các title đã sở hữu
+            if (!userTitlesRes.error && userTitlesRes.data) {
+                myTitleIds = new Set(userTitlesRes.data.map(r => r.title_id));
+            }
+
+            renderUserStatus();
+            renderTitlesGrid();
+
+        } catch (err) {
+            console.error('Lỗi tải trang danh hiệu:', err);
+            showToast('Lỗi tải dữ liệu: ' + err.message, 'error');
+            // Vẫn cố hiển thị trang
+            showLoggedIn();
+            renderTitlesGrid();
+        }
+    }
+
+    /* ── RENDER USER STATUS ── */
+    function renderUserStatus() {
+        if (!currentProfile) return;
+
+        const name     = currentProfile.name || 'Người dùng';
+        const avatar   = currentProfile.avatar_url;
+        const activeTitle = currentProfile.titles; // joined object
+
+        // Avatar
+        const avatarEl = document.getElementById('statusAvatar');
+        if (avatar) {
+            avatarEl.innerHTML = `<img src="${escHtml(avatar)}" alt="Avatar">`;
+        } else {
+            avatarEl.textContent = getInitials(name);
+        }
+
+        // Username
+        document.getElementById('statusUsername').textContent = name;
+
+        // Display name (với title)
+        const displayName = TitlesHelper.formatUsernameWithTitle(currentProfile);
+        document.getElementById('statusDisplayName').textContent = displayName;
+
+        // Hint
+        const hintEl = document.getElementById('statusHint');
+        if (activeTitle) {
+            hintEl.textContent = `Đang sử dụng danh hiệu: ${activeTitle.icon || ''} ${activeTitle.name}`;
+        } else {
+            hintEl.textContent = 'Chưa sử dụng danh hiệu nào.';
+        }
+    }
+
+    /* ── RENDER TITLES GRID ── */
+    function renderTitlesGrid() {
+        const grid = document.getElementById('titlesGrid');
+        const countEl = document.getElementById('titleCount');
+
+        if (!allTitles.length) {
+            grid.innerHTML = `
+                <div class="titles-empty" style="grid-column:1/-1">
+                    <div class="empty-icon">🏷️</div>
+                    <h3>Chưa có danh hiệu nào</h3>
+                    <p>Admin chưa tạo danh hiệu nào. Hãy quay lại sau!</p>
+                </div>`;
+            countEl.textContent = '0';
+            return;
+        }
+
+        countEl.textContent = allTitles.length;
+
+        grid.innerHTML = allTitles.map(title => {
+            const isOwned  = myTitleIds.has(title.id);
+            const isActive = title.id === activeTitleId;
+            const color    = safeColor(title.color);
+            const icon     = escHtml(title.icon || '🏷️');
+            const name     = escHtml(title.name);
+            const desc     = escHtml(title.description || '');
+
+            let cardClass = 'title-card';
+            if (isActive)       cardClass += ' active-title unlocked';
+            else if (isOwned)   cardClass += ' unlocked';
+            else                cardClass += ' locked';
+
+            let statusHtml = '';
+            let btnHtml    = '';
+            let indicatorHtml = '';
+
+            if (isActive) {
+                statusHtml    = `<span class="title-status-text status-active">✅ Đang sử dụng</span>`;
+                btnHtml       = `<button class="btn-use-title unuse" onclick="setActiveTitle(null)" title="Bỏ sử dụng danh hiệu">Bỏ dùng</button>`;
+                indicatorHtml = `<span class="active-indicator">Đang dùng</span>`;
+            } else if (isOwned) {
+                statusHtml = `<span class="title-status-text status-unlocked">✓ Đã mở khóa</span>`;
+                btnHtml    = `<button class="btn-use-title use" style="background:${color}" onclick="setActiveTitle('${escHtml(title.id)}')">Sử dụng</button>`;
+            } else {
+                statusHtml    = `<span class="title-status-text status-locked">🔒 Chưa mở khóa</span>`;
+                btnHtml       = `<button class="btn-use-title" disabled title="Bạn chưa được cấp danh hiệu này">Chưa có</button>`;
+                indicatorHtml = `<span class="lock-overlay">🔒</span>`;
+            }
+
+            return `
+            <div class="${cardClass}" style="--badge-color:${color}">
+                ${indicatorHtml}
+                <div class="title-card-header">
+                    <span class="title-icon">${icon}</span>
+                    <span class="title-name">${name}</span>
+                </div>
+                <p class="title-description">${desc || 'Không có mô tả.'}</p>
+                <div class="title-status-row">
+                    ${statusHtml}
+                    ${btnHtml}
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    /* ── SET ACTIVE TITLE ── */
+    async function setActiveTitle(titleId) {
+        if (!currentUser) { showToast('Bạn chưa đăng nhập.', 'error'); return; }
+
+        // Kiểm tra quyền sở hữu (nếu set title, không phải bỏ dùng)
+        if (titleId && !myTitleIds.has(titleId)) {
+            showToast('Bạn chưa được mở khóa danh hiệu này.', 'error');
+            return;
+        }
+
+        // Tắt tất cả nút trong lúc xử lý
+        document.querySelectorAll('.btn-use-title').forEach(b => b.disabled = true);
+
+        try {
+            const { error } = await supabaseClient
+                .from('profiles')
+                .update({ active_title_id: titleId || null })
+                .eq('id', currentUser.id);
+
+            if (error) throw error;
+
+            activeTitleId = titleId || null;
+
+            // Cập nhật profile object và re-render
+            if (currentProfile) {
+                currentProfile.active_title_id = activeTitleId;
+                // Cập nhật join object
+                if (activeTitleId) {
+                    const found = allTitles.find(t => t.id === activeTitleId);
+                    currentProfile.titles = found || null;
+                } else {
+                    currentProfile.titles = null;
+                }
+            }
+
+            if (titleId) {
+                const t = allTitles.find(t => t.id === titleId);
+                showToast(`✅ Đã chọn danh hiệu: ${t?.icon || ''} ${t?.name || ''}`, 'success');
+            } else {
+                showToast('Đã bỏ chọn danh hiệu.', 'info');
+            }
+
+            renderUserStatus();
+            renderTitlesGrid();
+
+        } catch (err) {
+            console.error('Lỗi cập nhật title:', err);
+            if (err.code === '42501' || err.message?.includes('policy')) {
+                showToast('Bạn không có quyền thực hiện thao tác này.', 'error');
+            } else {
+                showToast('Lỗi: ' + err.message, 'error');
+            }
+            // Re-enable buttons
+            renderTitlesGrid();
+        }
+    }
+
+    /* ── UI HELPERS ── */
+    function showNotLoggedIn() {
+        document.getElementById('notLoggedIn').hidden    = false;
+        document.getElementById('loggedInContent').hidden = true;
+    }
+
+    function showLoggedIn() {
+        document.getElementById('notLoggedIn').hidden    = true;
+        document.getElementById('loggedInContent').hidden = false;
+    }
+
+    function getInitials(name) {
+        const parts = (name || '').trim().split(/\s+/).filter(Boolean);
+        if (!parts.length) return 'U';
+        return parts.slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('');
+    }
+
+    function escHtml(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    function safeColor(color) {
+        return /^#[0-9a-fA-F]{3,8}$/.test(color || '') ? color : '#0b8a7b';
+    }
+
+    /* ── TOAST ── */
+    function showToast(message, type = 'info') {
+        const container = document.getElementById('titlesToast');
+        if (!container) return;
+        const toast = document.createElement('div');
+        toast.className = `t-toast ${type}`;
+        const icons = { success: '✅', error: '❌', info: 'ℹ️', warning: '⚠️' };
+        toast.innerHTML = `<span>${icons[type] || 'ℹ️'}</span><span>${escHtml(message)}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('fade-out');
+            setTimeout(() => toast.remove(), 320);
+        }, 3500);
+    }
+    </script>
+
+</body>
+</html>

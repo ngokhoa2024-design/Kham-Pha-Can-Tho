@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Ngày hội Chợ nổi Cái Răng với diễu hành ghe thuyền, ẩm thực sông nước và nhịp sinh hoạt văn hóa đặc trưng của Cần Thơ.">
+    <title>Lễ hội Chợ nổi Cái Răng</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .lehoicncr-page .sub-header { background: linear-gradient(135deg, rgba(14, 59, 66, 0.78), rgba(29, 138, 150, 0.48)), url("images/Cairang-01.jpg") center/cover; }
+        .lehoicncr-page .hero-btn.primary { color: #0d5260; background: linear-gradient(135deg, #dff8ff, #9ee5ef); box-shadow: 0 18px 30px rgba(29, 138, 150, 0.24); }
+        .lehoicncr-page .feature-pill i, .lehoicncr-page .highlight-item i, .lehoicncr-page .quick-plan li i, .lehoicncr-page .travel-tips li i, .lehoicncr-page .timeline-time { color: #0f7280; }
+        .lehoicncr-page .feature-pill i, .lehoicncr-page .highlight-item i { background: rgba(15, 114, 128, 0.12); }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page lehoicncr-page">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<header class="header"><div class="container"><div class="logo-area"><a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a><h1 class="site-title">Khám Phá Cần Thơ</h1></div><nav class="navbar" aria-label="Điều hướng chính"><ul><li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li><li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li><li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li><li><a href="vanhoa.html" class="active"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li><li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li><li class="dropdown"><a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a><ul class="dropdown-menu"><li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li><li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li><li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li></ul></li><li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li><li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li></ul></nav></div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header"><div class="hero-shell"><div class="hero-copy"><div class="eyebrow"><i class="fa-solid fa-water"></i> Nhịp hội trên sông mang dấu ấn Tây Đô</div><h1>Lễ hội Chợ nổi Cái Răng</h1><p class="hero-lead">Ngày hội làm sống dậy đầy đủ tinh thần của chợ nổi: ghe thuyền, âm thanh rộn ràng, món ăn sáng trên sông và niềm tự hào về một nếp sống thương hồ đã đi vào ký ức vùng đồng bằng.</p><div class="hero-actions"><a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem nhịp trải nghiệm</a><a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a></div></div><div class="hero-panel"><h2>Điểm nhanh trước khi ghé</h2><div class="hero-stats"><div class="hero-stat"><strong>Không gian sông nước thật</strong><span>Vẻ đẹp nằm ở nhịp sống chứ không chỉ ở khung cảnh chụp ảnh</span></div><div class="hero-stat"><strong>Ghe thuyền rộn rã</strong><span>Mang lại cảm giác lễ hội đặc trưng không nơi nào giống</span></div><div class="hero-stat"><strong>Ẩm thực rất cuốn</strong><span>Ăn sáng giữa mặt nước là phần đáng nhớ nhất với nhiều người</span></div><div class="hero-stat"><strong>Giàu tính trình diễn</strong><span>Các hoạt động trên sông giúp văn hóa chợ nổi hiện ra sống động hơn</span></div></div></div></div></header>
+<section class="tour-detail">
+    <div class="intro-section"><div class="intro-text"><h2>Vài nét về lễ hội</h2><p>Nếu Chợ nổi Cái Răng trong ngày thường là nhịp buôn bán chân thực, thì khi vào ngày hội, không gian ấy trở nên rực rỡ và giàu tính trình diễn hơn nhưng vẫn giữ được hồn sông nước. Đây là dịp để du khách nhìn thấy bản sắc thương hồ được kể lại bằng âm thanh, màu sắc và sinh hoạt cộng đồng.</p><p>Lễ hội hấp dẫn bởi cảm giác vừa truyền thống vừa vui tươi. Không khí trên sông khiến mọi thứ trở nên linh động: thuyền di chuyển, tiếng máy nổ hòa cùng tiếng gọi hàng, mùi cà phê kho và món nóng lan ra trong làn gió sớm rất đặc trưng của Cần Thơ.</p></div><div class="image-placeholder"><img src="images/Cairang-01.jpg" alt="Lễ hội Chợ nổi Cái Răng"><div class="image-badge">Khoảnh khắc đắt giá<span>Ngắm mặt sông đông vui khi nắng sớm vừa phủ lên những ghe đầy hàng hóa</span></div></div></div>
+    <div class="feature-band"><div class="feature-pill"><i class="fa-solid fa-ship"></i><div><h3>Không khí lễ trên sông</h3><p>Mọi hoạt động diễn ra trên mặt nước tạo nên trải nghiệm rất khác so với lễ hội trên bờ.</p></div></div><div class="feature-pill"><i class="fa-solid fa-basket-shopping"></i><div><h3>Đậm chất thương hồ</h3><p>Du khách cảm được lối sống mua bán, giao tiếp và ứng xử của cư dân chợ nổi.</p></div></div><div class="feature-pill"><i class="fa-solid fa-mug-hot"></i><div><h3>Ẩm thực sáng sớm rất riêng</h3><p>Món ăn trên ghe làm nên cảm giác vừa bình dị vừa đáng nhớ của ngày hội.</p></div></div></div>
+    <hr class="separator">
+    <div class="section-block"><h2 class="section-heading">Điều làm lễ hội này nổi bật</h2><p class="section-copy">Đây là một trong những lễ hội hiếm hoi mà bản sắc hiện ra bằng cả chuyển động. Bạn không chỉ nhìn lễ hội, mà gần như đang trôi cùng nó trên mặt nước.</p><div class="highlights"><div class="highlight-item"><i class="fa-solid fa-anchor"></i><h3>Cây bẹo và ghe hàng</h3><p>Những dấu hiệu nhận diện truyền thống của chợ nổi trở thành hình ảnh văn hóa rất mạnh trong ngày hội.</p></div><div class="highlight-item"><i class="fa-solid fa-music"></i><h3>Âm thanh tạo cảm xúc</h3><p>Tiếng ghe, tiếng người, tiếng sinh hoạt trên sông tạo nên bầu không khí có một không hai.</p></div><div class="highlight-item"><i class="fa-solid fa-camera-retro"></i><h3>Ảnh nào cũng có hồn</h3><p>Màu ghe, mặt nước và ánh bình minh giúp mỗi khung hình đều rất sống động.</p></div></div></div>
+    <div class="section-block" id="hanh-trinh"><h2 class="section-heading">Gợi ý một nhịp trải nghiệm</h2><p class="section-copy">Đi thật sớm là chìa khóa để cảm nhận trọn vẹn lễ hội và cũng là lúc đẹp nhất để chụp ảnh.</p><div class="timeline-grid"><div class="timeline-card"><div class="timeline-item"><div class="timeline-time">Mở đầu</div><div><h3>Xuất phát từ Bến Ninh Kiều</h3><p>Khung giờ đầu ngày giúp bạn nhập cuộc đúng lúc sông nước nhộn nhịp nhất.</p></div></div><div class="timeline-item"><div class="timeline-time">Tiếp nối</div><div><h3>Theo thuyền ra khu vực lễ hội chính</h3><p>Hãy quan sát tổng thể mặt sông để cảm nhận rõ độ đông vui và màu sắc lễ hội.</p></div></div><div class="timeline-item"><div class="timeline-time">Điểm vui</div><div><h3>Ăn sáng trên ghe và chụp ảnh</h3><p>Đây là đoạn trải nghiệm vừa ngon vừa rất có chất riêng của Cần Thơ.</p></div></div><div class="timeline-item"><div class="timeline-time">Kết lại</div><div><h3>Ghé thêm lò hủ tiếu hoặc vườn ven sông</h3><p>Một điểm nối bên bờ sẽ làm chuyến đi cân bằng hơn sau không khí lễ hội sôi động.</p></div></div></div><aside class="quick-plan"><h3>Một chuyến đi hợp lý thường có</h3><ul><li><i class="fa-solid fa-check"></i><span>Khởi hành trước giờ mặt trời lên cao để tránh nắng và đông quá mức.</span></li><li><i class="fa-solid fa-check"></i><span>Điện thoại đủ pin vì bạn sẽ rất dễ muốn chụp liên tục.</span></li><li><i class="fa-solid fa-check"></i><span>Một khoản tiền mặt nhỏ để mua đồ ăn, trái cây hoặc nước uống trên ghe.</span></li><li><i class="fa-solid fa-check"></i><span>Tâm thế thong thả để cảm nhận nhịp sống thay vì chỉ lướt qua cho biết.</span></li></ul></aside></div></div>
+    <div class="travel-tips"><h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ trước khi ghé</h3><div class="travel-tips-grid"><div class="tip-box"><strong>Cho trải nghiệm</strong><ul><li><i class="fa-solid fa-life-ring"></i><span>Ưu tiên chọn tàu hoặc thuyền đảm bảo an toàn và hỏi rõ lộ trình trước khi đi.</span></li><li><i class="fa-solid fa-hat-cowboy"></i><span>Mang nón và nước uống vì sau 8 giờ sáng thời tiết trên sông sẽ nắng hơn nhiều.</span></li><li><i class="fa-solid fa-handshake"></i><span>Giữ thái độ lịch sự khi chụp ảnh người dân để trải nghiệm vừa đẹp vừa văn minh.</span></li></ul></div><div class="tip-box"><strong>Cho ảnh đẹp</strong><ul><li><i class="fa-solid fa-sun"></i><span>Bình minh là khung giờ vàng cho ảnh có chiều sâu và màu nước đẹp.</span></li><li><i class="fa-solid fa-camera"></i><span>Hãy chụp cả các chi tiết nhỏ như ly cà phê, cây bẹo hay tay chèo ghe.</span></li><li><i class="fa-solid fa-images"></i><span>Ảnh toàn cảnh mặt sông sẽ đẹp hơn nếu đứng ở vị trí hơi cao hoặc góc rộng.</span></li></ul></div></div></div>
+    <div class="card comment-section" data-id="23" id="danh-gia"><h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3><p>Hãy chia sẻ cảm nhận của bạn về lễ hội và vẻ đẹp sông nước Cái Răng nhé.</p><div class="rating" id="rating-23"></div><div class="comment-box"></div></div>
+</section>
+<footer class="footer"><div class="footer-container"><div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div><div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div></div><div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div></footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

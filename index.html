@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ</title>
+    <link rel="stylesheet" href="styletrangchu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-don   g-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Tây Đô rực rỡ bản sắc miền sông nước</p>
+            <h2>Khám Phá Thành Phố Cần Thơ</h2>
+            <p class="hero-quote">“Cần Thơ gạo trắng nước trong, ai đi đến đó lòng không muốn về.”</p>
+            <div class="hero-actions">
+                <a href="dulichtest.html" class="btn">Khám phá ngay</a>
+                <a href="#diem-noi-bat" class="btn ghost">Xem điểm nổi bật</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="diem-noi-bat">
+        <div class="about-wrapper">
+            <div class="about-text">
+                <h2>Giới Thiệu Thành Phố Cần Thơ</h2>
+                <p>
+                    Chào mừng bạn đến với Cần Thơ, thủ phủ miền Tây sông nước nơi nhịp sống hiền hòa luôn song hành cùng
+                    nét năng động hiện đại. Từ chợ nổi Cái Răng lúc bình minh, bến Ninh Kiều về đêm đến những vườn trái cây
+                    xanh mát quanh năm, mỗi điểm đến đều mang một vẻ đẹp riêng đầy cuốn hút.
+                </p>
+                <p>
+                    Website này giúp bạn tìm nhanh nơi nên đi, món nên thử và các trải nghiệm văn hóa đáng nhớ khi khám phá
+                    vùng đất Tây Đô.
+                </p>
+            </div>
+
+            <div class="about-badges">
+                <div class="badge-card">
+                    <i class="fa-solid fa-water"></i>
+                    <h3>Sông nước đặc trưng</h3>
+                    <p>Không khí miền Tây gần gũi, bình yên.</p>
+                </div>
+                <div class="badge-card">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <h3>Ẩm thực phong phú</h3>
+                    <p>Nhiều món ngon dân dã và đậm vị địa phương.</p>
+                </div>
+                <div class="badge-card">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h3>Con người hiếu khách</h3>
+                    <p>Thân thiện, nhiệt tình và mến khách.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="explore-now">Điểm đến gợi ý cho bạn</p>
+
+        <div class="recommend">
+            <a href="dulichtest.html#diadiemnoitieng" class="card">
+                <img src="images/CNCR.jpg" alt="địa điểm nổi tiếng">
+                <h3>Địa điểm nổi tiếng</h3>
+            </a>
+
+            <a href="doan.html" class="card">
+                <img src="images/đs.jfif" alt="đặc sản cần thơ">
+                <h3>Đặc sản Cần Thơ</h3>
+            </a>
+
+            <a href="dulichtest.html#sthai" class="card">
+                <img src="images/dlst.jfif" alt="du lịch sinh thái">
+                <h3>Du lịch sinh thái</h3>
+            </a>
+
+            <a href="vanhoa.html" class="card">
+                <img src="images/lhvh.jpg" alt="lễ hội văn hóa">
+                <h3>Lễ hội văn hóa</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Khoảnh Khắc Cần Thơ</h2>
+        <div class="gallery-grid">
+            <img src="images/ct1.webp" alt="Cần Thơ 1" title="Cầu Cần Thơ lúc hoàng hôn">
+            <img src="images/ct2.webp" alt="Cần Thơ 2" title="Bến Ninh Kiều nhộn nhịp về đêm">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>
+                    Khám phá vẻ đẹp miền Tây sông nước,
+                    trải nghiệm văn hóa và ẩm thực đặc sắc.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa
+        </div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".navbar a");
+            let currentPage = window.location.pathname.split("/").pop();
+
+            if (currentPage === "") currentPage = "index.html";
+
+            links.forEach(function (link) {
+                const linkPage = link.getAttribute("href").split("/").pop();
+                if (linkPage === currentPage) link.classList.add("active");
+            });
+        });
+    </script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

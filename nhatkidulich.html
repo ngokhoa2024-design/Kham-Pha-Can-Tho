@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Nhật Kí Du Lịch</title>
+    <link rel="stylesheet" href="nhatkidulich.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="nhatkidulich.html" class="active"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Ghi lại hành trình của riêng bạn</p>
+            <h2>Nhật kí du lịch cá nhân</h2>
+            <p>Tạo lịch trình, viết câu chuyện, thêm ảnh hoặc video rồi xuất thành file để chia sẻ lại lên diễn đàn hay bất kì nền tảng nào khác.</p>
+            <div class="hero-actions">
+                <a href="#composer" class="hero-btn primary">Tạo nhật kí mới</a>
+                <a href="#journalList" class="hero-btn secondary">Xem nhật kí của tôi</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="journal-page">
+        <section class="journal-grid">
+            <aside class="sidebar-stack">
+                <article class="sidebar-card account-card">
+                    <div class="card-title-row">
+                        <h3>Quyền riêng tư</h3>
+                        <span class="status-pill" id="privacyPill">Đang kiểm tra</span>
+                    </div>
+                    <p id="privacyText">Đang đồng bộ nhật kí của bạn.</p>
+                    <div class="status-actions" id="privacyActions"></div>
+                </article>
+
+                <article class="sidebar-card tips-card">
+                    <h3>Gợi ý sáng tạo</h3>
+                    <ul class="tips-list">
+                        <li>Biến chuyến đi thành một câu chuyện có mở đầu, cao trào và điểm nhớ nhất.</li>
+                        <li>Kết hợp timeline, cảm xúc, món ăn và những khoảnh khắc ngẫu hứng.</li>
+                        <li>Xuất file HTML nếu bạn muốn có một bản trình bày đẹp để chia sẻ.</li>
+                    </ul>
+                </article>
+            </aside>
+
+            <section class="content-stack">
+                <article class="panel-card composer-card" id="composer">
+                    <div class="card-title-row">
+                        <h3>Tạo nhật kí du lịch</h3>
+                        <span class="hint">Chỉ tài khoản của bạn mới xem được nhật kí này</span>
+                    </div>
+                    <form id="journalForm" class="journal-form" novalidate>
+                        <div class="field-grid">
+                            <label>
+                                Tên hành trình
+                                <input type="text" name="title" placeholder="Ví dụ: Một ngày dạo bến Ninh Kiều" required>
+                            </label>
+                            <label>
+                                Điểm đến chính
+                                <input type="text" name="destination" placeholder="Ví dụ: Chợ nổi Cái Răng" required>
+                            </label>
+                        </div>
+                        <div class="field-grid three-col">
+                            <label>
+                                Ngày bắt đầu
+                                <input type="date" name="startDate">
+                            </label>
+                            <label>
+                                Ngày kết thúc
+                                <input type="date" name="endDate">
+                            </label>
+                            <label>
+                                Cảm hứng chuyến đi
+                                <input type="text" name="mood" placeholder="Ví dụ: Bình yên, rực rỡ, đầy cảm hứng">
+                            </label>
+                        </div>
+                        <label>
+                            Mô tả ngắn
+                            <textarea name="summary" rows="3" placeholder="Một đoạn giới thiệu ngắn cho hành trình này..." required></textarea>
+                        </label>
+                        <label>
+                            Câu chuyện của bạn
+                            <textarea name="story" rows="7" placeholder="Kể chi tiết trải nghiệm, cảm xúc, góc nhìn, điều bất ngờ và những điều bạn muốn nhớ mãi..."></textarea>
+                        </label>
+
+                        <div class="timeline-builder">
+                            <div class="card-title-row">
+                                <h4>Lịch trình sáng tạo</h4>
+                                <button type="button" class="inline-btn" id="addTimelineBtn"><i class="fa-solid fa-plus"></i> Thêm chặng</button>
+                            </div>
+                            <div class="timeline-fields" id="timelineFields"></div>
+                        </div>
+
+                        <label>
+                            Ảnh hoặc video của hành trình
+                            <input type="file" id="mediaInput" accept="image/*,video/*" multiple>
+                            <span class="input-help">Nên chọn file nhỏ để lưu ổn định trong trình duyệt. Bạn vẫn có thể xuất thành file sau khi hoàn thành.</span>
+                        </label>
+                        <div class="preview-grid" id="mediaPreview"></div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="primary-btn">Lưu nhật kí</button>
+                            <p class="form-message" id="journalMessage" role="status" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="panel-card list-card" id="journalList">
+                    <div class="card-title-row">
+                        <h3>Nhật kí của tôi</h3>
+                        <span class="hint" id="journalCounter">0 hành trình</span>
+                    </div>
+                    <div class="toolbar">
+                        <label class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="journalSearch" placeholder="Tìm theo hành trình, điểm đến, cảm hứng...">
+                        </label>
+                    </div>
+                    <div class="journal-list" id="journalListContent"></div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <script src="nhatkidulich.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>

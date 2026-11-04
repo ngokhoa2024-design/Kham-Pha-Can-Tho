@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tìm Bạn Đồng Hành | Khám Phá Cần Thơ</title>
+<link rel="stylesheet" href="find-friends.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="buddy-page">
+
+<header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<section class="buddy-hero">
+  <div class="buddy-hero-content">
+    <span class="hero-kicker"><i class="fa-solid fa-people-group"></i> BẠN ĐỒNG HÀNH</span>
+    <h1>Tìm người đồng hành,<br>khám phá Cần Thơ cùng nhau</h1>
+    <p>Đăng chuyến đi của bạn, tìm những người cùng sở thích và bắt đầu một hành trình mới.</p>
+    <p>Lưu ý: Tìm bạn là dịch vụ nhằm mục đích tìm người tham quan các địa điểm Cần Thơ với ý nghĩa trong sáng, quảng bá hình ảnh. Không dùng dịch vụ với mục đích xấu. Nếu phát hiện sẽ khóa tài khoản vĩnh viễn.</p>
+    <p>Nếu bạn phát hiện hoạt động bất thường, hãy báo cáo người dùng, hoặc liên lạc với chúng tôi. Xin cảm ơn</p>
+    <button class="primary-btn" id="findBuddyBtn" type="button"><i class="fa-solid fa-compass"></i> Tìm bạn Ngay</button>
+  </div>
+  <div class="hero-orbit" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
+</section>
+
+<section class="buddy-intro container">
+  <div class="intro-card"><div class="intro-icon"><i class="fa-solid fa-map-location-dot"></i></div><h3>Đăng chuyến đi</h3><p>Tạo một lời mời cho chuyến đi của bạn.</p></div>
+  <div class="intro-card"><div class="intro-icon"><i class="fa-solid fa-user-group"></i></div><h3>Tìm người đồng hành</h3><p>Khám phá những người đang tìm bạn đi cùng.</p></div>
+  <div class="intro-card"><div class="intro-icon"><i class="fa-brands fa-facebook"></i></div><h3>Liên hệ trực tiếp</h3><p>Kết nối với nhau thông qua Facebook.</p></div>
+</section>
+
+<section class="buddy-workspace container" id="buddyWorkspace">
+  <div class="section-heading">
+    <div><span class="eyebrow">Bảng tin tìm bạn</span><h2>Những chuyến đi đang tìm đồng đội</h2><p>Tìm một chuyến đi hợp vibe rồi kết nối với người đăng.</p></div>
+    <button class="secondary-btn" id="myPostsBtn" type="button"><i class="fa-solid fa-user"></i> Tin của tôi</button>
+  </div>
+
+  <section class="buddy-publish" id="publishSection">
+    <div class="publish-header"><div><span class="eyebrow">CHIA SẺ CHUYẾN ĐI</span><h2>Đăng tin tìm bạn đồng hành</h2></div><span class="login-state" id="loginState"></span></div>
+    <div id="loginRequired" class="notice-card" hidden>
+      <i class="fa-solid fa-lock"></i><div><strong>Bạn cần đăng nhập để đăng tin tìm bạn đồng hành.</strong><p>Tài khoản thật của website sẽ tự động được dùng cho tên, avatar và Facebook.</p></div>
+      <a href="account.html" class="primary-btn small">Đăng nhập</a>
+    </div>
+
+    <form id="buddyForm" class="buddy-form" hidden>
+      <div class="form-grid">
+        <label>Tiêu đề chuyến đi<input id="titleInput" maxlength="120" required placeholder="Tìm bạn đi Chợ nổi Cái Răng cuối tuần"></label>
+        <label>Điểm đến<input id="destinationInput" maxlength="120" required placeholder="Chợ nổi Cái Răng"></label>
+        <label>Ngày dự kiến<input id="tripDateInput" type="date"></label>
+        <label>Thời gian
+          <select id="tripTimeInput">
+            <option value="">Chọn thời gian</option><option>Sáng</option><option>Trưa</option><option>Chiều</option><option>Tối</option><option>Cả ngày</option>
+          </select>
+        </label>
+        <label>Số người muốn tìm<input id="guestCountInput" type="number" min="1" max="20" value="1" required></label>
+        <label>Loại chuyến đi
+          <select id="tripTypeInput" required>
+            <option value="">Chọn loại</option><option>Ăn uống</option><option>Tham quan</option><option>Chụp ảnh</option><option>Văn hóa</option><option>Sinh thái</option><option>Chill</option>
+          </select>
+        </label>
+        <label>Vibe
+          <select id="vibeInput">
+            <option value="">Chọn vibe</option><option>Hướng ngoại</option><option>Hướng nội</option><option>Thích nói chuyện</option><option>Thích chụp ảnh</option><option>Thích khám phá</option><option>Đi nhẹ nhàng</option>
+          </select>
+        </label>
+        <label class="full">Mô tả thêm<textarea id="descriptionInput" maxlength="1000" rows="5" required placeholder="Cuối tuần này mình muốn đi..."></textarea></label>
+      </div>
+      <div class="account-preview" id="accountPreview"></div>
+      <div class="form-actions"><button class="primary-btn" id="submitBuddyBtn" type="submit"><i class="fa-solid fa-paper-plane"></i> Đăng tin tìm</button><button class="ghost-btn" id="cancelEditBtn" type="button" hidden>Hủy sửa</button></div>
+      <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="feed-section" id="feedSection">
+    <div class="feed-toolbar">
+      <div class="filter-chips" id="filterChips">
+        <button class="filter-chip active" data-filter="all" type="button">Tất cả</button>
+        <button class="filter-chip" data-filter="Ăn uống" type="button">Ăn uống</button>
+        <button class="filter-chip" data-filter="Tham quan" type="button">Tham quan</button>
+        <button class="filter-chip" data-filter="Chụp ảnh" type="button">Chụp ảnh</button>
+        <button class="filter-chip" data-filter="Văn hóa" type="button">Văn hóa</button>
+        <button class="filter-chip" data-filter="Sinh thái" type="button">Sinh thái</button>
+        <button class="filter-chip" data-filter="Chill" type="button">Chill</button>
+      </div>
+      <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" type="search" placeholder="Tìm điểm đến hoặc chuyến đi..."></label>
+    </div>
+    <div class="feed-status" id="feedStatus" aria-live="polite"></div>
+    <div class="buddy-feed" id="buddyFeed"></div>
+  </section>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div>
+    <div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div>
+  </div>
+  <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+  <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="JS/supabase.js"></script>
+<script src="report.js"></script>
+<script src="find-friends.js"></script>
+
+    <script src="mobile-nav.js"></script>
+</body>
+</html>

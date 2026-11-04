@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Chùa Ông Cần Thơ - công trình tâm linh đặc sắc với kiến trúc rực rỡ, đậm nét Hoa và vị trí trung tâm thuận tiện tham quan.">
+    <title>Chùa Ông</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .co-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(116, 25, 18, 0.72), rgba(193, 84, 35, 0.58)),
+                url("images/chuaong đẹp.webp") center/cover;
+        }
+
+        .co-page .hero-btn.primary {
+            color: #5d180f;
+            background: linear-gradient(135deg, #ffd69e, #ffaf67);
+            box-shadow: 0 18px 30px rgba(193, 84, 35, 0.24);
+        }
+
+        .co-page .feature-pill i,
+        .co-page .highlight-item i,
+        .co-page .quick-plan li i,
+        .co-page .travel-tips li i,
+        .co-page .timeline-time {
+            color: #9b3f22;
+        }
+
+        .co-page .feature-pill i,
+        .co-page .highlight-item i {
+            background: rgba(155, 63, 34, 0.12);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page co-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ">
+            </a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html" class="active"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow">
+                <i class="fa-solid fa-place-of-worship"></i>
+                Nét kiến trúc rực rỡ giữa trung tâm thành phố
+            </div>
+            <h1>Chùa Ông</h1>
+            <p class="hero-lead">
+                Một điểm đến nổi bật về màu sắc, kiến trúc và chiều sâu văn hóa. Chùa Ông luôn dễ gây ấn tượng mạnh ngay từ ánh nhìn đầu tiên nhờ mặt tiền đặc trưng và không khí tâm linh rất riêng.
+            </p>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#hanh-trinh">
+                    <i class="fa-solid fa-route"></i>
+                    Xem gợi ý tham quan
+                </a>
+                <a class="hero-btn secondary" href="#danh-gia">
+                    <i class="fa-solid fa-star"></i>
+                    Đọc đánh giá du khách
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi ghé</h2>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Màu sắc nổi bật</strong>
+                    <span>Công trình rất dễ nhận ra và rất hợp cho ảnh kiến trúc</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Đậm nét văn hóa Hoa</strong>
+                    <span>Tạo nên sự khác biệt rõ ràng trong bản đồ du lịch Cần Thơ</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Vị trí thuận tiện</strong>
+                    <span>Dễ ghé trong lịch trình tham quan khu trung tâm</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Không gian tâm linh</strong>
+                    <span>Vừa tham quan vừa cảm nhận chiều sâu tín ngưỡng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Vài nét về Chùa Ông</h2>
+            <p>
+                Chùa Ông là một trong những công trình tâm linh gây ấn tượng mạnh nhất ở khu trung tâm Cần Thơ. Mặt tiền nhiều chi tiết, sắc đỏ nổi bật và những lớp hoa văn tinh xảo khiến nơi đây luôn nổi bật trong mắt du khách.
+            </p>
+            <p>
+                Điều hấp dẫn của địa điểm này không chỉ ở vẻ đẹp hình thức mà còn ở bầu không khí bên trong. Chỉ cần bước qua cổng, cảm giác náo nhiệt bên ngoài như lùi lại, nhường chỗ cho một nhịp điệu trầm và sâu hơn.
+            </p>
+        </div>
+
+        <div class="image-placeholder">
+            <img src="images/chuaong đẹp.webp" alt="Chùa Ông">
+            <div class="image-badge">
+                Điểm nhấn
+                <span>Mặt tiền nhiều màu sắc là phần dễ gây ấn tượng nhất với du khách</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-palette"></i>
+            <div>
+                <h3>Màu sắc rất bắt mắt</h3>
+                <p>Chỉ cần nhìn từ xa, công trình đã tạo được dấu ấn thị giác rất rõ.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-dragon"></i>
+            <div>
+                <h3>Chi tiết kiến trúc phong phú</h3>
+                <p>Mỗi góc nhìn đều có thêm một lớp trang trí đáng để quan sát kỹ hơn.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-incense"></i>
+            <div>
+                <h3>Không khí tâm linh riêng biệt</h3>
+                <p>Không gian bên trong tạo cảm giác trang nghiêm và tĩnh hơn hẳn bên ngoài.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="section-block">
+        <h2 class="section-heading">Điều khiến Chùa Ông đáng ghé</h2>
+        <p class="section-copy">
+            Đây là nơi hội tụ cả giá trị văn hóa, kiến trúc và trải nghiệm cảm xúc. Vừa đẹp để ngắm, vừa đáng để tìm hiểu sâu hơn về dấu ấn cộng đồng người Hoa tại Cần Thơ.
+        </p>
+
+        <div class="highlights">
+            <div class="highlight-item">
+                <i class="fa-solid fa-building"></i>
+                <h3>Kiến trúc giàu bản sắc</h3>
+                <p>Các chi tiết trang trí tạo nên một diện mạo khác biệt hoàn toàn với nhiều công trình khác.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Chiều sâu văn hóa</h3>
+                <p>Nơi đây kể rất rõ câu chuyện giao thoa cộng đồng và tín ngưỡng tại Cần Thơ.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-camera"></i>
+                <h3>Rất hợp để lưu lại hình ảnh</h3>
+                <p>Ảnh kiến trúc, ảnh cận chi tiết và ảnh toàn cảnh đều rất hiệu quả ở địa điểm này.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block" id="hanh-trinh">
+        <h2 class="section-heading">Gợi ý tham quan ngắn</h2>
+        <p class="section-copy">
+            Bạn có thể dành một khoảng thời gian ngắn nhưng vẫn đủ để cảm nhận vẻ đẹp nổi bật của công trình nếu đi theo nhịp đơn giản dưới đây.
+        </p>
+
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <div class="timeline-item">
+                    <div class="timeline-time">Bắt đầu</div>
+                    <div>
+                        <h3>Ngắm mặt tiền từ bên ngoài</h3>
+                        <p>Đây là lúc bạn cảm nhận rõ nhất sự rực rỡ và đặc trưng của kiến trúc chùa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Tiếp theo</div>
+                    <div>
+                        <h3>Đi vào không gian bên trong</h3>
+                        <p>Sự chuyển từ náo nhiệt sang tĩnh lặng là một phần rất thú vị của trải nghiệm.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Sau đó</div>
+                    <div>
+                        <h3>Quan sát chi tiết trang trí</h3>
+                        <p>Nhiều nét chạm khắc và màu sắc chỉ thật sự thấy hết khi đứng đủ gần.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Kết thúc</div>
+                    <div>
+                        <h3>Nối sang điểm trung tâm khác</h3>
+                        <p>Chùa Ông rất dễ kết hợp cùng Bến Ninh Kiều hoặc các điểm ven sông gần đó.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="quick-plan">
+                <h3>Một lượt tham quan hợp lý thường có</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i><span>Thời gian đi vừa phải để ngắm kỹ từng chi tiết.</span></li>
+                    <li><i class="fa-solid fa-check"></i><span>Trang phục lịch sự phù hợp với không gian tâm linh.</span></li>
+                    <li><i class="fa-solid fa-check"></i><span>Máy ảnh nếu bạn thích chụp kiến trúc màu sắc.</span></li>
+                    <li><i class="fa-solid fa-check"></i><span>Lịch trình kết hợp với các điểm gần trung tâm.</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu ý nhỏ</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box">
+                <strong>Cho trải nghiệm</strong>
+                <ul>
+                    <li><i class="fa-solid fa-volume-low"></i><span>Nên giữ không khí nhẹ nhàng khi vào khu vực bên trong.</span></li>
+                    <li><i class="fa-solid fa-shirt"></i><span>Trang phục gọn gàng sẽ phù hợp hơn với không gian chùa.</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Đây là điểm rất tiện để ghé khi đang ở khu trung tâm.</span></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <strong>Cho ảnh đẹp</strong>
+                <ul>
+                    <li><i class="fa-solid fa-sun"></i><span>Ánh sáng ban ngày giúp màu sắc mặt tiền nổi rõ hơn.</span></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i><span>Đừng bỏ qua các ảnh cận vào chi tiết trang trí.</span></li>
+                    <li><i class="fa-solid fa-border-all"></i><span>Góc chính diện thường cho ảnh rất ấn tượng ở địa điểm này.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comment-section" data-id="7" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Chùa Ông để những người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-7"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Khám Phá Cần Thơ</h3>
+            <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact for work</h4>
+            <p>Gmail 1: ngokhoa2024@gmail.com</p>
+            <p>Gmail 2: thiennn0412@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit">
+        <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p>
+    </div>
+</footer>
+
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Vườn Du Lịch Sinh Thái Ba Cống - không gian miệt vườn xanh mát với nhịp tham quan nhẹ nhàng, gần gũi thiên nhiên.">
+    <title>Vườn Du Lịch Sinh Thái Ba Cống</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .bacong-page .sub-header {
+            background:
+                linear-gradient(135deg, rgba(20, 20, 20, 0.15), rgba(20, 20, 20, 0.08)),
+                url("images/3cong đẹp.webp") center/cover;
+        }
+
+        .bacong-page .hero-btn.primary {
+            color: #25502b;
+            background: linear-gradient(135deg, #e7f4cf, #abd785);
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.14);
+        }
+
+        .bacong-page .feature-pill i,
+        .bacong-page .highlight-item i,
+        .bacong-page .quick-plan li i,
+        .bacong-page .travel-tips li i,
+        .bacong-page .timeline-time {
+            color: #3f7645;
+        }
+
+        .bacong-page .feature-pill i,
+        .bacong-page .highlight-item i {
+            background: rgba(63, 118, 69, 0.12);
+        }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page bacong-page">
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ">
+            </a>
+            <h1 class="site-title">Khám Phá Cần Thơ</h1>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navbar" aria-label="Điều hướng chính">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html" class="active"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="dropdown">
+                    <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    </ul>
+                </li>
+                <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <div class="eyebrow"><i class="fa-solid fa-tree-city"></i> Một khoảng xanh mộc mạc của Cần Thơ</div>
+            <h1>Vườn Du Lịch Sinh Thái Ba Cống</h1>
+            <p class="hero-lead">Ba Cống phù hợp với những ai thích kiểu đi chơi gần gũi, ít ồn và thiên về cảm giác miệt vườn thật. Không gian xanh, nhịp chậm và sự mộc mạc là điều khiến nơi này dễ tạo thiện cảm với người ghé thăm.</p>
+            <div class="hero-actions">
+                <a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem gợi ý tham quan</a>
+                <a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <h2>Điểm nhanh trước khi ghé</h2>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Không gian xanh gần gũi</strong>
+                    <span>Điểm mạnh lớn nhất là cảm giác tự nhiên và không quá du lịch hóa</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Hợp đi thư giãn</strong>
+                    <span>Đây là nơi hợp để nghỉ nhịp hơn là đi quá nhiều hoạt động mạnh</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Đậm tinh thần miệt vườn</strong>
+                    <span>Cảnh quan và nhịp trải nghiệm đều mang chất miền Tây rõ nét</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Ảnh tự nhiên đẹp</strong>
+                    <span>Không cần dàn dựng quá nhiều vẫn có thể có ảnh rất dễ thương</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="tour-detail">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h2>Vài nét về Ba Cống</h2>
+            <p>Ba Cống là kiểu điểm sinh thái khiến người ta thấy dễ chịu theo cách rất giản dị. Không quá rực rỡ, không quá dày hoạt động, nơi này hấp dẫn bởi vẻ mộc mạc và cảm giác đi để thở giữa thiên nhiên.</p>
+            <p>Với những người thích cảnh xanh, nhịp chậm và các chuyến đi không cần quá ồn ào, Ba Cống thường là một lựa chọn rất đáng cân nhắc khi khám phá Cần Thơ.</p>
+        </div>
+        <div class="image-placeholder">
+            <img src="images/3cong đẹp.webp" alt="Vườn Du Lịch Sinh Thái Ba Cống">
+            <div class="image-badge">Điểm nổi bật<span>Màu xanh dịu và cảm giác miệt vườn thật là điều đáng nhớ nhất</span></div>
+        </div>
+    </div>
+    <div class="feature-band">
+        <div class="feature-pill">
+            <i class="fa-solid fa-leaf"></i>
+            <div>
+                <h3>Không gian dịu và xanh</h3>
+                <p>Một nơi thích hợp cho những buổi muốn rời khỏi nhịp thành phố một chút.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-spa"></i>
+            <div>
+                <h3>Thư giãn đúng chất</h3>
+                <p>Nơi này đáng đi hơn khi bạn chậm lại và cảm nhận nhiều hơn.</p>
+            </div>
+        </div>
+        <div class="feature-pill">
+            <i class="fa-solid fa-camera"></i>
+            <div>
+                <h3>Hợp ảnh miệt vườn</h3>
+                <p>Các khung hình ở đây thường đẹp nhờ sự tự nhiên và mộc mạc.</p>
+            </div>
+        </div>
+    </div>
+    <hr class="separator">
+    <div class="section-block">
+        <h2 class="section-heading">Điều làm Ba Cống đáng ghé</h2>
+        <p class="section-copy">Chính sự giản dị là điểm mạnh. Không quá cầu kỳ nhưng đủ thật, đủ xanh và đủ nhẹ để chuyến đi để lại cảm giác dễ chịu lâu hơn.</p>
+        <div class="highlights">
+            <div class="highlight-item">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Cảm giác rất thật</h3>
+                <p>Đây là kiểu nơi ít tạo cảm giác du lịch hóa nên trải nghiệm thường gần gũi hơn.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-tree"></i>
+                <h3>Gần thiên nhiên rõ nét</h3>
+                <p>Màu xanh và không gian mở giúp nơi đây luôn giữ được sự dễ chịu.</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fa-solid fa-camera-retro"></i>
+                <h3>Ảnh đẹp theo kiểu tự nhiên</h3>
+                <p>Không cần quá nhiều setup, chính không gian đã đủ tạo cảm xúc cho ảnh.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-block" id="hanh-trinh">
+        <h2 class="section-heading">Gợi ý tham quan ngắn</h2>
+        <p class="section-copy">Điểm đến này hợp nhất với một nhịp đi chậm, đơn giản và thoải mái.</p>
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <div class="timeline-item">
+                    <div class="timeline-time">Bắt đầu</div>
+                    <div>
+                        <h3>Đi một vòng quanh khu</h3>
+                        <p>Việc làm quen không gian trước sẽ giúp bạn dễ tìm ra các góc đẹp và chỗ nghỉ phù hợp.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Tiếp theo</div>
+                    <div>
+                        <h3>Chụp vài góc xanh</h3>
+                        <p>Những đoạn đường nhỏ, hàng cây và khoảng mở thường là điểm ảnh đẹp nhất.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Sau đó</div>
+                    <div>
+                        <h3>Dành thời gian nghỉ ngắn</h3>
+                        <p>Địa điểm này sẽ đáng hơn khi bạn thật sự chậm lại và thư giãn trong không gian ấy.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Cuối buổi</div>
+                    <div>
+                        <h3>Kết nối với hành trình sinh thái khác</h3>
+                        <p>Ba Cống rất hợp để ghép vào một ngày đi theo chủ đề xanh và miệt vườn.</p>
+                    </div>
+                </div>
+            </div>
+            <aside class="quick-plan">
+                <h3>Một buổi đi đúng nhịp thường có</h3>
+                <ul>
+<li><i class='fa-solid fa-check'></i><span>Thời gian thoải mái và không gấp gáp.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Trang phục gọn, dễ đi bộ.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Điện thoại đủ pin cho ảnh cảnh tự nhiên.</span></li>
+<li><i class='fa-solid fa-check'></i><span>Thời điểm mát để chuyến đi dễ chịu hơn.</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <div class="travel-tips">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu ý nhỏ</h3>
+        <div class="travel-tips-grid">
+            <div class="tip-box"><strong>Cho trải nghiệm</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Đây là nơi hợp với nhịp thong thả, không nên chạy lịch quá nhanh.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ưu tiên đi lúc mát để cảm giác dễ chịu hơn nhiều.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Nên có nước nếu đi vào khung giờ nắng.</span></li>
+            </ul></div>
+            <div class="tip-box"><strong>Cho ảnh đẹp</strong><ul>
+<li><i class='fa-solid fa-circle'></i><span>Ảnh tự nhiên khi đang đi dạo thường hợp hơn ảnh tạo dáng quá nhiều.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Hãy tận dụng các lớp cây xanh để tạo chiều sâu cho khung hình.</span></li>
+<li><i class='fa-solid fa-circle'></i><span>Ánh sáng đầu ngày hoặc cuối chiều luôn dễ lên ảnh hơn.</span></li>
+            </ul></div>
+        </div>
+    </div>
+    <div class="card comment-section" data-id="15" id="danh-gia">
+        <h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3>
+        <p>Hãy chia sẻ cảm nhận của bạn về Vườn Du Lịch Sinh Thái Ba Cống để những người ghé sau có thêm gợi ý nhé.</p>
+        <div class="rating" id="rating-15"></div>
+        <div class="comment-box"></div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div>
+        <div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+    <div class="footer-credit"><p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân thành cảm ơn.</p></div>
+</footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

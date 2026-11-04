@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Lễ hội Sene Dolta với tinh thần hiếu kính tổ tiên, vẻ đẹp cộng đồng Khmer và không khí lắng sâu đầy nhân văn.">
+    <title>Lễ hội Sene Dolta</title>
+    <link rel="stylesheet" href="styleCNCR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .senedolta-page .sub-header { background: linear-gradient(135deg, rgba(92, 32, 18, 0.84), rgba(190, 94, 49, 0.48)), url("images/senedolta.jpg") center/cover; }
+        .senedolta-page .hero-btn.primary { color: #7e3316; background: linear-gradient(135deg, #ffe1c0, #ffb98d); box-shadow: 0 18px 30px rgba(190, 94, 49, 0.24); }
+        .senedolta-page .feature-pill i, .senedolta-page .highlight-item i, .senedolta-page .quick-plan li i, .senedolta-page .travel-tips li i, .senedolta-page .timeline-time { color: #a74824; }
+        .senedolta-page .feature-pill i, .senedolta-page .highlight-item i { background: rgba(167, 72, 36, 0.12); }
+    </style>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body class="cncr-page senedolta-page">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<header class="header"><div class="container"><div class="logo-area"><a href="index.html"><img src="images/logo Cần Thơ.png" alt="Logo du lịch Cần Thơ"></a><h1 class="site-title">Khám Phá Cần Thơ</h1></div><nav class="navbar" aria-label="Điều hướng chính"><ul><li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li><li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li><li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li><li><a href="vanhoa.html" class="active"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li><li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li><li class="dropdown"><a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a><ul class="dropdown-menu"><li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông Minh</a></li><li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li><li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li></ul></li><li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a></li><li><a href="account.html" class="account-link" aria-label="Tài khoản"><i class="fa-solid fa-user"></i></a></li></ul></nav></div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- MOBILE SIDEBAR NAV -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+            <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+            <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i> Khác
+                    <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                    <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                    <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                    <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                    <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-divider" role="separator"></li>
+            <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+            <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+        </ul>
+    </nav>
+</header>
+<header class="sub-header"><div class="hero-shell"><div class="hero-copy"><div class="eyebrow"><i class="fa-solid fa-hands-holding-circle"></i> Mùa lễ hiếu kính trong đời sống Khmer</div><h1>Lễ hội Sene Dolta</h1><p class="hero-lead">Sene Dolta mang bầu không khí trầm sâu và ấm áp, nơi các gia đình tưởng nhớ tổ tiên, gắn kết các thế hệ và làm nổi bật một vẻ đẹp văn hóa rất nhân văn của cộng đồng Khmer Nam Bộ.</p><div class="hero-actions"><a class="hero-btn primary" href="#hanh-trinh"><i class="fa-solid fa-route"></i> Xem nhịp trải nghiệm</a><a class="hero-btn secondary" href="#danh-gia"><i class="fa-solid fa-star"></i> Đọc đánh giá du khách</a></div></div><div class="hero-panel"><h2>Điểm nhanh trước khi ghé</h2><div class="hero-stats"><div class="hero-stat"><strong>Không khí lắng sâu</strong><span>Lễ hội phù hợp để cảm hơn là để vui chơi ồn ào</span></div><div class="hero-stat"><strong>Đậm nghĩa gia đình</strong><span>Tinh thần tưởng nhớ tổ tiên là cốt lõi cảm xúc của lễ</span></div><div class="hero-stat"><strong>Giàu tính cộng đồng</strong><span>Những nghi thức và cuộc gặp gỡ làm rõ sự gắn bó giữa các thế hệ</span></div><div class="hero-stat"><strong>Rất đáng tìm hiểu</strong><span>Đây là dịp tốt để hiểu sâu hơn về đời sống tinh thần của người Khmer</span></div></div></div></div></header>
+<section class="tour-detail"><div class="intro-section"><div class="intro-text"><h2>Vài nét về lễ hội</h2><p>Sene Dolta là lễ báo hiếu, tưởng nhớ ông bà tổ tiên trong văn hóa Khmer. Điểm đẹp của lễ không nằm ở sự hoành tráng mà ở chiều sâu tình cảm gia đình, lòng biết ơn và cảm giác sum họp rất đỗi gần gũi.</p><p>Với du khách, đây là một dịp đặc biệt để bước chậm lại và cảm nhận một phương diện khác của văn hóa miền Tây: không chỉ hào sảng và rộn ràng, mà còn rất sâu sắc, đằm và giàu lòng tri ân.</p></div><div class="image-placeholder"><img src="images/senedolta.jpg" alt="Lễ hội Sene Dolta"><div class="image-badge">Điểm chạm cảm xúc<span>Không khí đoàn tụ và sự thành kính thường là điều khiến người xem nhớ nhất</span></div></div></div><div class="feature-band"><div class="feature-pill"><i class="fa-solid fa-house-chimney-heart"></i><div><h3>Tinh thần gia đình rõ nét</h3><p>Mọi hoạt động đều xoay quanh sự tri ân, gặp gỡ và gắn bó giữa các thế hệ.</p></div></div><div class="feature-pill"><i class="fa-solid fa-incense"></i><div><h3>Không gian thành kính</h3><p>Nghi thức và bầu không khí tạo cảm giác trang trọng nhưng không xa cách.</p></div></div><div class="feature-pill"><i class="fa-solid fa-people-group"></i><div><h3>Nhân văn và gần gũi</h3><p>Lễ hội cho thấy chiều sâu đạo lý rất đẹp trong đời sống cộng đồng Khmer.</p></div></div></div><hr class="separator"><div class="section-block"><h2 class="section-heading">Điều làm lễ hội này nổi bật</h2><p class="section-copy">Sene Dolta không cố gây ấn tượng bằng bề nổi. Điều đọng lại thường là cảm giác ấm, sâu và sự trân trọng dành cho tổ tiên, gia đình và cội nguồn văn hóa.</p><div class="highlights"><div class="highlight-item"><i class="fa-solid fa-family"></i><h3>Nặng tình thân</h3><p>Ít lễ hội nào làm người xem cảm nhận rõ ý nghĩa của sum họp gia đình như Sene Dolta.</p></div><div class="highlight-item"><i class="fa-solid fa-book-open"></i><h3>Giàu chiều sâu văn hóa</h3><p>Mỗi nghi thức đều gắn với một hệ giá trị đạo lý và tín ngưỡng bền lâu.</p></div><div class="highlight-item"><i class="fa-solid fa-heart"></i><h3>Dư âm ở cảm xúc</h3><p>Nét đẹp của lễ hội thường đến chậm nhưng ở lại rất lâu sau khi rời đi.</p></div></div></div><div class="section-block" id="hanh-trinh"><h2 class="section-heading">Gợi ý một nhịp trải nghiệm</h2><p class="section-copy">Hãy giữ nhịp tham quan nhẹ nhàng để phù hợp với tinh thần lắng sâu của lễ hội này.</p><div class="timeline-grid"><div class="timeline-card"><div class="timeline-item"><div class="timeline-time">Mở đầu</div><div><h3>Quan sát tổng thể không gian lễ</h3><p>Đừng vội chụp ảnh ngay, hãy cảm nhận bầu không khí trước.</p></div></div><div class="timeline-item"><div class="timeline-time">Tiếp nối</div><div><h3>Theo dõi nghi thức và cách mọi người tham gia</h3><p>Chính thái độ thành kính của cộng đồng là điều làm nên vẻ đẹp của lễ.</p></div></div><div class="timeline-item"><div class="timeline-time">Điểm vui</div><div><h3>Trò chuyện nhẹ nhàng với người địa phương</h3><p>Bạn sẽ hiểu rõ hơn ý nghĩa của từng tập quán và lý do họ trân trọng ngày này.</p></div></div><div class="timeline-item"><div class="timeline-time">Kết lại</div><div><h3>Dành một khoảng lặng trước khi rời đi</h3><p>Đó thường là lúc dư âm của lễ hội chạm đến rõ nhất.</p></div></div></div><aside class="quick-plan"><h3>Một chuyến đi hợp lý thường có</h3><ul><li><i class="fa-solid fa-check"></i><span>Tinh thần tôn trọng không gian văn hóa và tín ngưỡng.</span></li><li><i class="fa-solid fa-check"></i><span>Trang phục nhã nhặn, phù hợp với bối cảnh lễ nghi.</span></li><li><i class="fa-solid fa-check"></i><span>Nhịp tham quan chậm để cảm nhận thay vì đi thật nhanh.</span></li><li><i class="fa-solid fa-check"></i><span>Thái độ tinh tế khi hỏi chuyện hoặc chụp ảnh người tham gia lễ.</span></li></ul></aside></div></div><div class="travel-tips"><h3><i class="fa-solid fa-circle-exclamation"></i> Mẹo nhỏ trước khi ghé</h3><div class="travel-tips-grid"><div class="tip-box"><strong>Cho trải nghiệm</strong><ul><li><i class="fa-solid fa-volume-low"></i><span>Nói chuyện nhỏ và giữ sự tôn trọng với các nghi thức đang diễn ra.</span></li><li><i class="fa-solid fa-shirt"></i><span>Trang phục kín đáo sẽ giúp bạn hòa vào không khí trang nghiêm tốt hơn.</span></li><li><i class="fa-solid fa-comments"></i><span>Nếu muốn tìm hiểu sâu, hãy hỏi với thái độ nhẹ nhàng và chân thành.</span></li></ul></div><div class="tip-box"><strong>Cho ảnh đẹp</strong><ul><li><i class="fa-solid fa-camera"></i><span>Ưu tiên ảnh kể chuyện, có cả nghi thức và nét mặt người tham gia.</span></li><li><i class="fa-solid fa-sun"></i><span>Ánh sáng dịu đầu ngày hoặc cuối ngày thường hợp với không khí của lễ hội này.</span></li><li><i class="fa-solid fa-images"></i><span>Đôi khi một góc ảnh yên tĩnh lại có sức gợi hơn cảnh đông người.</span></li></ul></div></div></div><div class="card comment-section" data-id="27" id="danh-gia"><h3><i class="fa-solid fa-star"></i> Đánh giá từ du khách</h3><p>Hãy chia sẻ cảm nhận của bạn về chiều sâu cảm xúc và nét đẹp cộng đồng của Sene Dolta nhé.</p><div class="rating" id="rating-27"></div><div class="comment-box"></div></div></section>
+<footer class="footer"><div class="footer-container"><div class="footer-col"><h3>Khám Phá Cần Thơ</h3><p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p></div><div class="footer-col"><h4>Contact for work</h4><p>Gmail 1: ngokhoa2024@gmail.com</p><p>Gmail 2: thiennn0412@gmail.com</p></div></div><div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div></footer>
+<script src="scriptCNCR.js"></script>
+    <section class="donate-section" aria-labelledby="donate-title">
+        <div class="donate-card">
+            <h2 id="donate-title">Ủng hộ dự án ❤️</h2>
+            <p>Nếu bạn thấy website hữu ích, hãy ủng hộ một ly cà phê để nhóm có thêm động lực phát triển.</p>
+            <a href="YOUR_BANK_LINK_HERE" target="_blank" rel="noopener noreferrer" class="donate-qr-link" aria-label="Ủng hộ dự án qua mã QR">
+                <img src="images/donate-qr.png" alt="QR Donate" class="donate-qr">
+            </a>
+            <small>Quét mã QR hoặc nhấn vào ảnh để ủng hộ.</small>
+        </div>
+    </section>
+    <script src="donate.js"></script>
+    <script src="mobile-nav.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Cần Thơ | Tài Khoản</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/logo Cần Thơ.png" alt="logo"></a>
+                <h1 class="site-title">Khám Phá Cần Thơ</h1>
+            </div>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu"
+                aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="navbar" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                    <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                    <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                    <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                    <li class="dropdown">
+                        <a href="forum.html"><i class="fa-solid fa-ellipsis"></i> Khác</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch Thông
+                                    Minh</a></li>
+                            <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                            <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a>
+                            </li>
+                            <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                            <li class="go-cantho-item"><a href="buddy-dong-hanh.html" class="go-cantho-link"><i
+                                        class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="timkiem.html" class="search-link" aria-label="Tìm kiếm"><i
+                                class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="account.html" class="account-link" aria-label="Tài khoản"><i
+                                class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!-- MOBILE OVERLAY -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <!-- MOBILE SIDEBAR NAV -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Khám Phá Cần Thơ</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Đóng menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="dulichtest.html"><i class="fa-solid fa-map-location-dot"></i> Du Lịch</a></li>
+                <li><a href="doan.html"><i class="fa-solid fa-utensils"></i> Ẩm Thực</a></li>
+                <li><a href="vanhoa.html"><i class="fa-solid fa-landmark"></i> Văn Hóa</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                <li class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" aria-expanded="false">
+                        <i class="fa-solid fa-ellipsis"></i> Khác
+                        <i class="fa-solid fa-chevron-down mobile-arrow"></i>
+                    </button>
+                    <ul class="mobile-submenu">
+                        <li><a href="plantrip.html"><i class="fa-solid fa-calendar-check"></i> Lên Kế Hoạch</a></li>
+                        <li><a href="forum.html"><i class="fa-solid fa-comments"></i> Diễn Đàn</a></li>
+                        <li><a href="nhatkidulich.html"><i class="fa-solid fa-book-open"></i> Nhật Kí Du Lịch</a></li>
+                        <li><a href="find-friends.html"><i class="fa-solid fa-user-group"></i> Tìm Bạn</a></li>
+                        <li class="mobile-go-cantho"><a href="buddy-dong-hanh.html"><i
+                                    class="fa-solid fa-handshake-angle"></i> GO Cần Thơ</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-divider" role="separator"></li>
+                <li><a href="timkiem.html"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a></li>
+                <li><a href="account.html"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Không gian cá nhân</p>
+            <h2>Tài khoản người dùng</h2>
+            <p>Đăng nhập nếu bạn đã có tài khoản, hoặc đăng ký nhanh để bắt đầu dùng.</p>
+        </div>
+    </section>
+
+    <main class="account-page">
+        <section class="account-layout">
+            <section class="form-area">
+                <div class="tabs" id="authTabs">
+                    <button type="button" class="tab-btn active" data-tab="login">Đăng Nhập</button>
+                    <button type="button" class="tab-btn" data-tab="register">Đăng Ký</button>
+                </div>
+
+                <div class="form-card active" id="loginPanel">
+                    <h3>Đăng nhập</h3>
+                    <form id="loginForm" novalidate>
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="ten@email.com" required>
+                        </label>
+                        <label>
+                            Mật khẩu
+                            <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+                        </label>
+                        <button type="submit" class="submit-btn">Đăng nhập</button>
+                        <p class="form-message" id="loginMessage" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+
+                <div class="form-card" id="registerPanel">
+                    <h3>Đăng ký</h3>
+                    <form id="registerForm" novalidate>
+                        <label>
+                            Họ và tên
+                            <input type="text" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="ten@email.com" required>
+                        </label>
+                        <label>
+                            Facebook
+                            <input type="text" name="facebook" id="registerFacebookInput"
+                                placeholder=https://www.facebook.com/profile.php?id=...">
+                            <span class="field-error" id="registerFacebookError"></span>
+                        </label>
+
+                        <label>
+                            Mật khẩu
+                            <input type="password" name="password" placeholder="Tối thiểu 6 ký tự" required
+                                minlength="6">
+                        </label>
+                        <button type="submit" class="submit-btn">Tạo tài khoản</button>
+                        <p class="form-message" id="registerMessage" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+
+                <div class="profile-card" id="profilePanel">
+                    <div class="profile-head">
+                        <div class="profile-top">
+                            <div class="avatar-shell">
+                                <img id="profileAvatarImage" class="profile-avatar-image" alt="Ảnh đại diện" hidden>
+                                <div id="profileAvatarFallback" class="profile-avatar-fallback">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="avatar-actions">
+                                <label class="avatar-upload">
+                                    <input type="file" id="avatarInput" accept="image/*">
+                                    <span>Đổi avatar</span>
+                                </label>
+                                <button type="button" id="removeAvatarBtn" class="avatar-remove">Xóa avatar</button>
+                            </div>
+                        </div>
+                        <span class="profile-badge"><i class="fa-solid fa-circle-check"></i> Đã đăng nhập</span>
+                        <h3>Thông tin cá nhân</h3>
+                        <p>Tài khoản của bạn đang hoạt động trên trình duyệt này.</p>
+                    </div>
+
+                    <div class="profile-info">
+                        <div class="profile-row">
+                            <span>Họ và tên</span>
+                            <strong id="profileName"></strong>
+                        </div>
+                        <div class="profile-row">
+                            <span>Email</span>
+                            <strong id="profileEmail"></strong>
+                        </div>
+                        <div class="profile-row">
+                            <span>Facebook</span>
+                            <strong id="profileFacebook"></strong>
+                        </div>
+                        <div class="profile-row">
+                            <span>Danh hiệu</span>
+                            <strong id="profileActiveTitle" style="color:var(--primary)">Không có</strong>
+                        </div>
+                        <div class="profile-row">
+                            <span>Trạng thái</span>
+                            <strong id="accountStatus">Đã đăng nhập</strong>
+                        </div>
+                        <div class="profile-row">
+                            <span>Vai trò</span>
+                            <strong id="accountRole">Thành viên</strong>
+                        </div>
+                    </div>
+
+                    <div class="profile-edit-card" id="trustScorePanel">
+                        <div class="profile-edit-head">
+                            <h4><i class="fa-solid fa-star"></i> Điểm uy tín</h4>
+                            <p><strong id="trustScoreValue">100 / 100</strong> · <span id="trustScoreLevel">Đại sứ Cần
+                                    Thơ</span></p>
+                        </div>
+                        <div id="trustHistoryList" style="font-size:0.9rem;color:#555">Đang tải lịch sử điểm uy tín...
+                        </div>
+                    </div>
+
+                    <div class="profile-edit-card" id="facebookUpdatePanel">
+                        <div class="profile-edit-head">
+                            <h4><i class="fa-brands fa-facebook"></i> Cập nhật Facebook</h4>
+                            <p>Liên kết Facebook là tùy chọn. Tên hiển thị trên website của bạn vẫn được giữ nguyên.</p>
+                        </div>
+
+                        <p class="facebook-help" id="facebookConnectMessage" role="status" aria-live="polite"></p>
+                        <form id="updateNameForm" class="update-name-form">
+                            <label for="nameUpdateInput">Đổi tên hiển thị</label>
+
+                            <input type="text" id="nameUpdateInput" placeholder="Nhập tên mới" required>
+
+                            <button type="submit">
+                                Cập nhật tên
+                            </button>
+                            <p id="updateNameMessage"></p>
+                        </form>
+
+                        <form id="updateFacebookForm" novalidate>
+                            <label>
+                                Facebook mới
+                                <input type="text" name="facebook" id="facebookUpdateInput"
+                                    placeholder="https://facebook.com/username">
+                                <span class="field-error" id="updateFacebookInputError"></span>
+                            </label>
+                            <button type="submit" class="submit-btn">Lưu Facebook</button>
+                            <p class="form-message" id="updateFacebookMessage" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <div class="ban-notice" id="banNotice" hidden>
+                        <h4><i class="fa-solid fa-ban"></i> Tài khoản đang bị khóa</h4>
+                        <p id="banReason">Lý do khóa sẽ hiển thị ở đây.</p>
+                    </div>
+
+                    <div class="security-card" id="securityPanel">
+                        <div class="security-head">
+                            <h4><i class="fa-solid fa-lock"></i> Bảo mật tài khoản</h4>
+                            <p>Đổi mật khẩu để bảo vệ tài khoản của bạn tốt hơn trên trình duyệt này.</p>
+                        </div>
+
+                        <form id="changePasswordForm" novalidate>
+                            <label>
+                                Mật khẩu hiện tại
+                                <input type="password" name="currentPassword" placeholder="Nhập mật khẩu hiện tại"
+                                    required>
+                            </label>
+                            <label>
+                                Mật khẩu mới
+                                <input type="password" name="newPassword" placeholder="Ít nhất 6 ký tự" required
+                                    minlength="6">
+                            </label>
+                            <label>
+                                Xác nhận mật khẩu mới
+                                <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu mới"
+                                    required minlength="6">
+                            </label>
+                            <button type="submit" class="submit-btn">Đổi mật khẩu</button>
+                            <p class="form-message" id="changePasswordMessage" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="logout-box" id="logoutBox">
+                    <a href="admin.html" id="adminLink" class="admin-link" hidden>Trang quản trị viên</a>
+                    <a href="titles.html" id="titlesLink" class="admin-link" hidden style="background:linear-gradient(135deg,#0b8a7b,#0a6a5f)">🏷️ Danh hiệu của tôi</a>
+                    <button type="button" id="logoutBtn" class="logout-btn">Đăng xuất</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Khám Phá Cần Thơ</h3>
+                <p>Khám phá vẻ đẹp miền Tây sông nước, trải nghiệm văn hóa và ẩm thực đặc sắc.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact for work</h4>
+                <p>Gmail 1: ngokhoa2024@gmail.com</p>
+                <p>Gmail 2: thiennn0412@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">© 2026 - Website Khám Phá Cần Thơ by Nhật Thiên and Nguyên Khoa</div>
+        <div class="footer-credit">
+            <p>Nguồn ảnh: Shutterstock, thamhiemmekong.com, vi.wikipedia.org và một số website du lịch khác. Xin chân
+                thành cảm ơn.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JS/supabase.js"></script>
+    <script src="JS/auth.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // =========================
+            // NAVBAR ACTIVE
+            // =========================
+            const links = document.querySelectorAll(".navbar a");
+            let currentPage = window.location.pathname.split("/").pop();
+
+            if (!currentPage) {
+                currentPage = "index.html";
+            }
+
+            links.forEach(function (link) {
+                const href = link.getAttribute("href");
+
+                if (!href) return;
+
+                const linkPage = href.split("/").pop();
+
+                if (linkPage === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+
+
+            // =========================
+            // ELEMENTS
+            // =========================
+            const tabButtons = document.querySelectorAll(".tab-btn");
+
+            const loginPanel = document.getElementById("loginPanel");
+            const registerPanel = document.getElementById("registerPanel");
+
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+
+            const loginMessage = document.getElementById("loginMessage");
+            const registerMessage = document.getElementById("registerMessage");
+
+            const authTabs = document.getElementById("authTabs");
+
+            const profilePanel = document.getElementById("profilePanel");
+            const profileName = document.getElementById("profileName");
+            const profileEmail = document.getElementById("profileEmail");
+            const profileFacebook = document.getElementById("profileFacebook");
+
+            const accountStatus = document.getElementById("accountStatus");
+            const accountRole = document.getElementById("accountRole");
+
+            const profileAvatarImage =
+                document.getElementById("profileAvatarImage");
+
+            const profileAvatarFallback =
+                document.getElementById("profileAvatarFallback");
+
+            const avatarInput =
+                document.getElementById("avatarInput");
+
+            const removeAvatarBtn =
+                document.getElementById("removeAvatarBtn");
+
+            const logoutBox =
+                document.getElementById("logoutBox");
+
+            const logoutBtn =
+                document.getElementById("logoutBtn");
+
+            const adminLink =
+                document.getElementById("adminLink");
+
+            const changePasswordForm =
+                document.getElementById("changePasswordForm");
+
+            const changePasswordMessage =
+                document.getElementById("changePasswordMessage");
+
+            const updateFacebookForm =
+                document.getElementById("updateFacebookForm");
+
+            const updateFacebookInput =
+                document.getElementById("facebookUpdateInput");
+
+            const updateFacebookMessage =
+                document.getElementById("updateFacebookMessage");
+
+            const facebookConnectMessage = document.getElementById("facebookConnectMessage");
+
+            const updateNameForm =
+                document.getElementById("updateNameForm");
+
+            const updateNameInput =
+                document.getElementById("nameUpdateInput");
+
+            const updateNameMessage =
+                document.getElementById("updateNameMessage");
+
+
+            // =========================
+            // CONFIG
+            // =========================
+            const MAX_AVATAR_SIZE = 1024 * 1024;
+
+
+            // =========================
+            // FACEBOOK VALIDATION
+            // =========================
+
+            /**
+             * Kiểm tra xem value có phải Facebook URL hợp lệ không.
+             * - Phải có protocol http: hoặc https:
+             * - Hostname phải là facebook.com hoặc www.facebook.com
+             * - Path phải có nội dung (không phải / hoặc rỗng)
+             * - Nếu là profile.php thì phải có query id có giá trị
+             * - Trả về true nếu hợp lệ, false nếu không
+             */
+            function validateFacebookUrl(value) {
+                const raw = (value || "").trim();
+                if (!raw) return true; // optional - trống là OK
+
+                // Phải có protocol đầy đủ
+                if (!/^https?:\/\//i.test(raw)) return false;
+
+                let url;
+                try {
+                    url = new URL(raw);
+                } catch (e) {
+                    return false;
+                }
+
+                // Protocol phải là http hoặc https
+                if (url.protocol !== "http:" && url.protocol !== "https:") return false;
+
+                // Hostname phải là facebook.com hoặc www.facebook.com
+                const hostname = url.hostname.toLowerCase();
+                if (hostname !== "facebook.com" && hostname !== "www.facebook.com") return false;
+
+                // Path phải có nội dung thực sự (không phải rỗng hoặc chỉ là /)
+                const path = url.pathname.replace(/\/+$/, "");
+                if (!path || path === "") return false;
+
+                // Nếu là profile.php thì phải có ?id= với giá trị
+                if (path.toLowerCase() === "/profile.php") {
+                    const id = url.searchParams.get("id");
+                    if (!id || !id.trim()) return false;
+                }
+
+                return true;
+            }
+
+            /**
+             * Chuẩn hóa Facebook URL về dạng https://facebook.com/...
+             * Chỉ hoạt động sau khi validateFacebookUrl đã pass.
+             * Nếu value trống trả về "". Nếu invalid trả về "".
+             */
+            function normalizeFacebook(value) {
+                const raw = (value || "").trim();
+                if (!raw) return "";
+                if (!validateFacebookUrl(raw)) return "";
+
+                try {
+                    const url = new URL(raw);
+                    const path = url.pathname.replace(/\/+$/, "") || "/";
+                    const isProfilePhp = path.toLowerCase() === "/profile.php";
+
+                    if (isProfilePhp && url.searchParams.has("id")) {
+                        const id = url.searchParams.get("id").trim();
+                        return "https://facebook.com/profile.php?id=" + id;
+                    }
+
+                    return "https://facebook.com" + path;
+                } catch (e) {
+                    return "";
+                }
+            }
+
+            /**
+             * Hiển thị hoặc xóa lỗi Facebook URL trên một input.
+             * @param {HTMLInputElement} input
+             * @param {HTMLElement} errorEl - span chứa text lỗi
+             * @param {boolean} showError
+             */
+            function setFacebookInputError(input, errorEl, showError) {
+                if (showError) {
+                    input.classList.add("input-error");
+                    if (errorEl) errorEl.textContent = "Vui lòng nhập link Facebook chính xác";
+                } else {
+                    input.classList.remove("input-error");
+                    if (errorEl) errorEl.textContent = "";
+                }
+            }
+
+            function renderFacebook(profile) {
+                const facebookUrl = profile?.facebook;
+                const facebookName = profile?.facebook_name;
+                profileFacebook.innerHTML = "";
+                if (!facebookUrl && !facebookName) { profileFacebook.textContent = "Chưa liên kết"; return; }
+                const label = document.createElement("span");
+                label.textContent = facebookName || "Tài khoản Facebook";
+                profileFacebook.appendChild(label);
+                if (facebookUrl) {
+                    const link = document.createElement("a");
+                    link.href = facebookUrl; link.target = "_blank"; link.rel = "noopener noreferrer";
+                    link.className = "facebook-profile-link";
+                    link.innerHTML = ' <i class="fa-brands fa-facebook"></i> Xem Facebook';
+                    profileFacebook.append(" ", link);
+                }
+            }
+
+            function facebookIdentity(user) { return (user?.identities || []).find(function (identity) { return identity.provider === "facebook"; }) || null; }
+
+            async function syncFacebookIdentity(profile, user) {
+                const identity = facebookIdentity(user);
+                if (!identity) return profile;
+                const identityData = identity.identity_data || {};
+                const facebookName = identityData.full_name || identityData.name || identityData.user_name || "Tài khoản Facebook";
+                const facebookId = identityData.sub || identityData.provider_id || "";
+                const facebookUrl = facebookId ? "https://www.facebook.com/" + encodeURIComponent(facebookId) : (profile?.facebook || null);
+                if (profile?.facebook_name === facebookName && profile?.facebook === facebookUrl) return profile;
+                const { data, error } = await supabaseClient.from("profiles").update({ facebook_name: facebookName, facebook: facebookUrl }).eq("id", user.id).select().maybeSingle();
+                if (error) { console.error("Không thể đồng bộ liên kết Facebook:", error); return profile; }
+                return data || profile;
+            }
+
+            async function linkFacebook(messageTarget) {
+                const { data: { user } } = await supabaseClient.auth.getUser();
+                if (!user) {
+                    const message = "Hãy tạo tài khoản hoặc đăng nhập trước, sau đó liên kết Facebook trong phần Thông tin cá nhân.";
+                    if (messageTarget) messageTarget.textContent = message; else registerMessage.textContent = message;
+                    return;
+                }
+                if (messageTarget) messageTarget.textContent = "Đang chuyển đến Facebook...";
+                const { error } = await supabaseClient.auth.linkIdentity({ provider: "facebook", options: { redirectTo: window.location.origin + window.location.pathname } });
+                if (error) {
+                    console.error("Không thể liên kết Facebook:", error);
+                    const message = "Không thể kết nối Facebook. Vui lòng thử lại.";
+                    if (messageTarget) messageTarget.textContent = message; else { registerMessage.textContent = message; registerMessage.classList.add("error"); }
+                }
+            }
+
+
+            // =========================
+            // INITIALS
+            // =========================
+            function getInitials(name) {
+                const parts = (name || "")
+                    .trim()
+                    .split(/\s+/)
+                    .filter(Boolean);
+
+                if (!parts.length) {
+                    return "U";
+                }
+
+                return parts
+                    .slice(0, 2)
+                    .map(function (part) {
+                        return part.charAt(0).toUpperCase();
+                    })
+                    .join("");
+            }
+
+
+            // =========================
+            // AVATAR
+            // =========================
+            function renderAvatar(profile) {
+                const hasAvatar =
+                    profile &&
+                    profile.avatar_url;
+
+                profileAvatarImage.hidden = !hasAvatar;
+                profileAvatarFallback.hidden = !!hasAvatar;
+
+                removeAvatarBtn.disabled = !hasAvatar;
+
+                if (hasAvatar) {
+                    profileAvatarImage.src =
+                        profile.avatar_url;
+
+                    profileAvatarImage.alt =
+                        "Avatar của " +
+                        (profile.name || "người dùng");
+
+                } else {
+                    profileAvatarImage.removeAttribute("src");
+
+                    profileAvatarFallback.textContent =
+                        getInitials(
+                            profile ? profile.name : ""
+                        );
+                }
+            }
+
+
+            // =========================
+            // READ IMAGE
+            // =========================
+            function readFileAsDataUrl(file) {
+                return new Promise(function (resolve, reject) {
+
+                    const reader = new FileReader();
+
+                    reader.onload = function () {
+                        resolve(reader.result);
+                    };
+
+                    reader.onerror = function () {
+                        reject(new Error("Không thể đọc ảnh."));
+                    };
+
+                    reader.readAsDataURL(file);
+                });
+            }
+
+
+            // =========================
+            // UPDATE AVATAR
+            // =========================
+            async function updateProfileAvatar(avatarUrl) {
+
+                const {
+                    data: { user },
+                    error: userError
+                } = await supabaseClient.auth.getUser();
+
+                if (userError || !user) {
+                    return null;
+                }
+
+                const {
+                    data: updatedProfile,
+                    error
+                } = await supabaseClient
+                    .from("profiles")
+                    .update({
+                        avatar_url: avatarUrl || ""
+                    })
+                    .eq("id", user.id)
+                    .select()
+                    .single();
+
+                if (error) {
+                    console.error(
+                        "Không cập nhật được avatar:",
+                        error
+                    );
+
+                    return null;
+                }
+
+                await updateStatus();
+
+                return updatedProfile;
+            }
+
+
+            // =========================
+            // TAB
+            // =========================
+            function setActiveTab(tabName) {
+
+                tabButtons.forEach(function (button) {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.tab === tabName
+                    );
+
+                });
+
+                loginPanel.classList.toggle(
+                    "active",
+                    tabName === "login"
+                );
+
+                registerPanel.classList.toggle(
+                    "active",
+                    tabName === "register"
+                );
+            }
+
+
+            // =========================
+            // GET PROFILE
+            // =========================
+            async function getCurrentProfile(userId) {
+
+                const {
+                    data,
+                    error
+                } = await supabaseClient
+                    .from("profiles")
+                    .select("*")
+                    .eq("id", userId)
+                    .maybeSingle();
+
+                if (error) {
+                    console.error(
+                        "Không lấy được profile:",
+                        error
+                    );
+
+                    return null;
+                }
+
+                return data;
+            }
+
+
+            // =========================
+            // UPDATE ACCOUNT UI
+            // =========================
+            async function updateStatus() {
+
+                const {
+                    data: { user },
+                    error: userError
+                } = await supabaseClient
+                    .auth
+                    .getUser();
+
+
+                // =====================
+                // CHƯA ĐĂNG NHẬP
+                // =====================
+                if (userError || !user) {
+
+                    profileName.textContent = "";
+                    profileEmail.textContent = "";
+                    profileFacebook.textContent = "";
+
+                    accountStatus.textContent =
+                        "Chưa đăng nhập";
+
+                    accountRole.textContent =
+                        "Thành viên";
+
+                    renderAvatar(null);
+
+                    authTabs.style.display = "grid";
+
+                    profilePanel.classList.remove("active");
+                    logoutBox.classList.remove("active");
+
+                    logoutBtn.style.display = "none";
+
+                    adminLink.hidden = true;
+
+                    // Ẩn link Danh hiệu
+                    const titlesLinkEl = document.getElementById('titlesLink');
+                    if (titlesLinkEl) titlesLinkEl.hidden = true;
+
+                    setActiveTab("login");
+
+                    return;
+                }
+
+
+                // =====================
+                // LẤY PROFILE
+                // =====================
+                let profile = await getCurrentProfile(user.id);
+
+
+                console.log("========== ACCOUNT DEBUG ==========");
+                console.log("USER ID:", user.id);
+                console.log("USER EMAIL:", user.email);
+                console.log("PROFILE:", profile);
+                console.log("PROFILE ROLE:", profile?.role);
+                console.log("PROFILE STATUS:", profile?.status);
+                console.log("===================================");
+
+
+                // =====================
+                // PROFILE KHÔNG TỒN TẠI
+                // =====================
+                if (!profile) {
+
+                    console.warn(
+                        "Không tìm thấy profile của user:",
+                        user.id
+                    );
+
+                    profileName.textContent =
+                        user.user_metadata?.name ||
+                        "Người dùng";
+
+                    profileEmail.textContent =
+                        user.email || "";
+
+                    profileFacebook.textContent =
+                        user.user_metadata?.facebook ||
+                        "Chưa cập nhật";
+
+                    accountStatus.textContent =
+                        "Đang hoạt động";
+
+                    accountRole.textContent =
+                        "Thành viên";
+
+                    renderAvatar(null);
+
+                    authTabs.style.display = "none";
+
+                    loginPanel.classList.remove("active");
+                    registerPanel.classList.remove("active");
+
+                    profilePanel.classList.add("active");
+                    logoutBox.classList.add("active");
+
+                    logoutBtn.style.display =
+                        "inline-flex";
+
+                    adminLink.hidden = true;
+
+                    return;
+                }
+
+                profile = await syncFacebookIdentity(profile, user);
+
+
+                // =====================
+                // KIỂM TRA BAN
+                // =====================
+                if (
+                    profile.status === "banned" ||
+                    profile.status === "suspended"
+                ) {
+
+                    await supabaseClient
+                        .auth
+                        .signOut();
+
+                    alert(
+                        profile.status === "banned"
+                            ? "Tài khoản của bạn đã bị khóa."
+                            : "Tài khoản của bạn hiện đang bị hạn chế."
+                    );
+
+                    window.location.reload();
+
+                    return;
+                }
+
+
+                // =====================
+                // HIỂN THỊ PROFILE
+                // =====================
+                profileName.textContent =
+                    profile.name ||
+                    user.user_metadata?.name ||
+                    "Người dùng";
+
+                profileEmail.textContent =
+                    user.email || "";
+
+                renderFacebook(profile);
+
+
+                updateNameInput.value =
+                    profile.name ||
+                    user.user_metadata?.name ||
+                    "";
+
+                updateFacebookInput.value =
+                    profile.facebook || "";
+
+
+                renderAvatar(profile);
+                loadOwnTrustData(user.id, profile.trust_score);
+
+
+                // =====================
+                // STATUS
+                // =====================
+                accountStatus.textContent =
+                    profile.status === "active"
+                        ? "Đang hoạt động"
+                        : (
+                            profile.status ||
+                            "Đang hoạt động"
+                        );
+
+
+                // =====================
+                // ROLE
+                // =====================
+                const role = String(
+                    profile.role || "member"
+                )
+                    .trim()
+                    .toLowerCase();
+
+
+                if (role === "admin") {
+
+                    accountRole.textContent =
+                        "Quản trị viên";
+
+                    adminLink.hidden = false;
+
+                } else {
+
+                    accountRole.textContent =
+                        "Thành viên";
+
+                    adminLink.hidden = true;
+                }
+
+
+                // =====================
+                // UI ĐÃ LOGIN
+                // =====================
+                authTabs.style.display = "none";
+
+                loginPanel.classList.remove("active");
+                registerPanel.classList.remove("active");
+
+                profilePanel.classList.add("active");
+
+                logoutBox.classList.add("active");
+
+                logoutBtn.style.display =
+                    "inline-flex";
+
+                // Hiển thị link Danh hiệu
+                const titlesLinkEl = document.getElementById('titlesLink');
+                if (titlesLinkEl) titlesLinkEl.hidden = false;
+
+                // Hiển thị Title đang dùng trong profile
+                loadActiveTitleForProfile(user.id);
+            }
+
+            async function loadActiveTitleForProfile(userId) {
+                const activeTitleEl = document.getElementById('profileActiveTitle');
+                if (!activeTitleEl) return;
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('profiles')
+                        .select('titles:active_title_id(name,icon,color)')
+                        .eq('id', userId)
+                        .single();
+                    if (error || !data || !data.titles) {
+                        activeTitleEl.textContent = 'Không có';
+                        activeTitleEl.style.color = '#aaa';
+                        return;
+                    }
+                    const t = data.titles;
+                    activeTitleEl.textContent = (t.icon || '') + ' ' + (t.name || '');
+                    activeTitleEl.style.color = /^#[0-9a-fA-F]{3,8}$/.test(t.color || '') ? t.color : 'var(--primary)';
+                } catch (e) {
+                    if (activeTitleEl) activeTitleEl.textContent = 'Không có';
+                }
+            }
+
+            function getTrustLevel(score) {
+                return score >= 95 ? "Đại sứ Cần Thơ" : score >= 90 ? "Người đóng góp tích cực" : score >= 80 ? "Thành viên uy tín" : score >= 70 ? "Thành viên mới nổi" : score >= 50 ? "Đang được theo dõi" : "Uy tín thấp";
+            }
+
+            function escapeHtml(value) {
+                return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            }
+
+            async function loadOwnTrustData(userId, profileScore) {
+                const score = Math.max(0, Math.min(100, Number.isFinite(Number(profileScore)) ? Number(profileScore) : 100));
+                document.getElementById("trustScoreValue").textContent = score + " / 100";
+                document.getElementById("trustScoreLevel").textContent = getTrustLevel(score);
+                const list = document.getElementById("trustHistoryList");
+                if (!list) return;
+                const { data, error } = await supabaseClient.from("trust_history").select("points_change,reason,report_id,created_at").eq("user_id", userId).order("created_at", { ascending: false }).limit(10);
+                if (error) { list.textContent = "Chưa thể tải lịch sử điểm uy tín."; return; }
+                if (!data || !data.length) { list.textContent = "Chưa có thay đổi điểm uy tín."; return; }
+                list.innerHTML = data.map(function (item) {
+                    const date = new Date(item.created_at).toLocaleString("vi-VN");
+                    return '<div style="padding:8px 0;border-top:1px solid #eee"><strong>' + item.points_change + ' điểm</strong> · ' + escapeHtml(item.reason || "Vi phạm đã xác nhận") + '<br><small>Report #' + escapeHtml(item.report_id || "—") + ' · ' + escapeHtml(date) + '</small></div>';
+                }).join("");
+            }
+
+
+            // =========================
+            // TAB CLICK
+            // =========================
+            tabButtons.forEach(function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        setActiveTab(
+                            button.dataset.tab
+                        );
+
+                    }
+                );
+
+            });
+
+
+            // =========================
+            // FACEBOOK BLUR VALIDATION
+            // =========================
+            (function () {
+                const regFbInput = document.getElementById("registerFacebookInput");
+                const regFbError = document.getElementById("registerFacebookError");
+                regFbInput.addEventListener("blur", function () {
+                    const value = regFbInput.value.trim();
+                    if (!value) { setFacebookInputError(regFbInput, regFbError, false); return; }
+                    setFacebookInputError(regFbInput, regFbError, !validateFacebookUrl(value));
+                });
+
+                updateFacebookInput.addEventListener("blur", function () {
+                    const updateFbError = document.getElementById("updateFacebookInputError");
+                    const value = updateFacebookInput.value.trim();
+                    if (!value) { setFacebookInputError(updateFacebookInput, updateFbError, false); return; }
+                    setFacebookInputError(updateFacebookInput, updateFbError, !validateFacebookUrl(value));
+                });
+            })();
+
+
+            // =========================
+            // REGISTER
+            // =========================
+            registerForm.addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    registerMessage.classList.remove(
+                        "error"
+                    );
+
+                    registerMessage.textContent = "";
+
+
+                    const name =
+                        registerForm.name.value.trim();
+
+                    const email =
+                        registerForm.email.value
+                            .trim()
+                            .toLowerCase();
+
+                    const facebookRaw = registerForm.facebook.value.trim();
+                    const regFbInput = document.getElementById("registerFacebookInput");
+                    const regFbError = document.getElementById("registerFacebookError");
+
+                    // Validate Facebook URL nếu có nhập
+                    if (facebookRaw && !validateFacebookUrl(facebookRaw)) {
+                        setFacebookInputError(regFbInput, regFbError, true);
+                        registerMessage.textContent = "Vui lòng nhập link Facebook chính xác";
+                        registerMessage.classList.add("error");
+                        regFbInput.focus();
+                        return;
+                    } else {
+                        setFacebookInputError(regFbInput, regFbError, false);
+                    }
+
+                    const facebook = normalizeFacebook(facebookRaw);
+
+                    const password =
+                        registerForm.password.value;
+
+
+                    if (
+                        !name ||
+                        !email ||
+                        !password
+                    ) {
+
+                        registerMessage.textContent =
+                            "Vui lòng điền đầy đủ thông tin.";
+
+                        registerMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (password.length < 6) {
+
+                        registerMessage.textContent =
+                            "Mật khẩu cần ít nhất 6 ký tự.";
+
+                        registerMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const {
+                        data,
+                        error
+                    } = await supabaseClient
+                        .auth
+                        .signUp({
+
+                            email: email,
+
+                            password: password,
+
+                            options: {
+                                data: {
+                                    name: name,
+                                    facebook: facebook || null
+                                }
+                            }
+
+                        });
+
+
+                    if (error) {
+
+                        registerMessage.textContent =
+                            error.message;
+
+                        registerMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (data.user) {
+
+                        const {
+                            error: profileError
+                        } = await supabaseClient
+                            .from("profiles")
+                            .upsert(
+                                {
+                                    id: data.user.id,
+
+                                    name: name,
+
+                                    facebook: facebook || null,
+
+                                    avatar_url: "",
+
+                                    role: "member",
+
+                                    status: "active"
+                                },
+                                {
+                                    onConflict: "id"
+                                }
+                            );
+
+
+                        if (profileError) {
+
+                            console.error(
+                                "Lỗi tạo profile:",
+                                profileError
+                            );
+
+                            registerMessage.textContent =
+                                "Tài khoản đã tạo nhưng chưa tạo được profile: " +
+                                profileError.message;
+
+                            registerMessage.classList.add(
+                                "error"
+                            );
+
+                            return;
+                        }
+                    }
+
+
+                    registerMessage.textContent =
+                        "Đăng ký thành công! Hãy kiểm tra email để xác nhận tài khoản.";
+
+                    registerForm.reset();
+                }
+            );
+
+
+
+
+            // =========================
+            // LOGIN
+            // =========================
+            loginForm.addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    loginMessage.classList.remove(
+                        "error"
+                    );
+
+                    loginMessage.textContent = "";
+
+
+                    const email =
+                        loginForm.email.value
+                            .trim()
+                            .toLowerCase();
+
+                    const password =
+                        loginForm.password.value;
+
+
+                    if (!email || !password) {
+
+                        loginMessage.textContent =
+                            "Vui lòng nhập email và mật khẩu.";
+
+                        loginMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const {
+                        data,
+                        error
+                    } = await supabaseClient
+                        .auth
+                        .signInWithPassword({
+
+                            email: email,
+
+                            password: password
+
+                        });
+
+
+                    if (error) {
+
+                        loginMessage.textContent =
+                            "Email hoặc mật khẩu chưa đúng.";
+
+                        loginMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const profile =
+                        await getCurrentProfile(
+                            data.user.id
+                        );
+
+
+                    if (
+                        profile &&
+                        (
+                            profile.status === "banned" ||
+                            profile.status === "suspended"
+                        )
+                    ) {
+
+                        await supabaseClient
+                            .auth
+                            .signOut();
+
+
+                        loginMessage.textContent =
+                            profile.status === "banned"
+                                ? "Tài khoản của bạn đã bị khóa."
+                                : "Tài khoản của bạn hiện đang bị hạn chế.";
+
+
+                        loginMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    loginMessage.textContent =
+                        "Đăng nhập thành công!";
+
+                    loginForm.reset();
+
+                    await updateStatus();
+                }
+            );
+
+
+            // =========================
+            // UPLOAD AVATAR
+            // =========================
+            avatarInput.addEventListener(
+                "change",
+                async function () {
+
+                    const file =
+                        avatarInput.files &&
+                        avatarInput.files[0];
+
+
+                    if (!file) return;
+
+
+                    if (file.size > MAX_AVATAR_SIZE) {
+
+                        loginMessage.textContent =
+                            "Avatar nên nhỏ hơn 1MB để lưu ổn định.";
+
+                        loginMessage.classList.add(
+                            "error"
+                        );
+
+                        avatarInput.value = "";
+
+                        return;
+                    }
+
+
+                    try {
+
+                        const dataUrl =
+                            await readFileAsDataUrl(
+                                file
+                            );
+
+
+                        const updated =
+                            await updateProfileAvatar(
+                                dataUrl
+                            );
+
+
+                        if (!updated) {
+
+                            loginMessage.textContent =
+                                "Không thể cập nhật avatar.";
+
+                            loginMessage.classList.add(
+                                "error"
+                            );
+
+                            avatarInput.value = "";
+
+                            return;
+                        }
+
+
+                        loginMessage.classList.remove(
+                            "error"
+                        );
+
+                        loginMessage.textContent =
+                            "Đã cập nhật avatar.";
+
+                        avatarInput.value = "";
+
+
+                    } catch (error) {
+
+                        console.error(
+                            "Lỗi avatar:",
+                            error
+                        );
+
+                        loginMessage.textContent =
+                            "Không thể đọc ảnh avatar.";
+
+                        loginMessage.classList.add(
+                            "error"
+                        );
+
+                        avatarInput.value = "";
+                    }
+                }
+            );
+
+
+            // =========================
+            // REMOVE AVATAR
+            // =========================
+            removeAvatarBtn.addEventListener(
+                "click",
+                async function () {
+
+                    const updated =
+                        await updateProfileAvatar("");
+
+
+                    if (!updated) {
+
+                        loginMessage.textContent =
+                            "Không thể xóa avatar.";
+
+                        loginMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    loginMessage.classList.remove(
+                        "error"
+                    );
+
+                    loginMessage.textContent =
+                        "Đã xóa avatar.";
+                }
+            );
+
+
+            // =========================
+            // UPDATE NAME
+            // =========================
+            updateNameForm.addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    updateNameMessage.classList.remove(
+                        "error"
+                    );
+
+                    updateNameMessage.textContent = "";
+
+
+                    const {
+                        data: { user }
+                    } = await supabaseClient
+                        .auth
+                        .getUser();
+
+
+                    if (!user) {
+
+                        updateNameMessage.textContent =
+                            "Bạn cần đăng nhập trước khi cập nhật tên.";
+
+                        updateNameMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const name =
+                        updateNameInput.value.trim();
+
+
+                    if (!name) {
+
+                        updateNameMessage.textContent =
+                            "Tên không được để trống.";
+
+                        updateNameMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (name.length < 2) {
+
+                        updateNameMessage.textContent =
+                            "Tên cần có ít nhất 2 ký tự.";
+
+                        updateNameMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const {
+                        error
+                    } = await supabaseClient
+                        .from("profiles")
+                        .update({
+                            name: name
+                        })
+                        .eq(
+                            "id",
+                            user.id
+                        );
+
+
+                    if (error) {
+
+                        updateNameMessage.textContent =
+                            "Không thể cập nhật tên: " +
+                            error.message;
+
+                        updateNameMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    updateNameMessage.textContent =
+                        "Đã cập nhật tên thành công!";
+
+                    await updateStatus();
+                }
+            );
+
+
+            // =========================
+            // UPDATE FACEBOOK
+            // =========================
+            updateFacebookForm.addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    updateFacebookMessage.classList.remove(
+                        "error"
+                    );
+
+                    updateFacebookMessage.textContent = "";
+
+
+                    const {
+                        data: { user }
+                    } = await supabaseClient
+                        .auth
+                        .getUser();
+
+
+                    if (!user) {
+
+                        updateFacebookMessage.textContent =
+                            "Bạn cần đăng nhập trước khi cập nhật Facebook.";
+
+                        updateFacebookMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const fbRaw = updateFacebookInput.value.trim();
+                    const updateFbError = document.getElementById("updateFacebookInputError");
+
+                    // Nếu trống thì cho phép (xóa Facebook)
+                    if (fbRaw && !validateFacebookUrl(fbRaw)) {
+                        setFacebookInputError(updateFacebookInput, updateFbError, true);
+                        updateFacebookMessage.textContent = "Vui lòng nhập link Facebook chính xác";
+                        updateFacebookMessage.classList.add("error");
+                        updateFacebookInput.focus();
+                        return;
+                    } else {
+                        setFacebookInputError(updateFacebookInput, updateFbError, false);
+                    }
+
+                    const facebook = normalizeFacebook(fbRaw);
+
+
+                    const {
+                        error
+                    } = await supabaseClient
+                        .from("profiles")
+                        .update({
+                            facebook: facebook
+                        })
+                        .eq(
+                            "id",
+                            user.id
+                        );
+
+
+                    if (error) {
+
+                        updateFacebookMessage.textContent =
+                            "Không thể cập nhật Facebook: " +
+                            error.message;
+
+                        updateFacebookMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    updateFacebookMessage.textContent =
+                        "Đã cập nhật Facebook thành công.";
+
+                    await updateStatus();
+                }
+            );
+
+
+            // =========================
+            // CHANGE PASSWORD
+            // =========================
+            changePasswordForm.addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    changePasswordMessage.classList.remove(
+                        "error"
+                    );
+
+                    changePasswordMessage.textContent = "";
+
+
+                    const {
+                        data: { user }
+                    } = await supabaseClient
+                        .auth
+                        .getUser();
+
+
+                    if (!user) {
+
+                        changePasswordMessage.textContent =
+                            "Bạn cần đăng nhập trước khi đổi mật khẩu.";
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    const currentPassword =
+                        changePasswordForm
+                            .currentPassword
+                            .value
+                            .trim();
+
+                    const newPassword =
+                        changePasswordForm
+                            .newPassword
+                            .value
+                            .trim();
+
+                    const confirmPassword =
+                        changePasswordForm
+                            .confirmPassword
+                            .value
+                            .trim();
+
+
+                    if (
+                        !currentPassword ||
+                        !newPassword ||
+                        !confirmPassword
+                    ) {
+
+                        changePasswordMessage.textContent =
+                            "Vui lòng điền đầy đủ thông tin.";
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (newPassword.length < 6) {
+
+                        changePasswordMessage.textContent =
+                            "Mật khẩu mới cần ít nhất 6 ký tự.";
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (newPassword === currentPassword) {
+
+                        changePasswordMessage.textContent =
+                            "Mật khẩu mới cần khác mật khẩu hiện tại.";
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (
+                        newPassword !== confirmPassword
+                    ) {
+
+                        changePasswordMessage.textContent =
+                            "Xác nhận mật khẩu mới chưa khớp.";
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    // Xác minh mật khẩu hiện tại
+                    const {
+                        error: verifyError
+                    } = await supabaseClient
+                        .auth
+                        .signInWithPassword({
+
+                            email: user.email,
+
+                            password: currentPassword
+
+                        });
+
+
+                    if (verifyError) {
+
+                        changePasswordMessage.textContent =
+                            "Mật khẩu hiện tại chưa đúng.";
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    // Đổi mật khẩu
+                    const {
+                        error: updateError
+                    } = await supabaseClient
+                        .auth
+                        .updateUser({
+
+                            password: newPassword
+
+                        });
+
+
+                    if (updateError) {
+
+                        changePasswordMessage.textContent =
+                            "Không thể đổi mật khẩu: " +
+                            updateError.message;
+
+                        changePasswordMessage.classList.add(
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    changePasswordMessage.textContent =
+                        "Đổi mật khẩu thành công.";
+
+                    changePasswordForm.reset();
+                }
+            );
+
+
+            // =========================
+            // LOGOUT
+            // =========================
+            logoutBtn.addEventListener(
+                "click",
+                async function () {
+
+                    const {
+                        error
+                    } = await supabaseClient
+                        .auth
+                        .signOut();
+
+
+                    if (error) {
+
+                        alert(
+                            "Không thể đăng xuất: " +
+                            error.message
+                        );
+
+                        return;
+                    }
+
+
+                    loginMessage.classList.remove(
+                        "error"
+                    );
+
+                    loginMessage.textContent =
+                        "Bạn đã đăng xuất.";
+
+
+                    await updateStatus();
+                }
+            );
+
+
+            // =========================
+            // AUTO UPDATE KHI AUTH ĐỔI
+            // =========================
+            supabaseClient.auth.onAuthStateChange(
+                function (event) {
+
+                    if (
+                        event === "SIGNED_IN" ||
+                        event === "SIGNED_OUT" ||
+                        event === "TOKEN_REFRESHED"
+                    ) {
+
+                        setTimeout(function () {
+                            updateStatus();
+                        }, 0);
+                    }
+                }
+            );
+
+
+            // =========================
+            // LOAD LẦN ĐẦU
+            // =========================
+            updateStatus();
+
+        });
+    </script>
+
+    <script src="mobile-nav.js"></script>
+</body>
+
+</html>
