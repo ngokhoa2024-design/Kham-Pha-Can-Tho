@@ -170,11 +170,13 @@ body {
     background: rgba(11, 138, 123, 0.08);
 }
 
-.navbar .dropdown-menu .go-cantho-item {
+.navbar .dropdown-menu .go-cantho-item,
+.navbar .dropdown-menu .locago-item {
     margin-top: 6px;
 }
 
-.navbar .dropdown-menu .go-cantho-link {
+.navbar .dropdown-menu .go-cantho-link,
+.navbar .dropdown-menu .locago-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,7 +190,9 @@ body {
 }
 
 .navbar .dropdown-menu .go-cantho-link:hover,
-.navbar .dropdown-menu .go-cantho-link.active {
+.navbar .dropdown-menu .go-cantho-link.active,
+.navbar .dropdown-menu .locago-link:hover,
+.navbar .dropdown-menu .locago-link.active {
     background: linear-gradient(135deg, #ffd883, #f2914f 58%, #10a192 140%);
     color: #152029;
     transform: translateY(-1px);
@@ -321,6 +325,7 @@ main {
     margin-bottom: 16px;
 }
 
+#locagoForm,
 #goCanThoForm {
     display: grid;
     gap: 18px;

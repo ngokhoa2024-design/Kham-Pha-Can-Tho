@@ -67,6 +67,7 @@ body {
     margin-bottom: 16px;
 }
 
+#locagoForm,
 #goCanThoForm {
     display: grid;
     gap: 18px;

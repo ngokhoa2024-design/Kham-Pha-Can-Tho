@@ -3,17 +3,17 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyo1Hr2MazAzvoNbo2e
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll(".navbar a");
     let currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "") currentPage = "buddy-dong-hanh.html";
+    if (currentPage === "" || currentPage === "locago.html") currentPage = "buddy-dong-hanh.html";
 
     links.forEach(function (link) {
         const href = link.getAttribute("href");
         if (!href || href === "#") return;
         const linkPage = href.split("/").pop();
-        if (linkPage === currentPage) link.classList.add("active");
+        if (linkPage === currentPage || (linkPage === "buddy-dong-hanh.html" && currentPage === "locago.html")) link.classList.add("active");
     });
 
     const heroBtn = document.querySelector(".hero-btn");
-    const formSection = document.querySelector("#go-cantho-form");
+    const formSection = document.querySelector("#locago-form, #go-cantho-form");
     const header = document.querySelector(".header");
 
     if (heroBtn && formSection && header) {
@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const form = document.querySelector("#goCanThoForm");
-    const formNote = document.querySelector("#goCanThoNote");
+    const form = document.querySelector("#locagoForm, #goCanThoForm");
+    const formNote = document.querySelector("#locagoNote, #goCanThoNote");
 
     if (form && formNote) {
         form.addEventListener("submit", async function (event) {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             const mailMessage = [
-                "YEU CAU GO CAN THO - BUDDY DONG HANH",
+                "YEU CAU LOCAGO - BUDDY DONG HANH",
                 "Ho va ten: " + payload.name,
                 "Email: " + payload.email,
                 "So dien thoai / Zalo: " + payload.phone,

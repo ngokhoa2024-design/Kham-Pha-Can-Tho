@@ -95,6 +95,7 @@
 
         // ── Đánh dấu active link dựa theo URL hiện tại ──────────
         var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        if (currentPage === 'locago.html') currentPage = 'buddy-dong-hanh.html';
 
         var mobileLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
         mobileLinks.forEach(function (link) {

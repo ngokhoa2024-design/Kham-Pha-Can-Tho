@@ -345,15 +345,17 @@ canvas {
     font-weight: 700;
 }
 
-/* ---- GO Cần Thơ đặc biệt trong submenu ---- */
-.mobile-submenu .mobile-go-cantho a {
+/* ---- LOCAGO đặc biệt trong submenu ---- */
+.mobile-submenu .mobile-go-cantho a,
+.mobile-submenu .mobile-locago a {
     background: linear-gradient(135deg, rgba(247, 201, 108, 0.2), rgba(242, 122, 59, 0.15), rgba(11, 138, 123, 0.15));
     border: 1px solid rgba(242, 122, 59, 0.2);
     font-weight: 700;
     color: #1f2833;
 }
 
-.mobile-submenu .mobile-go-cantho a:hover {
+.mobile-submenu .mobile-go-cantho a:hover,
+.mobile-submenu .mobile-locago a:hover {
     background: linear-gradient(135deg, rgba(247, 201, 108, 0.35), rgba(242, 122, 59, 0.25), rgba(11, 138, 123, 0.25));
 }
 
